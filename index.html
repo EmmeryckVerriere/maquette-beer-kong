@@ -1,0 +1,1504 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="robots" content="noindex, nofollow">
+<meta name="theme-color" content="#0E0A0A">
+<meta name="description" content="Maquette de présentation du site du bar Beer Kong (Saint-Onen-la-Chapelle). Contenu d'exemple, non publié.">
+<title>Beer Kong · maquette (Rem Studio)</title>
+<link rel="icon" type="image/png" href="img/favicon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Anton&family=Barlow:wght@400;500;600;700&family=Barlow+Condensed:wght@500;600;700&display=swap">
+<script>document.documentElement.classList.add('js');</script>
+<style>
+:root{
+  /* Palette mesurée sur l'Instagram du bar (approximative, non officielle) */
+  --bg:#0E0A0A; --bg2:#150F0E; --panel:#1b1413; --panel2:#241a18; --line:#3b2d29;
+  --tx:#E7E2DC; --mut:#B9AEA6;
+  --red:#BE3822; --red-tx:#E2583F;          /* rouge brique : fonds / texte lisible */
+  --orange:#C8560C; --orange-btn:#B64C08; --orange-tx:#E8742A;
+  --amber:#C4802C;
+  --hdr:92px;
+  --fd:'Anton','Bebas Neue',Impact,'Arial Narrow',sans-serif;
+  --fc:'Barlow Condensed','Arial Narrow','Roboto Condensed',sans-serif;
+  --fb:'Barlow',system-ui,-apple-system,'Segoe UI',Roboto,Helvetica,Arial,sans-serif;
+  --gut:clamp(16px,5vw,36px);
+}
+*,*::before,*::after{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:calc(var(--hdr) + 8px);-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--bg);color:var(--tx);font-family:var(--fb);font-size:1.0625rem;line-height:1.6;overflow-x:hidden;padding-bottom:calc(76px + env(safe-area-inset-bottom))}
+/* grain très discret */
+body::before{content:"";position:fixed;inset:0;z-index:70;pointer-events:none;opacity:.055;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E")}
+img,svg,canvas{max-width:100%}
+[hidden]{display:none!important}
+a{color:var(--orange-tx)}
+h1,h2,h3,h4,p,figure{margin:0}
+ul,ol{margin:0}
+.sr-only{position:absolute;width:1px;height:1px;margin:-1px;padding:0;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap;border:0}
+:focus-visible{outline:3px solid var(--amber);outline-offset:3px;border-radius:6px}
+.skip{position:absolute;left:12px;top:-90px;z-index:100;background:var(--amber);color:#150a00;padding:12px 18px;border-radius:8px;font-weight:700;text-decoration:none}
+.skip:focus{top:12px}
+.wrap{width:100%;max-width:1140px;margin-inline:auto;padding-inline:var(--gut)}
+.tlink{display:inline-flex;align-items:center;min-height:44px}
+
+/* ---------- En-tête ---------- */
+.top{position:fixed;inset:0 0 auto 0;z-index:60;background:rgba(14,10,10,.92);-webkit-backdrop-filter:blur(10px);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+.demo-bar{background:#2a1a0a;color:#F0B060;font-size:.75rem;line-height:1.25;letter-spacing:.05em;text-align:center;padding:5px 10px;font-weight:600;border-bottom:1px solid #4a3010}
+.nav-row{display:flex;align-items:center;gap:8px;min-height:56px;padding-inline:var(--gut);max-width:1240px;margin-inline:auto;position:relative}
+.brand{display:flex;align-items:center;gap:10px;margin-right:auto;min-height:44px;color:var(--tx);text-decoration:none;font-family:var(--fd);font-size:1.45rem;letter-spacing:.04em;white-space:nowrap}
+.brand img{width:38px;height:38px;border-radius:50%;display:block}
+.menu-btn,.sound-toggle{min-height:44px;min-width:44px;border:1.5px solid var(--line);background:transparent;color:var(--tx);border-radius:10px;font:600 .95rem var(--fb);padding:0 12px;cursor:pointer;display:inline-flex;align-items:center;justify-content:center;gap:8px;transition:background .2s,border-color .2s}
+.menu-btn:hover,.sound-toggle:hover{border-color:var(--amber)}
+.sound-toggle[aria-pressed="true"]{background:rgba(196,128,44,.16);border-color:var(--amber);color:#F0C27A}
+.sound-toggle .st{display:none}
+.menu-list{list-style:none;margin:0;padding:6px var(--gut) 16px;position:absolute;left:0;right:0;top:100%;background:#0E0A0A;border-bottom:1px solid var(--line);display:none}
+.menu-list.open{display:block}
+.menu-list a{display:flex;align-items:center;min-height:50px;color:var(--tx);text-decoration:none;font-family:var(--fc);font-weight:600;font-size:1.3rem;letter-spacing:.08em;text-transform:uppercase;border-bottom:1px solid rgba(255,255,255,.06);position:relative}
+.menu-list a:hover{color:#fff}
+.menu-list a[aria-current="true"]{color:var(--orange-tx)}
+.menu-list a.nav-pack{color:#fff;background:var(--red);border-radius:10px;padding:0 14px;margin:8px 0;border-bottom:0}
+.menu-list a.nav-pack[aria-current="true"]{box-shadow:0 0 0 2px var(--amber)}
+.progress{position:absolute;left:0;right:0;bottom:-1px;height:3px;background:transparent;pointer-events:none}
+.progress i{display:block;height:100%;background:linear-gradient(90deg,var(--red),var(--orange),var(--amber));transform:scaleX(0);transform-origin:0 50%}
+
+/* ---------- Boutons ---------- */
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;min-height:48px;padding:0 24px;border-radius:10px;font:700 1.1rem var(--fc);letter-spacing:.07em;text-transform:uppercase;text-decoration:none;border:2px solid transparent;cursor:pointer;transition:transform .2s,background .2s,border-color .2s,box-shadow .2s;text-align:center;color:#fff}
+.btn-main{background:var(--orange-btn);border-color:var(--orange-btn)}
+.btn-main:hover{background:#cf5809;border-color:#cf5809;transform:translateY(-1px)}
+.btn-red{background:var(--red);border-color:var(--red)}
+.btn-red:hover{background:#cf4128;border-color:#cf4128;transform:translateY(-1px)}
+.btn-alt{background:transparent;border-color:rgba(231,226,220,.5);color:var(--tx)}
+.btn-alt:hover{border-color:var(--tx);background:rgba(231,226,220,.07)}
+.btn[disabled]{opacity:.45;cursor:not-allowed}
+.btn-sm{min-height:44px;padding:0 18px;font-size:1rem}
+.btn.nav-call{display:none}
+.ico{width:20px;height:20px;flex:none}
+.actionbar{position:fixed;inset:auto 0 0 0;z-index:59;display:grid;grid-template-columns:1fr 1fr;gap:10px;padding:10px var(--gut) calc(10px + env(safe-area-inset-bottom));background:rgba(14,10,10,.95);border-top:1px solid var(--line);-webkit-backdrop-filter:blur(10px);backdrop-filter:blur(10px)}
+.actionbar .btn{min-height:52px}
+
+/* ---------- Apparitions ---------- */
+@media (prefers-reduced-motion:no-preference){
+  .js .reveal{opacity:0;transform:translateY(26px);transition:opacity .9s ease,transform .9s cubic-bezier(.2,.7,.2,1);transition-delay:calc(var(--i,0) * 80ms)}
+  .js .reveal.in{opacity:1;transform:none}
+  .js h2.reveal::after{transform:scaleX(0)}
+  .js h2.reveal.in::after{transform:scaleX(1)}
+}
+
+/* ---------- Sections ---------- */
+section{padding-block:clamp(64px,10vw,116px);position:relative}
+section + section::before{content:"";position:absolute;top:0;left:50%;width:min(1140px,calc(100% - 2*var(--gut)));transform:translateX(-50%);height:1px;background:linear-gradient(90deg,transparent,var(--line) 20%,var(--line) 80%,transparent)}
+.kicker{font-family:var(--fc);font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:var(--orange-tx);font-size:1rem;margin-bottom:10px;display:flex;align-items:center;gap:12px}
+.kicker::before{content:"";width:28px;height:2px;background:var(--red)}
+h2{font-family:var(--fd);font-weight:400;font-size:clamp(2.5rem,9vw,4.8rem);line-height:1;letter-spacing:.01em;text-transform:uppercase;position:relative;padding-bottom:18px}
+h2 em{font-style:normal;color:var(--red-tx)}
+h2::after{content:"";position:absolute;left:0;bottom:0;width:84px;height:4px;background:var(--red);transform-origin:0 50%;transition:transform .9s cubic-bezier(.2,.7,.2,1) .2s}
+.lead{color:var(--mut);max-width:62ch;margin-top:18px;font-size:1.125rem}
+.tag-ex{display:inline-flex;align-items:center;background:var(--amber);color:#150a00;font-family:var(--fc);font-weight:700;font-size:.82rem;letter-spacing:.1em;padding:2px 10px;border-radius:6px;text-transform:uppercase}
+.ex-banner{display:flex;gap:10px;align-items:center;background:rgba(196,128,44,.1);border:1.5px dashed var(--amber);color:#F0C27A;font-weight:600;font-size:.95rem;padding:10px 14px;border-radius:10px;margin-top:22px}
+.evin{margin-top:26px;border-left:4px solid var(--amber);padding:9px 14px;background:rgba(196,128,44,.08);color:var(--tx);font-weight:600;font-size:.98rem;border-radius:0 8px 8px 0}
+
+/* ---------- Hero ---------- */
+.hero{padding-top:calc(var(--hdr) + 20px);padding-bottom:44px;overflow:hidden;isolation:isolate}
+.hero-bg{position:absolute;inset:0;z-index:-1;overflow:hidden;background:radial-gradient(circle at 70% 30%,#2a1812,var(--bg) 70%)}
+.hero-bg img{position:absolute;left:0;top:-6%;width:100%;height:112%;object-fit:cover;object-position:50% 38%;opacity:.3;filter:saturate(.85) contrast(1.05);will-change:transform}
+.hero-bg::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(14,10,10,.55) 0%,rgba(14,10,10,.35) 40%,rgba(14,10,10,.92) 85%,var(--bg) 100%),linear-gradient(90deg,rgba(14,10,10,.88),rgba(14,10,10,.25) 70%,rgba(14,10,10,.6))}
+.hero-grid{display:grid;gap:10px;align-items:center;grid-template-areas:'text' 'stage' 'btns'}
+.hero-text{grid-area:text}.kong-stage{grid-area:stage}.hero-btns{grid-area:btns}
+.hero-id{display:flex;align-items:center;gap:14px}
+.hero-logo{width:clamp(64px,18vw,96px);height:auto;border-radius:50%;display:block;flex:none}
+.mention{font-family:var(--fc);font-weight:600;text-transform:uppercase;letter-spacing:.16em;font-size:1rem;color:var(--amber)}
+h1{font-family:var(--fd);font-weight:400;text-transform:uppercase;line-height:.9;font-size:clamp(4.2rem,21vw,10.5rem);letter-spacing:.005em;margin-top:8px}
+h1 .l1,h1 .l2{display:block}
+h1 .l2{color:var(--red)}
+.punch{font-family:var(--fc);font-weight:600;font-size:clamp(1.5rem,5.6vw,2.2rem);line-height:1.15;margin-top:16px;max-width:20ch}
+.orig{font-size:.8rem;color:var(--mut);margin-top:10px;max-width:44ch}
+.hero-btns{display:flex;flex-wrap:wrap;gap:12px;margin-top:10px}
+.kong-stage{position:relative;width:100%;max-width:400px;aspect-ratio:1/1;margin-inline:auto;touch-action:pan-y}
+.kong-stage .halo{position:absolute;inset:8%;border-radius:50%;background:radial-gradient(circle,rgba(190,56,34,.22) 0%,rgba(200,86,12,.08) 45%,transparent 70%);pointer-events:none}
+.kong-stage canvas{position:absolute;inset:0;width:100%;height:100%;display:block;cursor:pointer}
+.hint{position:absolute;left:0;right:0;bottom:-2px;text-align:center;font-size:.85rem;color:var(--mut);pointer-events:none}
+.fallback{display:none;position:absolute;inset:0;flex-direction:column;align-items:center;justify-content:center;gap:6px;text-align:center}
+.fallback svg{width:66%;height:auto}
+.fallback p{color:var(--mut);font-size:.9rem;max-width:30ch}
+.no-gl .fallback{display:flex}
+.no-gl canvas,.no-gl .hint{display:none}
+
+/* ---------- Ce soir ---------- */
+.tabs{display:flex;gap:8px;margin-top:26px;flex-wrap:wrap}
+.tab,.chip{min-height:46px;padding:0 18px;border-radius:10px;border:1.5px solid var(--line);background:var(--panel);color:var(--tx);font:700 1.05rem var(--fc);letter-spacing:.08em;text-transform:uppercase;cursor:pointer;transition:background .2s,border-color .2s}
+.tab:hover,.chip:hover{border-color:var(--amber)}
+.tab[aria-selected="true"],.chip[aria-pressed="true"]{border-color:var(--red);background:var(--red);color:#fff}
+.tonight{margin-top:16px;border:1px solid var(--line);border-left:6px solid var(--red);border-radius:6px 18px 18px 6px;background:linear-gradient(135deg,rgba(190,56,34,.12),var(--panel) 55%);padding:clamp(22px,5vw,48px)}
+.tonight .meta,.ev .row{display:flex;flex-wrap:wrap;gap:10px;align-items:center}
+.type-pill{font-family:var(--fc);font-weight:700;letter-spacing:.16em;text-transform:uppercase;font-size:.95rem;padding:2px 12px;border-radius:6px;border:1.5px solid currentColor}
+.t-match{color:#E1A24E}.t-concert{color:var(--red-tx)}.t-dj{color:var(--orange-tx)}
+.tonight h3{font-family:var(--fd);font-weight:400;text-transform:uppercase;font-size:clamp(2.3rem,9vw,4.6rem);line-height:1;margin-top:14px}
+.when{font-family:var(--fc);font-weight:700;font-size:clamp(1.5rem,5vw,2.1rem);color:var(--amber);margin-top:8px;letter-spacing:.06em;text-transform:uppercase}
+.tonight p.desc{color:var(--mut);margin-top:12px;max-width:56ch}
+.tonight .acts{display:flex;flex-wrap:wrap;gap:12px;margin-top:24px}
+
+/* ---------- Pack événement ---------- */
+.pack{background:radial-gradient(900px 500px at 85% 20%,rgba(190,56,34,.14),transparent 65%),linear-gradient(180deg,transparent,rgba(200,86,12,.05) 50%,transparent)}
+.pack-grid{display:grid;gap:30px;margin-top:34px;align-items:start}
+.pack-fig{position:relative;border:1px solid var(--line);border-radius:14px;overflow:hidden;background:var(--panel);max-width:560px;width:100%;margin-inline:auto}
+.pack-fig img{display:block;width:100%;height:auto;aspect-ratio:1/1;object-fit:cover;background:linear-gradient(135deg,#2a1812,#120c0b)}
+.pack-fig figcaption{padding:10px 14px;font-size:.85rem;color:var(--mut)}
+.pack-list{list-style:none;padding:0;display:grid;gap:10px;margin-top:22px}
+.pack-list li{display:flex;gap:14px;align-items:flex-start;background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:12px 14px}
+.pack-list .n{font-family:var(--fd);font-size:1.5rem;line-height:1;color:var(--red-tx);min-width:2ch}
+.pack-list b{display:block;font-family:var(--fc);font-size:1.25rem;letter-spacing:.05em;text-transform:uppercase;line-height:1.2}
+.pack-list span.d{color:var(--mut);font-size:.96rem}
+.pack-hook{font-family:var(--fc);font-weight:600;font-size:clamp(1.5rem,5vw,2rem);color:var(--tx);margin-top:18px;line-height:1.15}
+.pack-hook em{font-style:normal;color:var(--amber)}
+.pack .acts{display:flex;flex-wrap:wrap;gap:12px;margin-top:24px}
+.pack .note{font-size:.88rem;color:var(--mut);margin-top:16px;border-left:3px solid var(--amber);padding-left:12px}
+
+/* ---------- Agenda ---------- */
+.filters{display:flex;flex-wrap:wrap;gap:8px;margin-top:26px}
+.grid-ev{display:grid;gap:14px;margin-top:20px;grid-template-columns:1fr}
+.ev{background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:18px;display:flex;flex-direction:column;gap:8px;border-top:4px solid var(--c,var(--red))}
+.ev[hidden]{display:none}
+.ev h3{font-family:var(--fd);font-weight:400;text-transform:uppercase;font-size:1.6rem;line-height:1.05}
+.ev .when{font-size:1.25rem;margin-top:0}
+.ev p{color:var(--mut);font-size:.98rem}
+.ev p.when{color:var(--amber)}
+.count{color:var(--mut);margin-top:14px;font-size:.95rem}
+
+/* ---------- Bières ---------- */
+.beers{display:grid;gap:14px;margin-top:28px;grid-template-columns:1fr 1fr}
+.bcard{position:relative;border:0;padding:0;background:none;color:inherit;font:inherit;text-align:left;cursor:pointer;perspective:900px;min-height:256px;display:block;width:100%;-webkit-tap-highlight-color:transparent;touch-action:pan-y;--mx:50%;--my:50%}
+.btilt{display:block;width:100%;height:100%;min-height:256px;transform-style:preserve-3d;transform:rotateX(var(--rx,0deg)) rotateY(var(--ry,0deg));transition:transform .5s cubic-bezier(.2,.7,.2,1)}
+.bcard.tilting .btilt{transition:transform .12s linear}
+.binner{display:grid;width:100%;height:100%;min-height:256px;transition:transform .6s cubic-bezier(.3,.7,.2,1);transform-style:preserve-3d}
+.bface{grid-area:1/1;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:8px;text-align:center;padding:14px 12px;border-radius:14px;border:1.5px solid var(--bc,var(--amber));background:linear-gradient(160deg,var(--panel2),var(--panel));-webkit-backface-visibility:hidden;backface-visibility:hidden;position:relative;overflow:hidden}
+.bface::after{content:"";position:absolute;inset:0;border-radius:inherit;pointer-events:none;opacity:0;transition:opacity .25s;background:radial-gradient(circle at var(--mx) var(--my),rgba(255,236,210,.22),transparent 55%)}
+.bcard.tilting .bface::after{opacity:1}
+.bface.back{transform:rotateY(180deg);background:linear-gradient(160deg,#2c211e,var(--panel2));justify-content:flex-start;padding-top:18px}
+.bcard.flipped .binner{transform:rotateY(180deg)}
+.bname{font-family:var(--fd);font-weight:400;text-transform:uppercase;font-size:1.6rem;line-height:1.05;letter-spacing:.02em;color:var(--tx)}
+.bface svg{width:58px;height:86px}
+.bhint{font-size:.85rem;color:var(--mut)}
+.btxt{font-size:.95rem;color:var(--tx);line-height:1.45}
+.bdeg{font-size:.85rem;color:#E1A24E;font-weight:600}
+@media (prefers-reduced-motion:reduce){
+  .btilt{transform:none!important;transition:none}
+  .binner{transition:none;transform:none!important;transform-style:flat}
+  .bface{-webkit-backface-visibility:visible;backface-visibility:visible}
+  .bface.back{transform:none;visibility:hidden}
+  .bcard.flipped .bface.front{visibility:hidden}
+  .bcard.flipped .bface.back{visibility:visible}
+  .bface::after{display:none}
+}
+
+/* ---------- Fléchettes ---------- */
+.game{display:grid;gap:22px;margin-top:28px;align-items:start}
+.dstage{position:relative;width:100%;max-width:540px;aspect-ratio:1/1;margin-inline:auto;border-radius:18px;border:1px solid var(--line);background:radial-gradient(circle at 50% 50%,#241714,#0E0A0A 75%);overflow:hidden;touch-action:pan-y;cursor:crosshair;-webkit-tap-highlight-color:transparent}
+.dstage canvas{position:absolute;inset:0;width:100%;height:100%;display:block}
+.viseur{position:absolute;left:0;top:0;width:38px;height:38px;margin:-19px 0 0 -19px;border:2.5px solid var(--amber);border-radius:50%;pointer-events:none;will-change:transform;background:rgba(14,10,10,.18)}
+.viseur::before,.viseur::after{content:"";position:absolute;background:var(--amber)}
+.viseur::before{left:50%;top:-8px;bottom:-8px;width:2px;margin-left:-1px}
+.viseur::after{top:50%;left:-8px;right:-8px;height:2px;margin-top:-1px}
+.viseur.idle{opacity:.35}
+.dmsg{font-size:.9rem;color:#F0C27A;border:1.5px dashed var(--amber);border-radius:10px;padding:8px 12px;display:none}
+.dstage.no-gl + .hud .dmsg{display:block}
+.hud{display:grid;gap:12px}
+.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}
+.stat{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:10px 8px;text-align:center}
+.stat span{display:block;font-size:.8rem;color:var(--mut);line-height:1.2}
+.stat b{font-family:var(--fd);font-weight:400;font-size:2.3rem;line-height:1.15;color:var(--amber)}
+.darts-left{display:flex;gap:7px;justify-content:center;min-height:2.6rem;align-items:center}
+.darts-left i{width:9px;height:34px;border-radius:5px 5px 2px 2px;background:linear-gradient(var(--red) 0 30%,var(--tx) 30% 100%);transform:rotate(14deg)}
+.darts-left i.used{opacity:.2}
+.result{min-height:3.4rem;background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:10px 14px;font-weight:600}
+.result small{display:block;font-weight:400;color:var(--mut)}
+.game-btns{display:flex;gap:12px;flex-wrap:wrap}
+.game-btns .btn{flex:1 1 140px}
+.fun{color:var(--mut);font-size:.9rem}
+.save{background:var(--panel);border:1px solid var(--amber);border-radius:12px;padding:14px;display:grid;gap:10px}
+.save label{font-weight:600}
+.save .row{display:flex;gap:10px;flex-wrap:wrap}
+.save input{flex:1 1 140px}
+.lb{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:14px 16px}
+.lb h3{font-family:var(--fd);font-weight:400;text-transform:uppercase;font-size:1.5rem;letter-spacing:.02em}
+.lb-list{list-style:none;padding:0;margin:10px 0 0;display:grid;gap:4px;counter-reset:r}
+.lb-list li{display:grid;grid-template-columns:2.2rem 1fr auto;gap:8px;align-items:baseline;padding:7px 10px;border-radius:8px;background:rgba(255,255,255,.03)}
+.lb-list li .rk{font-family:var(--fd);color:var(--amber)}
+.lb-list li .nm{overflow-wrap:anywhere;font-weight:600}
+.lb-list li .pt{font-family:var(--fd);color:var(--tx)}
+.lb-list li.me{background:rgba(190,56,34,.22);outline:1px solid var(--red)}
+.lb-empty,.lb-note,.lb-stor{color:var(--mut);font-size:.9rem;margin-top:10px}
+.lb-stor{color:#F0C27A}
+.lb-clear{display:flex;flex-wrap:wrap;gap:10px;align-items:center;margin-top:12px}
+.lb-clear .btn{min-height:44px;font-size:.95rem;padding:0 14px}
+
+/* ---------- Formulaire ---------- */
+.priv{display:grid;gap:26px;margin-top:28px}
+.chips{display:flex;flex-wrap:wrap;gap:10px;margin-top:22px;padding:0;list-style:none}
+.chips li{border:1.5px solid var(--line);color:var(--tx);border-radius:8px;padding:6px 14px;font-family:var(--fc);font-weight:600;letter-spacing:.06em;text-transform:uppercase;background:var(--panel)}
+.pform{background:var(--panel);border:1px solid var(--line);border-radius:16px;padding:clamp(18px,4vw,30px);display:grid;gap:16px}
+.pform h3,.callbox h3{font-family:var(--fd);font-weight:400;text-transform:uppercase;font-size:1.7rem;line-height:1.1}
+.f-grid{display:grid;gap:14px;grid-template-columns:1fr}
+.field{display:grid;gap:6px;align-content:start}
+.field label{font-weight:600;font-size:.98rem}
+.opt{font-weight:400;color:var(--mut)}
+input[type=text],input[type=date],input[type=number],select,textarea{width:100%;min-height:48px;background:#120c0b;color:var(--tx);border:1.5px solid #5a4740;border-radius:10px;padding:10px 12px;font:500 1.05rem var(--fb);color-scheme:dark}
+textarea{min-height:170px;line-height:1.5;resize:vertical}
+input:focus-visible,select:focus-visible,textarea:focus-visible{outline:3px solid var(--amber);outline-offset:2px}
+input[aria-invalid="true"]{border-color:#FF7A5F}
+.err{color:#FF8E76;font-weight:600;font-size:.92rem}
+.note{color:var(--mut);font-size:.9rem}
+.pform .acts,.callbox .acts{display:flex;flex-wrap:wrap;gap:10px}
+.pform .acts .btn{flex:1 1 170px}
+.status{min-height:1.4em;color:#F0C27A;font-weight:600;font-size:.95rem}
+.callbox{background:var(--panel);border:1px solid var(--line);border-radius:16px;padding:24px;align-self:start}
+.callbox p{color:var(--mut);margin-top:10px}
+.callbox .acts{margin-top:18px}
+
+/* ---------- Infos ---------- */
+.infos{display:grid;gap:16px;margin-top:30px}
+.card{background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:22px}
+.card h3{font-family:var(--fd);font-weight:400;text-transform:uppercase;font-size:1.5rem;line-height:1.1;color:var(--amber);margin-bottom:12px;letter-spacing:.02em}
+address{font-style:normal}
+.card .acts{display:flex;flex-wrap:wrap;gap:12px;margin-top:16px}
+.hours{width:100%;border-collapse:collapse}
+.hours th,.hours td{text-align:left;padding:9px 0;border-bottom:1px solid rgba(255,255,255,.08);font-weight:500}
+.hours td{text-align:right}
+.closed{color:var(--mut)}
+.badge-tbc{display:inline-block;margin-top:12px;background:rgba(196,128,44,.12);border:1.5px dashed var(--amber);color:#F0C27A;font-weight:700;border-radius:8px;padding:3px 12px;font-size:.9rem}
+.hours-sum{margin-bottom:8px}
+.photo-card{padding:0;overflow:hidden;display:flex;flex-direction:column}
+.photo-card .ph{aspect-ratio:4/3;background:linear-gradient(135deg,#2a1812,#120c0b);position:relative}
+.photo-card img{display:block;width:100%;height:100%;object-fit:cover;object-position:50% 45%}
+.photo-card figcaption{padding:12px 16px;font-size:.88rem;color:var(--mut)}
+.img-fail img{visibility:hidden}
+.img-fail::after{content:attr(data-fb);position:absolute;inset:0;display:flex;align-items:center;justify-content:center;text-align:center;padding:16px;color:var(--mut);font-family:var(--fc);font-size:1.1rem;letter-spacing:.06em;text-transform:uppercase}
+
+/* ---------- Pied de page ---------- */
+footer{border-top:1px solid var(--line);padding:36px 0 22px;background:#080505}
+.evin-foot{font-weight:700;font-size:1.1rem;color:var(--tx);border:1.5px solid var(--amber);border-radius:10px;padding:14px 16px;text-align:center;background:rgba(196,128,44,.08)}
+.foot-grid{display:grid;gap:20px;margin-top:24px;font-size:.95rem;color:var(--mut)}
+.foot-grid h3{font-family:var(--fc);font-weight:700;letter-spacing:.12em;text-transform:uppercase;font-size:1.1rem;color:var(--tx);margin-bottom:4px}
+footer ul{list-style:none;margin:0;padding:0}
+.todo{color:#F0C27A;font-weight:600}
+
+/* ---------- Écrans larges ---------- */
+@media (min-width:640px){
+  .grid-ev{grid-template-columns:repeat(2,1fr)}
+  .beers{grid-template-columns:repeat(3,1fr)}
+  .foot-grid{grid-template-columns:repeat(3,1fr)}
+  .infos{grid-template-columns:repeat(2,1fr)}
+  .f-grid{grid-template-columns:1fr 1fr}
+  .sound-toggle .st{display:inline}
+}
+@media (min-width:900px){
+  .pack-grid{grid-template-columns:.95fr 1.05fr;gap:44px}
+  .grid-ev{grid-template-columns:repeat(3,1fr)}
+  .beers{grid-template-columns:repeat(4,1fr)}
+  .game{grid-template-columns:1fr 1fr;gap:36px}
+  .priv{grid-template-columns:.8fr 1.2fr;gap:36px}
+  .infos{grid-template-columns:repeat(3,1fr)}
+  .hero-grid{grid-template-columns:1.05fr .95fr;gap:24px;grid-template-areas:'text stage' 'btns stage';align-content:center}
+  .hero-btns{align-self:start;margin-top:0}
+  .hero-text{align-self:end}
+  .hero{padding-bottom:70px;min-height:min(820px,100svh);display:flex;align-items:center}
+  .kong-stage{max-width:560px}
+}
+@media (min-width:1060px){
+  :root{--hdr:96px}
+  body{padding-bottom:0}
+  .actionbar{display:none}
+  .menu-btn{display:none}
+  .menu-list{display:flex;position:static;background:none;border:0;padding:0;gap:2px;margin-right:6px;align-items:center}
+  .menu-list a{font-size:1.02rem;min-height:44px;padding:0 10px;border:0;letter-spacing:.1em}
+  .menu-list a.nav-pack{margin:0 4px;padding:0 14px}
+  .btn.nav-call{display:inline-flex}
+  .sound-toggle{order:3}.menu-list{order:2}.btn.nav-call{order:4}
+}
+@media (max-width:359px){
+  .btn{padding:0 14px;font-size:1rem}
+  .beers{gap:10px}
+  .bname{font-size:1.4rem}
+  .brand{font-size:1.25rem}
+}
+@media (prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  .hint{display:none}
+  *,*::before,*::after{animation:none!important;transition:none!important}
+  .hero-bg img{will-change:auto}
+}
+@media (forced-colors:active){.btn,.tab,.chip{border:2px solid ButtonText}}
+</style>
+</head>
+<body>
+<a class="skip" href="#contenu">Aller au contenu</a>
+
+<header class="top" id="entete">
+  <div class="demo-bar" role="note">MAQUETTE : événements, bières et horaires sont des EXEMPLES</div>
+  <div class="nav-row">
+    <a class="brand" href="#accueil"><img src="img/logo-beer-kong.webp" width="360" height="360" alt="" id="brandLogo"><span>BEER KONG<span class="sr-only"> : retour à l'accueil</span></span></a>
+    <button class="sound-toggle" type="button" id="soundBtn" aria-pressed="false" aria-label="Ambiance sonore : coupée. Activer">
+      <svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M11 5 6 9H3v6h3l5 4z"/><path class="wave" d="M15.5 8.5a5 5 0 0 1 0 7M18.5 5.5a9 9 0 0 1 0 13"/><path class="mute" d="m16 9 5 6m0-6-5 6" style="display:none"/></svg>
+      <span class="st">Ambiance</span>
+    </button>
+    <nav aria-label="Navigation principale" style="display:contents">
+      <button class="menu-btn" type="button" id="menuBtn" aria-expanded="false" aria-controls="menu">
+        <svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+        Menu
+      </button>
+      <ul class="menu-list" id="menu">
+        <li><a href="#ce-soir">Ce soir</a></li>
+        <li><a href="#pack" class="nav-pack">Pack événement</a></li>
+        <li><a href="#agenda">Agenda</a></li>
+        <li><a href="#bieres">Bières</a></li>
+        <li><a href="#flechettes">Fléchettes</a></li>
+        <li><a href="#privatisation">Privatiser</a></li>
+        <li><a href="#infos">Infos</a></li>
+      </ul>
+    </nav>
+    <a class="btn btn-main btn-sm nav-call" href="tel:+33252569246" aria-label="Appeler Beer Kong au 02 52 56 92 46">Appeler</a>
+  </div>
+  <div class="progress" aria-hidden="true"><i id="prog"></i></div>
+</header>
+
+<main id="contenu">
+
+<!-- 1. HERO -->
+<section class="hero" id="accueil" aria-labelledby="titre-hero">
+  <div class="hero-bg" aria-hidden="true"><img src="img/bar-comptoir.webp" width="540" height="640" alt="" fetchpriority="high" id="heroBg"></div>
+  <div class="wrap hero-grid">
+    <div class="hero-text">
+      <div class="hero-id"><img class="hero-logo" src="img/logo-beer-kong.webp" width="360" height="360" alt="Logo Beer Kong : un gorille en médaillon, une bouteille dans chaque main" fetchpriority="high">
+      <p class="mention">Bar à bières &amp; vins<br>Sports bar</p></div>
+      <h1 id="titre-hero"><span class="l1">Beer</span><span class="l2">Kong</span></h1>
+      <p class="punch">On vient pour le match, on reste pour l'ambiance.</p>
+    </div>
+    <div class="kong-stage" id="kongStage">
+      <div class="halo" id="halo" aria-hidden="true"></div>
+      <canvas id="kongCanvas" role="img" aria-label="Kong, un gorille en 3D qui tourne doucement, suit le curseur ou le doigt et réagit au défilement de la page. Touche-le pour le voir se frapper la poitrine."></canvas>
+      <div class="fallback" id="kongFallback">
+        <svg viewBox="0 0 240 240" fill="none" stroke-linejoin="round" stroke-linecap="round" role="img" aria-label="Kong, le gorille de Beer Kong, en dessin">
+          <polygon points="14,236 36,150 84,124 156,124 204,150 226,236" stroke="#BE3822" stroke-width="3.5" fill="#1b1413"/>
+          <path d="M70 162 120 178 170 162M120 140v96" stroke="#BE3822" stroke-width="3"/>
+          <polygon points="84,124 76,84 94,50 120,40 146,50 164,84 156,124 120,142" stroke="#C4802C" stroke-width="3.5" fill="#1b1413"/>
+          <polyline points="98,52 120,26 142,52" stroke="#C4802C" stroke-width="3"/>
+          <path d="M86 80h68" stroke="#E7E2DC" stroke-width="4"/>
+          <circle cx="104" cy="93" r="5" fill="#C4802C" stroke="#C4802C"/><circle cx="136" cy="93" r="5" fill="#C4802C" stroke="#C4802C"/>
+          <polygon points="98,106 142,106 150,128 120,142 90,128" stroke="#C4802C" stroke-width="3" fill="#2a1d1a"/>
+          <path d="M112 114v4M128 114v4M104 130q16 7 32 0" stroke="#E7E2DC" stroke-width="3"/>
+        </svg>
+        <p role="status">La 3D n'est pas disponible ici : voici Kong en version dessin. Tout le site reste utilisable.</p>
+      </div>
+      <p class="hint" id="kongHint">Touche Kong : il réagit. Fais défiler la page : il tourne.</p>
+    </div>
+    <div class="hero-btns">
+      <a class="btn btn-main" href="tel:+33252569246" aria-label="Appeler Beer Kong au 02 52 56 92 46">
+        <svg class="ico" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M6.6 10.8a15 15 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.25 11 11 0 0 0 3.5.56 1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.2.2 2.4.56 3.5a1 1 0 0 1-.25 1z"/></svg>
+        Appeler</a>
+      <a class="btn btn-alt" href="https://www.google.com/maps/dir/?api=1&amp;destination=La+Banquette+35290+Saint-Onen-la-Chapelle" target="_blank" rel="noopener">
+        <svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 21s7-6.2 7-11.5A7 7 0 0 0 5 9.5C5 14.8 12 21 12 21z"/><circle cx="12" cy="9.5" r="2.5"/></svg>
+        Itinéraire<span class="sr-only"> (s'ouvre dans un nouvel onglet)</span></a>
+      <a class="btn btn-red" href="#pack">Pack événement</a>
+    </div>
+  </div>
+</section>
+
+<!-- 2. CE SOIR AU KONG -->
+<section id="ce-soir" aria-labelledby="t-ce-soir">
+  <div class="wrap">
+    <p class="kicker reveal">Au programme</p>
+    <h2 id="t-ce-soir" class="reveal">Ce soir au <em>Kong</em></h2>
+    <p class="lead reveal">Le prochain rendez-vous, en grand. Match sur écran, concert ou DJ : choisissez ce qui vous intéresse.</p>
+    <div class="ex-banner reveal" role="note"><span class="tag-ex">Exemple</span> EXEMPLE, à remplacer par le vrai programme</div>
+    <div class="tabs reveal" role="tablist" aria-label="Type de soirée" id="tonightTabs"></div>
+    <div class="tonight reveal" id="tonightPanel" role="tabpanel" tabindex="0" aria-live="polite"></div>
+  </div>
+</section>
+
+<!-- 3. PACK ÉVÉNEMENT CLÉ EN MAIN -->
+<section class="pack" id="pack" aria-labelledby="t-pack">
+  <div class="wrap">
+    <p class="kicker reveal">Leur offre pour vos événements</p>
+    <h2 id="t-pack" class="reveal">Pack événement <em>clé en main</em></h2>
+    <p class="pack-hook reveal">Vous profitez, <em>on s'occupe du reste !</em></p>
+    <div class="pack-grid">
+      <figure class="pack-fig reveal" id="packFig" data-fb="Affiche du pack événement">
+        <img src="img/pack-evenement.webp" width="640" height="640" loading="lazy" alt="Affiche Beer Kong du Pack événement clé en main : un fourgon aux couleurs du bar, une tonnelle avec tireuses installées, des gobelets personnalisés, une enceinte, des fûts de bière et des mange-debout.">
+        <figcaption>Leur affiche, publiée sur leur Instagram.</figcaption>
+      </figure>
+      <div>
+        <p class="lead reveal" style="margin-top:0">Un anniversaire, une fête d'association, un pot : le bar vient à vous avec tout le matériel.</p>
+        <ul class="pack-list">
+          <li class="reveal" style="--i:0"><span class="n" aria-hidden="true">1</span><div><b>Tireuses installées</b><span class="d">Prêtes à servir.</span></div></li>
+          <li class="reveal" style="--i:1"><span class="n" aria-hidden="true">2</span><div><b>Gobelets personnalisés</b><span class="d">À l'image du Beer Kong.</span></div></li>
+          <li class="reveal" style="--i:2"><span class="n" aria-hidden="true">3</span><div><b>Enceinte à louer</b><span class="d">Pour l'ambiance musicale.</span></div></li>
+          <li class="reveal" style="--i:3"><span class="n" aria-hidden="true">4</span><div><b>Fûts de bière au choix</b><span class="d">Blondes, IPA, ambrées, blanches.</span></div></li>
+          <li class="reveal" style="--i:4"><span class="n" aria-hidden="true">5</span><div><b>Mange-debout à louer</b><span class="d">Pour que les invités se retrouvent.</span></div></li>
+          <li class="reveal" style="--i:5"><span class="n" aria-hidden="true">6</span><div><b>Livraison et installation</b><span class="d">Le matériel arrive et se met en place pour vous.</span></div></li>
+        </ul>
+        <div class="acts reveal">
+          <a class="btn btn-red" href="#privatisation" id="askPack">Demander le pack</a>
+          <a class="btn btn-alt" href="tel:+33252569246" aria-label="Appeler Beer Kong au 02 52 56 92 46">Appeler</a>
+        </div>
+        <p class="note reveal">D'après leur publication Instagram, contenu à confirmer avec le bar. Aucun prix n'est affiché : on en parle ensemble, sur demande.</p>
+        <p class="evin reveal">L'abus d'alcool est dangereux pour la santé, à consommer avec modération.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 4. AGENDA -->
+<section id="agenda" aria-labelledby="t-agenda">
+  <div class="wrap">
+    <p class="kicker reveal">Les prochaines dates</p>
+    <h2 id="t-agenda" class="reveal">Agenda</h2>
+    <div class="ex-banner reveal" role="note"><span class="tag-ex">Exemple</span> EXEMPLE : ces événements sont inventés pour la maquette. Le vrai agenda sera mis à jour par le bar.</div>
+    <div class="filters reveal" role="group" aria-label="Filtrer l'agenda par type" id="filters"></div>
+    <p class="count" id="evCount" role="status"></p>
+    <div class="grid-ev" id="evGrid"></div>
+  </div>
+</section>
+
+<!-- 5. LES BIÈRES -->
+<section id="bieres" aria-labelledby="t-bieres">
+  <div class="wrap">
+    <p class="kicker reveal">À la carte</p>
+    <h2 id="t-bieres" class="reveal">Les <em>bières</em></h2>
+    <p class="lead reveal">Des styles pour tous les goûts. Touchez une carte pour la retourner et lire la description.</p>
+    <div class="ex-banner reveal" role="note"><span class="tag-ex">Exemple</span> EXEMPLE : la vraie carte sera mise à jour avec le bar. Styles génériques, sans marques, sans prix.</div>
+    <div class="beers reveal" id="beers"></div>
+    <p class="evin reveal">L'abus d'alcool est dangereux pour la santé, à consommer avec modération.</p>
+  </div>
+</section>
+
+<!-- 6. FLÉCHETTES -->
+<section id="flechettes" aria-labelledby="t-fle">
+  <div class="wrap">
+    <p class="kicker reveal">Un petit jeu</p>
+    <h2 id="t-fle" class="reveal">Fléchettes</h2>
+    <p class="lead reveal">Un petit jeu pour patienter, juste pour le plaisir. Trois fléchettes par manche : touchez l'écran (ou le bouton Lancer) quand le viseur passe sur la cible. Des points pour rire, rien d'autre : pas de lot, pas de gain.</p>
+    <div class="game">
+      <div class="dstage" id="dartStage" role="group" aria-label="Zone de jeu : cible de fléchettes">
+        <canvas id="dartCanvas" aria-hidden="true"></canvas>
+        <div class="viseur idle" id="viseur" aria-hidden="true"></div>
+      </div>
+      <div class="hud">
+        <p class="dmsg" id="dartMsg" role="status">La 3D n'est pas disponible ici : voici la cible en version 2D, le jeu fonctionne pareil.</p>
+        <div class="stats">
+          <div class="stat"><span>Fléchettes</span><div class="darts-left" id="dartsLeft" aria-label="3 fléchettes restantes" role="img"></div></div>
+          <div class="stat"><span>Score de la manche</span><b id="scoreNow">0</b></div>
+          <div class="stat"><span>Meilleur de la session</span><b id="scoreBest">0</b></div>
+        </div>
+        <div class="result" id="dartResult" role="status" aria-live="polite">Prêt ? Appuyez sur Lancer au bon moment.</div>
+        <div class="game-btns">
+          <button class="btn btn-main" type="button" id="throwBtn">Lancer</button>
+          <button class="btn btn-alt" type="button" id="againBtn" hidden>Rejouer</button>
+        </div>
+        <form class="save" id="saveForm" hidden novalidate>
+          <label for="pseudo">Votre pseudo pour le classement <span class="opt">(12 caractères max : lettres, chiffres, espace, tiret)</span></label>
+          <div class="row">
+            <input type="text" id="pseudo" name="pseudo" maxlength="12" autocomplete="nickname" autocapitalize="off" spellcheck="false">
+            <button class="btn btn-red btn-sm" type="submit">Enregistrer mon score</button>
+            <button class="btn btn-alt btn-sm" type="button" id="skipSave">Passer</button>
+          </div>
+        </form>
+        <div class="lb" role="region" aria-labelledby="lbT">
+          <h3 id="lbT">Classement : les 10 meilleurs</h3>
+          <p class="lb-empty" id="lbEmpty">Aucun score pour l'instant. Terminez une manche pour entrer au classement.</p>
+          <ol class="lb-list" id="lbList"></ol>
+          <p class="lb-stor" id="lbStor" hidden role="status">Le stockage du navigateur est bloqué : le classement est gardé en mémoire le temps de cette visite seulement.</p>
+          <p class="lb-note">Classement enregistré uniquement sur ce téléphone (ou cet appareil), rien n'est envoyé en ligne.</p>
+          <div class="lb-clear">
+            <button class="btn btn-alt" type="button" id="lbClear">Effacer le classement</button>
+            <span id="lbConfirm" hidden role="group" aria-label="Confirmer l'effacement">
+              <span>Tout effacer ?</span>
+              <button class="btn btn-red" type="button" id="lbYes">Oui, effacer</button>
+              <button class="btn btn-alt" type="button" id="lbNo">Annuler</button>
+            </span>
+          </div>
+        </div>
+        <p class="fun">Jeu gratuit, sans lien avec la consommation d'alcool. Pas de gain, pas de lot.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 7. PRIVATISER -->
+<section id="privatisation" aria-labelledby="t-priv">
+  <div class="wrap">
+    <p class="kicker reveal">Entre vous</p>
+    <h2 id="t-priv" class="reveal">Privatiser le <em>Kong</em></h2>
+    <div class="priv">
+      <div>
+        <p class="lead reveal" style="margin-top:0">Un anniversaire, un pot, une réunion d'association, un club qui fête sa saison ou une soirée entre amis : le Kong peut se réserver pour votre événement.</p>
+        <ul class="chips reveal" aria-label="Types d'événements possibles">
+          <li>Anniversaires</li><li>Pots</li><li>Associations</li><li>Clubs</li><li>Soirées entre amis</li>
+        </ul>
+        <div class="callbox reveal" style="margin-top:26px">
+          <h3>On en parle ?</h3>
+          <p>Le plus simple reste d'appeler. Le formulaire prépare juste un message, à envoyer vous-même.</p>
+          <div class="acts">
+            <a class="btn btn-main" href="tel:+33252569246" aria-label="Appeler Beer Kong au 02 52 56 92 46">Appeler</a>
+          </div>
+        </div>
+      </div>
+      <form class="pform reveal" id="privForm" novalidate aria-labelledby="pfT">
+        <h3 id="pfT">Préparer mon message</h3>
+        <p class="note">Remplissez quelques infos : le message se prépare tout seul. Vous pouvez le modifier avant de l'envoyer.</p>
+        <div class="f-grid">
+          <div class="field">
+            <label for="fPrenom">Prénom <span class="opt">(facultatif)</span></label>
+            <input type="text" id="fPrenom" name="prenom" autocomplete="given-name" maxlength="30">
+          </div>
+          <div class="field">
+            <label for="fType">Type de soirée</label>
+            <select id="fType" name="type">
+              <option value="anniv">Anniversaire</option>
+              <option value="amis">Entre amis / pot</option>
+              <option value="asso">Association ou club</option>
+              <option value="entreprise">Soirée d'entreprise</option>
+              <option value="pack">Pack événement clé en main</option>
+              <option value="autre">Autre</option>
+            </select>
+          </div>
+          <div class="field">
+            <label for="fDate">Date souhaitée</label>
+            <input type="date" id="fDate" name="date" required aria-describedby="eDate">
+            <p class="err" id="eDate" hidden></p>
+          </div>
+          <div class="field">
+            <label for="fNb">Nombre de personnes</label>
+            <input type="number" id="fNb" name="nb" min="1" step="1" inputmode="numeric" required aria-describedby="eNb">
+            <p class="err" id="eNb" hidden></p>
+          </div>
+        </div>
+        <div class="field">
+          <label for="fMsg">Votre message <span class="opt">(modifiable)</span></label>
+          <textarea id="fMsg" name="msg" rows="7"></textarea>
+          <button class="btn btn-alt btn-sm" type="button" id="msgReset" hidden style="justify-self:start">Refaire le message automatique</button>
+        </div>
+        <div class="acts">
+          <button class="btn btn-red" type="button" id="btnCopy">Copier</button>
+          <a class="btn btn-main" id="lnkSms" href="sms:?&amp;body=">SMS</a>
+          <a class="btn btn-main" id="lnkMail" href="mailto:?subject=&amp;body=">Mail</a>
+          <a class="btn btn-alt" id="lnkInsta" href="https://www.instagram.com/beerkong35/" target="_blank" rel="noopener">Message Instagram<span class="sr-only"> (copie le message, puis ouvre le profil dans un nouvel onglet)</span></a>
+          <a class="btn btn-alt" id="lnkCall" href="tel:+33252569246" aria-label="Appeler Beer Kong au 02 52 56 92 46">Appeler</a>
+        </div>
+        <p class="status" id="formStatus" role="status" aria-live="polite"></p>
+        <p class="note" id="contactNote"></p>
+        <p class="note">Rien n'est envoyé d'ici : ce site n'a pas de serveur et ne garde ni ne transmet aucune donnée. Le message s'ouvre dans votre propre messagerie, c'est vous qui l'envoyez.</p>
+      </form>
+    </div>
+  </div>
+</section>
+
+<!-- 8. INFOS ET ACCÈS -->
+<section id="infos" aria-labelledby="t-infos">
+  <div class="wrap">
+    <p class="kicker reveal">Nous trouver</p>
+    <h2 id="t-infos" class="reveal">Infos et <em>accès</em></h2>
+    <div class="infos">
+      <figure class="card photo-card reveal" style="--i:0">
+        <div class="ph" id="barPh" data-fb="Le comptoir du Beer Kong"><img src="img/bar-comptoir.webp" width="540" height="640" loading="lazy" alt="Le comptoir du Beer Kong : les deux gérants derrière la rangée de tireuses, sous une lampe orange, devant les étagères de bouteilles."></div>
+        <figcaption>Le comptoir, photo issue de leur Instagram.</figcaption>
+      </figure>
+      <div class="card reveal" style="--i:1">
+        <h3>Adresse</h3>
+        <address>Beer Kong<br>La Banquette<br>35290 Saint-Onen-la-Chapelle</address>
+        <div class="acts"><a class="btn btn-alt" href="https://www.google.com/maps/dir/?api=1&amp;destination=La+Banquette+35290+Saint-Onen-la-Chapelle" target="_blank" rel="noopener">Itinéraire<span class="sr-only"> (s'ouvre dans un nouvel onglet)</span></a></div>
+        <h3 style="margin-top:22px">Contact</h3>
+        <p><a class="tlink" href="tel:+33252569246" style="font-size:1.5rem;font-weight:600;text-decoration:none;color:var(--tx)">02 52 56 92 46</a></p>
+        <p>Instagram : <a class="tlink" href="https://www.instagram.com/beerkong35/" target="_blank" rel="noopener">@beerkong35<span class="sr-only"> (s'ouvre dans un nouvel onglet)</span></a></p>
+        <div class="acts"><a class="btn btn-main" href="tel:+33252569246" aria-label="Appeler Beer Kong au 02 52 56 92 46">Appeler</a></div>
+      </div>
+      <div class="card reveal" style="--i:2">
+        <h3>Horaires</h3>
+        <p class="hours-sum">Ouvert du mardi au jeudi dès 17 h et le samedi dès 11 h. Vendredi, lundi et dimanche : à confirmer.</p>
+        <table class="hours">
+          <caption class="sr-only">Horaires d'ouverture (à confirmer)</caption>
+          <tbody>
+            <tr><th scope="row">Mardi au jeudi</th><td>Dès 17 h</td></tr>
+            <tr><th scope="row">Samedi</th><td>Dès 11 h</td></tr>
+            <tr><th scope="row">Vendredi, dimanche, lundi</th><td>À confirmer</td></tr>
+          </tbody>
+        </table>
+        <span class="badge-tbc">Horaires à confirmer</span>
+      </div>
+    </div>
+    <p class="evin reveal">L'abus d'alcool est dangereux pour la santé, à consommer avec modération.</p>
+  </div>
+</section>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <p class="evin-foot">L'abus d'alcool est dangereux pour la santé, à consommer avec modération.</p>
+    <div class="foot-grid">
+      <div>
+        <h3>Maquette</h3>
+        <p>Maquette de présentation réalisée par Rem Studio, non publiée, contenu d'exemple. Logo, photo et affiche : © Beer Kong (publications Instagram), accord des gérants à confirmer avant toute publication.</p>
+      </div>
+      <div>
+        <h3>Mentions légales</h3>
+        <ul>
+          <li>Éditeur du site : <span class="todo">à compléter</span></li>
+          <li>Hébergeur : <span class="todo">à compléter</span></li>
+          <li>Identifiant d'entreprise : <span class="todo">à compléter</span></li>
+          <li>Données personnelles : <span class="todo">à compléter</span></li>
+        </ul>
+      </div>
+      <div>
+        <h3>Beer Kong</h3>
+        <p>La Banquette, 35290 Saint-Onen-la-Chapelle<br><a class="tlink" href="tel:+33252569246">02 52 56 92 46</a><br><a class="tlink" href="https://www.instagram.com/beerkong35/" target="_blank" rel="noopener">Instagram @beerkong35<span class="sr-only"> (s'ouvre dans un nouvel onglet)</span></a></p>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<div class="actionbar" role="group" aria-label="Actions rapides">
+  <a class="btn btn-main" href="tel:+33252569246" aria-label="Appeler Beer Kong au 02 52 56 92 46">
+    <svg class="ico" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M6.6 10.8a15 15 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.25 11 11 0 0 0 3.5.56 1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.2.2 2.4.56 3.5a1 1 0 0 1-.25 1z"/></svg>
+    Appeler</a>
+  <a class="btn btn-alt" href="https://www.google.com/maps/dir/?api=1&amp;destination=La+Banquette+35290+Saint-Onen-la-Chapelle" target="_blank" rel="noopener">
+    <svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 21s7-6.2 7-11.5A7 7 0 0 0 5 9.5C5 14.8 12 21 12 21z"/><circle cx="12" cy="9.5" r="2.5"/></svg>
+    Itinéraire<span class="sr-only"> (s'ouvre dans un nouvel onglet)</span></a>
+</div>
+
+<noscript><p style="position:fixed;bottom:80px;left:12px;right:12px;background:#C4802C;color:#150a00;padding:10px;border-radius:10px;z-index:99">JavaScript est désactivé : l'agenda, la carte des bières, la 3D, le jeu et le formulaire ne s'affichent pas. Appelez le 02 52 56 92 46 pour toute information.</p></noscript>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js" crossorigin="anonymous" defer></script>
+<script defer>
+(function(){
+'use strict';
+
+/* =====================================================================
+   CONTACT : à renseigner avec le mobile et le mail du bar.
+   ATTENTION : ces valeurs ne sont PAS vérifiées, elles sont vides exprès.
+   Le 02 52 56 92 46 est un numéro FIXE : il ne reçoit pas les SMS, on ne
+   le met donc pas ici.
+   - sms   : numéro de MOBILE au format international, ex. '+336xxxxxxxx'
+   - email : adresse mail du bar
+   Si ces champs sont vides, les liens SMS et mail s'ouvrent sans
+   destinataire : la personne choisit elle-même dans sa messagerie.
+   ===================================================================== */
+var CONTACT = { sms: '+33645967070' /* numéro à confirmer avec le bar */, email: 'beerkong35@gmail.com' /* vu sur leur affiche Pack événement, à confirmer */ };
+
+var $=function(s,r){return (r||document).querySelector(s)};
+var $$=function(s,r){return Array.prototype.slice.call((r||document).querySelectorAll(s))};
+var clamp=function(v,a,b){return Math.max(a,Math.min(b,v))};
+var FORCE_2D=/[?&]nogl\b/.test(location.search);       // ?nogl force la version 2D (test du secours)
+var DEBUG=/[?&]debug\b/.test(location.search);
+var mqRM=window.matchMedia('(prefers-reduced-motion: reduce)');
+var RM=mqRM.matches;
+var onRM=function(){RM=mqRM.matches;};
+if(mqRM.addEventListener)mqRM.addEventListener('change',onRM);else if(mqRM.addListener)mqRM.addListener(onRM);
+var COARSE=window.matchMedia('(pointer: coarse)').matches||window.innerWidth<768;
+function pixelRatio(){return Math.min(window.devicePixelRatio||1,COARSE?1.5:2);}
+function el(tag,cls,txt){var e=document.createElement(tag);if(cls)e.className=cls;if(txt!=null)e.textContent=txt;return e;}
+
+/* ===== Images : secours visuel si une image ne charge pas ===== */
+function imgFail(img){var box=img.closest('[data-fb]');if(box)box.classList.add('img-fail');}
+$$('img').forEach(function(im){
+  im.addEventListener('error',function(){imgFail(im);});
+  if(im.complete&&im.naturalWidth===0&&im.currentSrc)imgFail(im);
+});
+
+/* ===== En-tête : hauteur, menu, progression, section active ===== */
+var header=$('#entete');
+function setHdr(){document.documentElement.style.setProperty('--hdr',header.offsetHeight+'px');}
+setHdr();
+if(window.ResizeObserver)new ResizeObserver(setHdr).observe(header);else window.addEventListener('resize',setHdr);
+var menuBtn=$('#menuBtn'),menu=$('#menu');
+function closeMenu(focusBtn){menu.classList.remove('open');menuBtn.setAttribute('aria-expanded','false');if(focusBtn)menuBtn.focus();}
+menuBtn.addEventListener('click',function(){var o=menu.classList.toggle('open');menuBtn.setAttribute('aria-expanded',String(o));});
+menu.addEventListener('click',function(e){if(e.target.closest('a'))closeMenu(false);});
+document.addEventListener('keydown',function(e){if(e.key==='Escape'&&menu.classList.contains('open'))closeMenu(true);});
+
+var prog=$('#prog'),navLinks=$$('#menu a'),secs=navLinks.map(function(a){return document.getElementById(a.getAttribute('href').slice(1));}),heroBgImg=$('#heroBg'),heroEl=$('#accueil');
+secs.unshift(heroEl);
+var tick=false;
+function onScroll(){
+  tick=false;
+  var max=document.documentElement.scrollHeight-window.innerHeight,y=window.scrollY;
+  prog.style.transform='scaleX('+(max>0?clamp(y/max,0,1):0).toFixed(4)+')';
+  var line=y+header.offsetHeight+window.innerHeight*.3,cur=secs[0];
+  secs.forEach(function(s){if(s&&s.offsetTop<=line)cur=s;});
+  if(max>0&&y>=max-4)cur=secs[secs.length-1];
+  navLinks.forEach(function(a){
+    var on=a.getAttribute('href')==='#'+cur.id;
+    if(on)a.setAttribute('aria-current','true');else a.removeAttribute('aria-current');
+  });
+  if(!RM&&y<window.innerHeight*1.3)heroBgImg.style.transform='translate3d(0,'+(y*.12).toFixed(1)+'px,0)';
+}
+function reqTick(){if(!tick){tick=true;requestAnimationFrame(onScroll);}}
+window.addEventListener('scroll',reqTick,{passive:true});window.addEventListener('resize',reqTick);onScroll();
+
+/* ===== Apparitions douces au scroll ===== */
+if('IntersectionObserver' in window){
+  var io=new IntersectionObserver(function(es){es.forEach(function(en){if(en.isIntersecting){en.target.classList.add('in');io.unobserve(en.target);}});},{threshold:.12,rootMargin:'0px 0px -5% 0px'});
+  $$('.reveal').forEach(function(e){io.observe(e);});
+}else{$$('.reveal').forEach(function(e){e.classList.add('in');});}
+
+/* =====================================================================
+   EVENTS : LE PROGRAMME (À MODIFIER PAR LES GÉRANTS OU PAR AZAA)
+   Chaque ligne = un événement. Pour changer le programme, modifiez ce
+   tableau (ou, plus tard, remplissez-le depuis un Google Sheet publié).
+   - type    : 'match', 'concert' ou 'dj'
+   - title   : titre affiché en grand
+   - day     : jour (mardi à samedi, le bar est fermé lundi et dimanche)
+   - time    : heure
+   - text    : petite description
+   - example : true = affiche l'étiquette EXEMPLE. METTRE false (ou
+               supprimer la ligne) pour les vrais événements.
+   Le premier événement de chaque type alimente « Ce soir au Kong ».
+   Aucun service externe n'est appelé : tout est écrit ici.
+   ===================================================================== */
+var EVENTS=[
+  {type:'match',  title:'Match de foot sur grand écran', day:'Vendredi', time:'21 h',   text:'Le match sur écran, entre amis. Le vrai programme sportif sera ajouté ici.', example:true},
+  {type:'concert',title:'Soirée concert',                day:'Samedi',   time:'21 h',   text:'Un groupe sur scène. Le nom du groupe et le style seront ajoutés ici.',       example:true},
+  {type:'dj',     title:'Soirée DJ',                     day:'Samedi',   time:'23 h',   text:'Un DJ aux platines pour finir la soirée. Le nom du DJ sera ajouté ici.',       example:true},
+  {type:'match',  title:'Match de rugby sur grand écran',day:'Mardi',    time:'20 h',   text:'Un autre match à suivre sur l\'écran du bar. Exemple de rendez-vous.',         example:true},
+  {type:'concert',title:'Concert en terrasse',           day:'Jeudi',    time:'20 h 30',text:'Un concert, si la météo s\'y prête. Exemple de rendez-vous.',                 example:true},
+  {type:'dj',     title:'Soirée DJ',                     day:'Vendredi', time:'22 h',   text:'Une soirée musique pour danser. Exemple de rendez-vous.',                     example:true}
+];
+var TYPES={match:'Matchs',concert:'Concerts',dj:'DJ'};
+var TYPE_LABEL={match:'Match',concert:'Concert',dj:'DJ'};
+var TYPE_COLOR={match:'#C4802C',concert:'#BE3822',dj:'#C8560C'};
+var CALL_SVG='<svg class="ico" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M6.6 10.8a15 15 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.25 11 11 0 0 0 3.5.56 1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.2.2 2.4.56 3.5a1 1 0 0 1-.25 1z"/></svg>';
+var MAPS='https://www.google.com/maps/dir/?api=1&destination=La+Banquette+35290+Saint-Onen-la-Chapelle';
+var INSTA='https://www.instagram.com/beerkong35/';
+
+/* ===== Ce soir au Kong (onglets) ===== */
+var tabsBox=$('#tonightTabs'),panel=$('#tonightPanel');
+var tabEls={};
+Object.keys(TYPES).forEach(function(k,i){
+  var b=el('button','tab',TYPES[k]);b.type='button';b.setAttribute('role','tab');b.id='tab-'+k;
+  b.setAttribute('aria-controls','tonightPanel');b.setAttribute('aria-selected',i===0?'true':'false');b.tabIndex=i===0?0:-1;
+  b.addEventListener('click',function(){selectTab(k,false);});
+  b.addEventListener('keydown',function(e){
+    var keys=Object.keys(TYPES),idx=keys.indexOf(k),n=null;
+    if(e.key==='ArrowRight')n=keys[(idx+1)%keys.length];else if(e.key==='ArrowLeft')n=keys[(idx+keys.length-1)%keys.length];
+    else if(e.key==='Home')n=keys[0];else if(e.key==='End')n=keys[keys.length-1];
+    if(n){e.preventDefault();selectTab(n,true);}
+  });
+  tabsBox.appendChild(b);tabEls[k]=b;
+});
+function selectTab(k,focus){
+  Object.keys(tabEls).forEach(function(t){var on=t===k;tabEls[t].setAttribute('aria-selected',String(on));tabEls[t].tabIndex=on?0:-1;});
+  if(focus)tabEls[k].focus();
+  panel.setAttribute('aria-labelledby','tab-'+k);
+  var ev=EVENTS.filter(function(e){return e.type===k;})[0];
+  panel.textContent='';
+  if(!ev){panel.appendChild(el('p','desc','Rien de prévu pour le moment. Appelez-nous pour en savoir plus.'));return;}
+  var meta=el('div','meta');
+  meta.appendChild(el('span','type-pill t-'+k,TYPE_LABEL[k]));
+  if(ev.example)meta.appendChild(el('span','tag-ex','Exemple'));
+  panel.appendChild(meta);
+  panel.appendChild(el('h3',null,ev.title));
+  panel.appendChild(el('p','when',ev.day+' · '+ev.time));
+  panel.appendChild(el('p','desc',ev.text));
+  var acts=el('div','acts');
+  var call=el('a','btn btn-main');call.href='tel:+33252569246';call.setAttribute('aria-label','Appeler Beer Kong au 02 52 56 92 46');call.innerHTML=CALL_SVG;call.appendChild(document.createTextNode('Appeler'));
+  var it=el('a','btn btn-alt','Itinéraire');it.href=MAPS;it.target='_blank';it.rel='noopener';
+  acts.appendChild(call);acts.appendChild(it);panel.appendChild(acts);
+}
+selectTab('match',false);
+
+/* ===== Agenda (filtre) ===== */
+var fBox=$('#filters'),grid=$('#evGrid'),countEl=$('#evCount');
+var current='all';
+var fList=[['all','Tous']].concat(Object.keys(TYPES).map(function(k){return [k,TYPES[k]];}));
+fList.forEach(function(f){
+  var b=el('button','chip',f[1]);b.type='button';b.dataset.f=f[0];b.setAttribute('aria-pressed',f[0]==='all'?'true':'false');
+  b.addEventListener('click',function(){current=f[0];$$('.chip',fBox).forEach(function(c){c.setAttribute('aria-pressed',String(c.dataset.f===current));});applyFilter();});
+  fBox.appendChild(b);
+});
+EVENTS.forEach(function(ev,i){
+  var c=el('article','ev reveal');c.style.setProperty('--i',String(i%3));c.dataset.type=ev.type;c.style.setProperty('--c',TYPE_COLOR[ev.type]);
+  var row=el('div','row');row.appendChild(el('span','type-pill t-'+ev.type,TYPE_LABEL[ev.type]));
+  if(ev.example)row.appendChild(el('span','tag-ex','Exemple'));
+  c.appendChild(row);c.appendChild(el('h3',null,ev.title));c.appendChild(el('p','when',ev.day+' · '+ev.time));c.appendChild(el('p',null,ev.text));
+  grid.appendChild(c);if(window.IntersectionObserver&&typeof io!=='undefined')io.observe(c);else c.classList.add('in');
+});
+function applyFilter(){
+  var n=0;$$('.ev',grid).forEach(function(c){var show=current==='all'||c.dataset.type===current;c.hidden=!show;if(show)n++;});
+  countEl.textContent=n+(n>1?' événements d\'exemple affichés':' événement d\'exemple affiché');
+}
+applyFilter();
+
+/* ===== Les bières (cartes à retourner + inclinaison 3D) ===== */
+var BEERS=[
+  {n:'Blonde',c:'#E8C25A',d:'Légère en bouche, notes de céréales et de pain frais, amertume discrète.',k:'pint'},
+  {n:'Ambrée',c:'#C9701C',d:'Caramel, noisette grillée, belle rondeur en bouche et finale douce.',k:'pint'},
+  {n:'IPA',c:'#D9A441',d:'Houblonnée, parfums d\'agrumes et de fruits tropicaux, amertume franche.',k:'tulip'},
+  {n:'Blanche',c:'#EFE3B8',d:'Trouble et fruitée, orange et coriandre, texture soyeuse.',k:'pint'},
+  {n:'Brune',c:'#9A5A38',d:'Malt torréfié, notes de cacao et de café, longueur en bouche.',k:'pint'},
+  {n:'Bière du moment',c:'#BE3822',d:'Une bière qui change au fil des semaines. Style et goût à renseigner avec le bar.',k:'tulip'},
+  {n:'Vins',c:'#8E2A3A',d:'Une ligne de vins en complément. Sélection à renseigner avec le bar.',k:'wine'}
+];
+function glass(kind,color){
+  var liq,out,S='#E7E2DC';
+  if(kind==='wine'){
+    liq='<path d="M20 12h24c0 16-4 26-12 26S20 28 20 12z" fill="'+color+'" fill-opacity=".8"/>';
+    out='<path d="M18 8h28c0 20-5 32-14 32S18 28 18 8z M32 40v38M20 80h24" stroke="'+S+'" stroke-width="2.4" fill="none" stroke-linecap="round" stroke-linejoin="round"/>';
+  }else if(kind==='tulip'){
+    liq='<path d="M21 28h22l-2 16c-1 8 1 14 3 30H20c2-16 4-22 3-30z" fill="'+color+'" fill-opacity=".85"/><ellipse cx="32" cy="27" rx="12" ry="4" fill="#E7E2DC" fill-opacity=".9"/>';
+    out='<path d="M16 12c0 12 8 20 7 32-1 12-4 20-4 32h26c0-12-3-20-4-32-1-12 7-20 7-32z" stroke="'+S+'" stroke-width="2.4" fill="none" stroke-linejoin="round"/>';
+  }else{
+    liq='<path d="M15 30h34l-3 54H18z" fill="'+color+'" fill-opacity=".85"/><ellipse cx="32" cy="29" rx="17" ry="5" fill="#E7E2DC" fill-opacity=".9"/>';
+    out='<path d="M13 12h38l-4 74c0 3-2 4-5 4H22c-3 0-5-1-5-4z" stroke="'+S+'" stroke-width="2.4" fill="none" stroke-linejoin="round"/>';
+  }
+  return '<svg viewBox="0 0 64 96" aria-hidden="true" focusable="false">'+liq+out+'</svg>';
+}
+var beersBox=$('#beers');
+function tiltCard(card,tilt){
+  function set(e){
+    if(RM)return;
+    var r=card.getBoundingClientRect();if(!r.width)return;
+    var px=clamp((e.clientX-r.left)/r.width,0,1),py=clamp((e.clientY-r.top)/r.height,0,1);
+    tilt.style.setProperty('--ry',((px-.5)*18).toFixed(2)+'deg');
+    tilt.style.setProperty('--rx',((.5-py)*16).toFixed(2)+'deg');
+    card.style.setProperty('--mx',(px*100).toFixed(1)+'%');card.style.setProperty('--my',(py*100).toFixed(1)+'%');
+    card.classList.add('tilting');
+  }
+  function reset(){card.classList.remove('tilting');tilt.style.setProperty('--rx','0deg');tilt.style.setProperty('--ry','0deg');}
+  card.addEventListener('pointerenter',function(e){if(e.pointerType==='mouse')set(e);});
+  card.addEventListener('pointermove',set);
+  card.addEventListener('pointerdown',set);
+  card.addEventListener('pointerleave',reset);
+  card.addEventListener('pointercancel',reset);
+  card.addEventListener('pointerup',function(e){if(e.pointerType!=='mouse')reset();});
+}
+BEERS.forEach(function(b){
+  var card=el('button','bcard');card.type='button';card.setAttribute('aria-pressed','false');
+  card.style.setProperty('--bc',b.c);
+  var label=function(f){return b.n+' (exemple). '+(f?'Goût : '+b.d+' Degré à renseigner. Toucher pour revenir.':'Toucher pour lire la description.');};
+  card.setAttribute('aria-label',label(false));
+  var tilt=el('span','btilt');
+  var inner=el('span','binner');
+  var front=el('span','bface front');front.innerHTML=glass(b.k,b.c);
+  front.appendChild(el('span','bname',b.n));front.appendChild(el('span','tag-ex','Exemple'));front.appendChild(el('span','bhint','Touchez pour retourner'));
+  var back=el('span','bface back');back.setAttribute('aria-hidden','true');
+  back.appendChild(el('span','bname',b.n));back.appendChild(el('span','btxt',b.d));back.appendChild(el('span','bdeg','Degré à renseigner'));back.appendChild(el('span','tag-ex','Exemple'));
+  inner.appendChild(front);inner.appendChild(back);tilt.appendChild(inner);card.appendChild(tilt);
+  card.addEventListener('click',function(){
+    var f=card.classList.toggle('flipped');card.setAttribute('aria-pressed',String(f));card.setAttribute('aria-label',label(f));
+  });
+  tiltCard(card,tilt);
+  beersBox.appendChild(card);
+});
+
+/* ===== Ambiance sonore (WebAudio, aucun fichier, coupée par défaut) ===== */
+var Sound=(function(){
+  var ctx=null,master=null,on=false,built=false,timer=null,noiseBuf=null;
+  var btns=[$('#soundBtn')];
+  function ui(){
+    btns.forEach(function(b){
+      b.setAttribute('aria-pressed',String(on));
+      b.setAttribute('aria-label','Ambiance sonore : '+(on?'activée. Couper':'coupée. Activer'));
+      var w=$('.mute',b);if(w)w.style.display=on?'none':'';
+      var wv=$('.wave',b);if(wv)wv.style.display=on?'':'none';
+    });
+  }
+  function noise(){
+    if(noiseBuf)return noiseBuf;
+    var len=ctx.sampleRate*2,buf=ctx.createBuffer(1,len,ctx.sampleRate),d=buf.getChannelData(0);
+    for(var i=0;i<len;i++)d[i]=Math.random()*2-1;
+    noiseBuf=buf;return buf;
+  }
+  function build(){
+    // murmure de salle : bruit filtré, qui respire lentement
+    var ns=ctx.createBufferSource();ns.buffer=noise();ns.loop=true;
+    var bp=ctx.createBiquadFilter();bp.type='bandpass';bp.frequency.value=520;bp.Q.value=.7;
+    var mg=ctx.createGain();mg.gain.value=.16;
+    var lfo=ctx.createOscillator();lfo.frequency.value=.13;var lg=ctx.createGain();lg.gain.value=.06;lfo.connect(lg);lg.connect(mg.gain);lfo.start();
+    ns.connect(bp);bp.connect(mg);mg.connect(master);ns.start();
+    // basse très douce
+    var bass=ctx.createGain();bass.gain.value=.5;
+    var lp=ctx.createBiquadFilter();lp.type='lowpass';lp.frequency.value=200;bass.connect(lp);lp.connect(master);
+    [[55,'sine'],[82.4,'triangle']].forEach(function(p){var o=ctx.createOscillator();o.type=p[1];o.frequency.value=p[0];var g=ctx.createGain();g.gain.value=.22;o.connect(g);g.connect(bass);o.start();});
+    var sw=ctx.createOscillator();sw.frequency.value=.09;var sg=ctx.createGain();sg.gain.value=.2;sw.connect(sg);sg.connect(bass.gain);sw.start();
+    built=true;
+  }
+  function clink(){
+    if(!on)return;
+    try{
+      var t=ctx.currentTime,f=1800+Math.random()*900;
+      [f,f*1.5].forEach(function(fr,i){var o=ctx.createOscillator(),g=ctx.createGain();o.type='sine';o.frequency.value=fr;g.gain.setValueAtTime(.012/(i+1),t);g.gain.exponentialRampToValueAtTime(.0001,t+.5);o.connect(g);g.connect(master);o.start(t);o.stop(t+.55);});
+    }catch(e){}
+    timer=setTimeout(clink,5000+Math.random()*7000);
+  }
+  function enable(){
+    try{
+      var AC=window.AudioContext||window.webkitAudioContext;if(!AC)return;
+      if(!ctx){ctx=new AC();master=ctx.createGain();master.gain.value=0;master.connect(ctx.destination);}
+      var p=ctx.resume();if(p&&p.catch)p.catch(function(){});
+      var s=ctx.createBufferSource();s.buffer=ctx.createBuffer(1,1,22050);s.connect(ctx.destination);s.start(0);
+      if(!built)build();
+      var t=ctx.currentTime;master.gain.cancelScheduledValues(t);master.gain.setValueAtTime(master.gain.value,t);master.gain.linearRampToValueAtTime(.5,t+1.2);
+      on=true;clearTimeout(timer);timer=setTimeout(clink,3000);
+    }catch(e){on=false;}
+    ui();
+  }
+  function disable(){
+    on=false;clearTimeout(timer);
+    try{var t=ctx.currentTime;master.gain.cancelScheduledValues(t);master.gain.setValueAtTime(master.gain.value,t);master.gain.linearRampToValueAtTime(0,t+.25);}catch(e){}
+    ui();
+  }
+  function tone(f0,f1,dur,vol,type,when){
+    var t=ctx.currentTime+(when||0),o=ctx.createOscillator(),g=ctx.createGain();
+    o.type=type||'sine';o.frequency.setValueAtTime(f0,t);if(f1)o.frequency.exponentialRampToValueAtTime(f1,t+dur);
+    g.gain.setValueAtTime(vol,t);g.gain.exponentialRampToValueAtTime(.0001,t+dur);o.connect(g);g.connect(master);o.start(t);o.stop(t+dur+.02);
+  }
+  function burst(f0,f1,dur,vol,type){
+    var t=ctx.currentTime,s=ctx.createBufferSource();s.buffer=noise();
+    var f=ctx.createBiquadFilter();f.type=type||'bandpass';f.Q.value=1.2;f.frequency.setValueAtTime(f0,t);f.frequency.exponentialRampToValueAtTime(f1,t+dur);
+    var g=ctx.createGain();g.gain.setValueAtTime(vol,t);g.gain.exponentialRampToValueAtTime(.0001,t+dur);
+    s.connect(f);f.connect(g);g.connect(master);s.start(t,Math.random());s.stop(t+dur+.02);
+  }
+  function sfx(kind){
+    if(!on||!ctx)return;
+    try{
+      if(kind==='throw')burst(500,2400,.22,.2,'bandpass');
+      else if(kind==='hit'){tone(190,60,.16,.5,'sine');burst(1400,400,.07,.22,'lowpass');}
+      else if(kind==='bull'){tone(190,60,.16,.5,'sine');tone(880,0,.35,.1,'triangle',.05);tone(1320,0,.4,.08,'triangle',.12);}
+      else if(kind==='miss')tone(150,90,.25,.3,'triangle');
+      else if(kind==='end'){tone(523,0,.25,.1,'triangle');tone(659,0,.25,.1,'triangle',.12);tone(784,0,.4,.1,'triangle',.24);}
+    }catch(e){}
+  }
+  function toggle(){if(on)disable();else enable();}
+  btns.forEach(function(b){b.addEventListener('click',toggle);});
+  ui();
+  return {sfx:sfx,toggle:toggle,isOn:function(){return on;}};
+})();
+
+/* ===== 3D : détection WebGL, rendu ===== */
+var GL_OK=null;
+function glSupported(){ // test discret avant de créer le rendu (évite les erreurs dans la console)
+  if(GL_OK!==null)return GL_OK;
+  try{
+    var c=document.createElement('canvas'),g=c.getContext('webgl')||c.getContext('experimental-webgl');
+    GL_OK=!!g;
+    if(g){var x=g.getExtension('WEBGL_lose_context');if(x)x.loseContext();}
+  }catch(e){GL_OK=false;}
+  return GL_OK;
+}
+function hasGL(){return !FORCE_2D&&typeof window.THREE!=='undefined'&&glSupported();}
+function makeRenderer(canvas){
+  try{
+    var r=new THREE.WebGLRenderer({canvas:canvas,antialias:true,alpha:true,powerPreference:'low-power'});
+    if(!r.getContext())throw new Error('no context');
+    return r;
+  }catch(e){return null;}
+}
+
+/* ===== Gorille Kong (Three.js) : tourne, réagit au scroll et à la souris ===== */
+function initKong(){
+  var stage=$('#kongStage'),canvas=$('#kongCanvas');
+  function fallback(){stage.classList.add('no-gl');}
+  if(!hasGL()){fallback();return;}
+  var renderer=makeRenderer(canvas);
+  if(!renderer){fallback();return;}
+  renderer.setPixelRatio(pixelRatio());
+  var scene=new THREE.Scene(),camera=new THREE.PerspectiveCamera(32,1,.1,60);
+  camera.position.set(0,-.15,12.6);camera.lookAt(0,-.15,0);
+  var disp=[];                                     // ressources à libérer
+  function mk(geo,o){
+    o=o||{};
+    var mat=new THREE.MeshPhongMaterial({color:o.fill||0x1b1412,flatShading:true,shininess:18,polygonOffset:true,polygonOffsetFactor:1,polygonOffsetUnits:1});
+    var m=new THREE.Mesh(geo,mat);if(o.pos)m.position.set(o.pos[0],o.pos[1],o.pos[2]);if(o.sc)m.scale.set(o.sc[0],o.sc[1],o.sc[2]);
+    var eg=new THREE.EdgesGeometry(geo,1),lm=new THREE.LineBasicMaterial({color:o.edge||0xBE3822});
+    m.add(new THREE.LineSegments(eg,lm));disp.push(geo,mat,eg,lm);return m;
+  }
+  function ico(r,d){return new THREE.IcosahedronGeometry(r,d);}
+  function limb(a,b,r1,r2,o){
+    var A=new THREE.Vector3(a[0],a[1],a[2]),B=new THREE.Vector3(b[0],b[1],b[2]),dir=B.clone().sub(A),len=dir.length();
+    var m=mk(new THREE.CylinderGeometry(r2,r1,len,6,1),o);
+    m.position.copy(A.clone().add(B).multiplyScalar(.5));m.quaternion.setFromUnitVectors(new THREE.Vector3(0,1,0),dir.normalize());return m;
+  }
+  // teintes sobres : rouge brique, ambre/cuivre, blanc cassé
+  var BRICK=0xBE3822,DARKB=0x8a2a1a,AMB=0xC4802C,BONE=0xE7E2DC;
+  var spinner=new THREE.Group();scene.add(spinner);
+  var kong=new THREE.Group();spinner.add(kong);
+  var chest=mk(ico(1,1),{pos:[0,.5,0],sc:[1.6,1.3,1.05],edge:BRICK});kong.add(chest);
+  kong.add(mk(ico(1,0),{pos:[0,-.95,.1],sc:[1.15,.95,.85],edge:DARKB}));
+  kong.add(mk(ico(.8,0),{pos:[0,1.55,-.15],sc:[1.9,.7,.9],edge:DARKB}));
+  [-1,1].forEach(function(s){
+    kong.add(mk(ico(.55,0),{pos:[s*.58,.72,.86],sc:[1,.75,.5],edge:AMB}));                 // pectoraux
+    kong.add(mk(ico(.78,1),{pos:[s*1.55,1.1,-.05],sc:[1,.85,.95],edge:DARKB}));            // épaules
+    kong.add(mk(ico(.62,0),{pos:[s*.7,-1.85,.1],sc:[.9,1.1,.95],edge:DARKB}));             // jambes
+    kong.add(mk(ico(.5,0),{pos:[s*.75,-2.55,.4],sc:[1,.45,1.5],edge:BONE}));               // pieds
+  });
+  function arm(s){
+    var g=new THREE.Group();g.position.set(s*1.6,1,0);
+    g.add(limb([0,0,0],[s*.45,-1.5,.1],.42,.34,{edge:DARKB}));
+    g.add(limb([s*.45,-1.5,.1],[s*.35,-2.7,.55],.34,.42,{edge:BRICK}));
+    g.add(mk(ico(.52,0),{pos:[s*.35,-2.85,.6],sc:[1.1,.9,1],edge:BONE}));
+    kong.add(g);return g;
+  }
+  var armL=arm(-1),armR=arm(1);
+  var head=new THREE.Group();head.position.set(0,2.3,.4);head.scale.setScalar(1.25);kong.add(head);
+  head.add(mk(ico(.62,1),{sc:[1,.95,1],edge:AMB}));
+  head.add(mk(ico(.4,0),{pos:[0,.5,-.1],sc:[.55,.75,1],edge:AMB}));
+  head.add(mk(new THREE.BoxGeometry(1.15,.2,.45),{pos:[0,.1,.5],edge:BONE}));
+  head.add(mk(ico(.4,1),{pos:[0,-.22,.5],sc:[1.25,.85,.85],edge:AMB,fill:0x2a1d19}));
+  [-1,1].forEach(function(s){
+    head.add(mk(ico(.14,0),{pos:[s*.64,-.05,0],edge:AMB}));
+    var eyeMat=new THREE.MeshBasicMaterial({color:0xE8A24A}),eyeGeo=ico(.075,0),eye=new THREE.Mesh(eyeGeo,eyeMat);eye.position.set(s*.2,-.02,.6);head.add(eye);disp.push(eyeGeo,eyeMat);
+    var nMat=new THREE.MeshBasicMaterial({color:BRICK}),nGeo=ico(.045,0),n=new THREE.Mesh(nGeo,nMat);n.position.set(s*.1,-.12,.87);head.add(n);disp.push(nGeo,nMat);
+  });
+  var mg=new THREE.BufferGeometry().setFromPoints([new THREE.Vector3(-.24,-.4,.79),new THREE.Vector3(0,-.45,.86),new THREE.Vector3(0,-.45,.86),new THREE.Vector3(.24,-.4,.79)]);
+  var mm=new THREE.LineBasicMaterial({color:BONE});head.add(new THREE.LineSegments(mg,mm));disp.push(mg,mm);
+  kong.position.y=-.1;
+  scene.add(new THREE.AmbientLight(0x6b4a3a,1.0));
+  var l1=new THREE.PointLight(0xC8560C,1.15,0);l1.position.set(-5,3,7);scene.add(l1);
+  var l2=new THREE.PointLight(0xE7C9A0,.8,0);l2.position.set(5,2,7);scene.add(l2);
+  var l3=new THREE.PointLight(0xBE3822,.55,0);l3.position.set(0,-4,-6);scene.add(l3);
+  disp.push(l1,l2,l3);
+
+  var cur={x:0,y:0},tgt={x:0,y:0},lastIn=-99,poundT=-99,running=false,visible=false,raf=0,lost=false,clock0=performance.now();
+  var spin=-.35,scrollYaw=0,lastT=0,yawNow=-.35;
+  function size(){
+    var w=stage.clientWidth,h=stage.clientHeight;if(!w||!h)return;
+    renderer.setPixelRatio(pixelRatio());renderer.setSize(w,h,false);camera.aspect=w/h;camera.updateProjectionMatrix();
+  }
+  function frame(t){
+    var dt=Math.min(.05,Math.max(0,t-lastT));lastT=t;
+    var k=RM?0:1;
+    if(k){
+      spin+=dt*.32;                                                     // rotation lente continue
+      var wantScroll=window.scrollY*.0042;                                // rotation liée au scroll
+      scrollYaw+=(wantScroll-scrollYaw)*Math.min(1,dt*6);
+    }
+    if(k&&t-lastIn>2.5){tgt.x=Math.sin(t*.6)*.5;tgt.y=Math.sin(t*.45)*.2;}
+    cur.x+=(tgt.x-cur.x)*.08;cur.y+=(tgt.y-cur.y)*.08;
+    yawNow=(k?spin+scrollYaw:-.35)+cur.x*.35;
+    spinner.rotation.y=yawNow;spinner.rotation.x=-cur.y*.14;
+    head.rotation.y=cur.x*.3;head.rotation.x=-cur.y*.25;
+    var br=Math.sin(t*1.7)*.014*k,p=Math.max(0,1-(t-poundT)/1.1),hit=p>0?Math.abs(Math.sin((t-poundT)*15)):0;
+    chest.scale.set(1.6*(1+br+.05*hit*p),1.3*(1+br),1.05*(1+br));
+    var sw=Math.sin(t*1.7)*.02*k;
+    armL.rotation.set(-.75*hit*p,0,.04+sw+.95*hit*p);armR.rotation.set(-.75*hit*p,0,-.04-sw-.95*hit*p);
+    head.position.y=2.3+br*2.5;
+    renderer.render(scene,camera);
+    if(DEBUG)canvas.dataset.yaw=yawNow.toFixed(3);
+  }
+  function loop(ms){
+    if(!running){raf=0;return;}
+    frame((ms-clock0)/1000);raf=requestAnimationFrame(loop);
+  }
+  function start(){
+    if(running||RM||lost)return;
+    running=true;lastT=(performance.now()-clock0)/1000;raf=requestAnimationFrame(loop);
+  }
+  function stop(){running=false;if(raf)cancelAnimationFrame(raf);raf=0;}
+  function update(){if(visible&&!document.hidden&&!RM)start();else stop();}   // pause hors écran
+  function still(){cur.x=tgt.x=0;cur.y=tgt.y=0;frame(0);}
+  function inputAt(cx,cy){
+    if(RM)return;
+    var r=stage.getBoundingClientRect(),mx=r.left+r.width/2,my=r.top+r.height/2;
+    tgt.x=clamp((cx-mx)/(window.innerWidth*.5),-1,1);tgt.y=clamp(-(cy-my)/(window.innerHeight*.5),-1,1);lastIn=(performance.now()-clock0)/1000;
+  }
+  window.addEventListener('pointermove',function(e){inputAt(e.clientX,e.clientY);},{passive:true});
+  window.addEventListener('pointerdown',function(e){inputAt(e.clientX,e.clientY);},{passive:true});
+  canvas.addEventListener('click',function(){
+    if(RM)return;poundT=(performance.now()-clock0)/1000;Sound.sfx('hit');
+  });
+  var ro=window.ResizeObserver?new ResizeObserver(function(){size();if(RM||!running)frame((performance.now()-clock0)/1000);}):null;
+  if(ro)ro.observe(stage);else window.addEventListener('resize',size);
+  if('IntersectionObserver' in window)new IntersectionObserver(function(es){visible=es[0].isIntersecting;update();},{threshold:0}).observe(stage);else{visible=true;}
+  document.addEventListener('visibilitychange',update);
+  var onRMchange=function(){RM=mqRM.matches;if(RM){stop();still();}else{update();}};
+  if(mqRM.addEventListener)mqRM.addEventListener('change',onRMchange);
+  canvas.addEventListener('webglcontextlost',function(e){e.preventDefault();lost=true;stop();fallback();});
+  function dispose(){
+    stop();disp.forEach(function(d){if(d&&d.dispose)d.dispose();});disp.length=0;
+    try{renderer.dispose();renderer.forceContextLoss();}catch(e){}
+  }
+  window.addEventListener('pagehide',dispose);
+  size();if(RM)still();else frame(0);update();
+  if(DEBUG){window.__kong={running:function(){return running;},yaw:function(){return yawNow;}};}
+}
+
+/* ===== Cible de fléchettes ===== */
+var SECT=[20,1,18,4,13,6,10,15,2,17,3,19,7,16,8,11,14,9,12,5];
+var R_BULL=.075,R_OUT=.16,R_T0=.52,R_T1=.62,R_D0=.90,R_D1=1.0,R_PLATE=1.22;
+function drawBoard(ctx,N){
+  var c=N/2,u=c/R_PLATE,i,TAU=Math.PI*2;
+  ctx.clearRect(0,0,N,N);
+  ctx.fillStyle='#120c0b';ctx.beginPath();ctx.arc(c,c,c,0,TAU);ctx.fill();
+  function wedge(r0,r1,a0,a1,col){ctx.fillStyle=col;ctx.beginPath();ctx.arc(c,c,r1*u,a0,a1);ctx.arc(c,c,r0*u,a1,a0,true);ctx.closePath();ctx.fill();}
+  for(i=0;i<20;i++){
+    var a0=-Math.PI/2+(i-.5)*TAU/20,a1=a0+TAU/20,ev=i%2===0;
+    var single=ev?'#1c1412':'#D9CFC3',ring=ev?'#BE3822':'#C4802C';
+    wedge(R_OUT,R_T0,a0,a1,single);wedge(R_T0,R_T1,a0,a1,ring);wedge(R_T1,R_D0,a0,a1,single);wedge(R_D0,R_D1,a0,a1,ring);
+  }
+  ctx.fillStyle='#C4802C';ctx.beginPath();ctx.arc(c,c,R_OUT*u,0,TAU);ctx.fill();
+  ctx.fillStyle='#BE3822';ctx.beginPath();ctx.arc(c,c,R_BULL*u,0,TAU);ctx.fill();
+  ctx.strokeStyle='rgba(200,190,180,.5)';ctx.lineWidth=N/420;
+  [R_BULL,R_OUT,R_T0,R_T1,R_D0,R_D1].forEach(function(r){ctx.beginPath();ctx.arc(c,c,r*u,0,TAU);ctx.stroke();});
+  for(i=0;i<20;i++){var a=-Math.PI/2+(i-.5)*TAU/20;ctx.beginPath();ctx.moveTo(c+Math.cos(a)*R_OUT*u,c+Math.sin(a)*R_OUT*u);ctx.lineTo(c+Math.cos(a)*R_D1*u,c+Math.sin(a)*R_D1*u);ctx.stroke();}
+  ctx.fillStyle='#E7E2DC';ctx.font='700 '+Math.round(N*.062)+'px "Barlow Condensed","Arial Narrow",Arial,sans-serif';ctx.textAlign='center';ctx.textBaseline='middle';
+  for(i=0;i<20;i++){var b=-Math.PI/2+i*TAU/20;ctx.fillText(String(SECT[i]),c+Math.cos(b)*1.115*u,c+Math.sin(b)*1.115*u);}
+}
+function scoreAt(x,y){
+  var r=Math.sqrt(x*x+y*y);
+  if(r>R_D1)return {pts:0,label:'Raté, à côté de la cible',kind:'miss'};
+  if(r<=R_BULL)return {pts:50,label:'En plein centre !',kind:'bull'};
+  if(r<=R_OUT)return {pts:25,label:'Anneau du centre',kind:'bull'};
+  var deg=(Math.atan2(x,y)*180/Math.PI+360+9)%360,n=SECT[Math.floor(deg/18)%20];
+  if(r>=R_T0&&r<=R_T1)return {pts:n*3,label:'Triple '+n,kind:'hit'};
+  if(r>=R_D0)return {pts:n*2,label:'Double '+n,kind:'hit'};
+  return {pts:n,label:'Simple '+n,kind:'hit'};
+}
+
+function makeBoard3D(canvas,stage){
+  var renderer=makeRenderer(canvas);if(!renderer)return null;
+  renderer.setPixelRatio(pixelRatio());
+  var S=1.3,scene=new THREE.Scene(),camera=new THREE.PerspectiveCamera(40,1,.1,50);camera.position.set(0,0,5.4);
+  var disp=[],bg=new THREE.Group();scene.add(bg);
+  var bc=document.createElement('canvas');bc.width=bc.height=1024;drawBoard(bc.getContext('2d'),1024);
+  var tex=new THREE.CanvasTexture(bc);tex.anisotropy=Math.min(4,renderer.capabilities.getMaxAnisotropy());
+  function add(g,m,o){var me=new THREE.Mesh(g,m);disp.push(g,m);if(o)o(me);return me;}
+  var disc=add(new THREE.CircleGeometry(R_PLATE*S,72),new THREE.MeshBasicMaterial({map:tex}));bg.add(disc);disp.push(tex);
+  var body=add((function(){var g=new THREE.CylinderGeometry((R_PLATE+.05)*S,(R_PLATE+.05)*S,.2,56);g.rotateX(Math.PI/2);return g;})(),new THREE.MeshBasicMaterial({color:0x120a08}));body.position.z=-.11;bg.add(body);
+  var ring=add(new THREE.TorusGeometry((R_PLATE+.03)*S,.035,8,96),new THREE.MeshBasicMaterial({color:0x8a2a1a}));bg.add(ring);
+  var ring2=add(new THREE.TorusGeometry((R_PLATE+.12)*S,.02,8,96),new THREE.MeshBasicMaterial({color:0x6b4a2a}));ring2.position.z=-.05;bg.add(ring2);
+  var wall=add(new THREE.PlaneGeometry(14,14),new THREE.MeshBasicMaterial({color:0x0c0807}));wall.position.z=-.22;scene.add(wall);
+  // fléchette : pointe vers -z
+  function makeDart(){
+    var g=new THREE.Group();
+    function part(geo,col,z){var m=new THREE.MeshBasicMaterial({color:col,side:THREE.DoubleSide}),me=new THREE.Mesh(geo,m);me.position.z=z;disp.push(geo,m);g.add(me);return me;}
+    var tip=new THREE.ConeGeometry(.04,.3,8);tip.rotateX(-Math.PI/2);part(tip,0xe8e4dc,.15);
+    var bar=new THREE.CylinderGeometry(.06,.06,.36,10);bar.rotateX(Math.PI/2);part(bar,0xC4802C,.48);
+    var sh=new THREE.CylinderGeometry(.02,.02,.24,8);sh.rotateX(Math.PI/2);part(sh,0xE7E2DC,.78);
+    var pl=new THREE.PlaneGeometry(.26,.22);pl.rotateY(Math.PI/2);
+    var f1=part(pl,0xBE3822,.98),f2=new THREE.Mesh(pl,f1.material);f2.position.z=.98;f2.rotation.z=Math.PI/2;g.add(f2);
+    return g;
+  }
+  var flash=add(new THREE.RingGeometry(.1,.16,32),new THREE.MeshBasicMaterial({color:0xffe9cc,transparent:true,opacity:0,depthWrite:false}));flash.visible=false;bg.add(flash);
+  var darts=[],flying=null,flashT=-1,sway=0,w=1,h=1;
+  var v=new THREE.Vector3();
+  function proj(x,y){
+    bg.updateMatrixWorld(true);v.set(x*S,y*S,.02);bg.localToWorld(v);v.project(camera);
+    return {x:(v.x*.5+.5)*w,y:(-v.y*.5+.5)*h};
+  }
+  function throwDart(x,y,done){
+    var d=makeDart(),r=Math.sqrt(x*x+y*y),zEnd=r>R_PLATE+.05?-.22:0;
+    scene.add(d);d.position.set(.9,-2,3.6);
+    var end=new THREE.Vector3(x*S,y*S,zEnd);bg.updateMatrixWorld(true);bg.localToWorld(end);
+    flying={d:d,start:d.position.clone(),end:end,t0:-1,dur:RM?0:520,x:x,y:y,zEnd:zEnd,done:done,prev:d.position.clone()};
+  }
+  function land(f){
+    var d=f.d;bg.attach(d);d.position.set(f.x*S,f.y*S,f.zEnd);d.quaternion.identity();
+    d.userData.base={x:.42+Math.random()*.2,y:(Math.random()-.5)*.8};d.rotation.set(d.userData.base.x,d.userData.base.y,0);
+    d.userData.wob={t:0,ax:(Math.random()-.5)*.5,ay:(Math.random()-.5)*.5};
+    darts.push(d);flash.position.set(f.x*S,f.y*S,.03);flash.visible=true;flashT=0;
+    var cb=f.done;flying=null;if(cb)cb();
+  }
+  function render(t,dt){
+    var k=RM?0:1;
+    sway=Math.sin(t*.5)*.05*k;bg.rotation.y=sway;bg.rotation.x=Math.sin(t*.37)*.025*k;
+    if(flying){
+      var f=flying;
+      if(f.t0<0)f.t0=t;
+      var p=f.dur?clamp((t-f.t0)*1000/f.dur,0,1):1,e=1-Math.pow(1-p,2);
+      if(p<1){
+        bg.updateMatrixWorld(true);
+        var end=new THREE.Vector3(f.x*S,f.y*S,f.zEnd);bg.localToWorld(end);f.end=end;
+        f.d.position.lerpVectors(f.start,f.end,e);f.d.position.y+=.8*Math.sin(Math.PI*p)*(1-p*.4);
+        var dir=f.d.position.clone().sub(f.prev);if(dir.lengthSq()>1e-8)f.d.quaternion.setFromUnitVectors(new THREE.Vector3(0,0,-1),dir.normalize());
+        f.prev.copy(f.d.position);
+      }else land(f);
+    }
+    darts.forEach(function(d){
+      var wb=d.userData.wob;if(wb&&wb.t<1&&!RM){wb.t+=dt/.5;var a=Math.sin(wb.t*26)*(1-wb.t)*.2,bs=d.userData.base;d.rotation.set(bs.x+wb.ax*a,bs.y+wb.ay*a,0);}
+    });
+    if(flashT>=0){flashT+=dt/.4;if(flashT>=1||RM){flash.visible=false;flashT=-1;}else{flash.material.opacity=(1-flashT)*.8;flash.scale.setScalar(1+flashT*3.5);}}
+    renderer.render(scene,camera);
+  }
+  function resize(W,H){
+    w=W;h=H;renderer.setPixelRatio(pixelRatio());renderer.setSize(W,H,false);camera.aspect=W/H;camera.updateProjectionMatrix();
+  }
+  function clear(){
+    flying=null;darts.forEach(function(d){bg.remove(d);});darts.length=0;
+  }
+  function dispose(){
+    clear();disp.forEach(function(d){if(d&&d.dispose)d.dispose();});disp.length=0;
+    try{renderer.dispose();renderer.forceContextLoss();}catch(e){}
+  }
+  canvas.addEventListener('webglcontextlost',function(e){e.preventDefault();if(board3dLost)board3dLost();});
+  return {proj:proj,throwDart:throwDart,render:render,resize:resize,clear:clear,dispose:dispose};
+}
+var board3dLost=null;
+
+function makeBoard2D(canvas){
+  var ctx=canvas.getContext('2d'),bc=document.createElement('canvas');bc.width=bc.height=1024;drawBoard(bc.getContext('2d'),1024);
+  var w=1,h=1,dpr=1,marks=[],anim=null;
+  function geo(){var D=Math.min(w,h)*.94;return {cx:w/2,cy:h/2,D:D,pps:D/2/R_PLATE};}
+  function proj(x,y){var g=geo();return {x:g.cx+x*g.pps,y:g.cy-y*g.pps};}
+  function throwDart(x,y,done){anim={x:x,y:y,t:0,done:done};}
+  function render(t,dt){
+    ctx.setTransform(dpr,0,0,dpr,0,0);ctx.clearRect(0,0,w,h);
+    var g=geo();ctx.drawImage(bc,g.cx-g.D/2,g.cy-g.D/2,g.D,g.D);
+    ctx.lineWidth=3;
+    marks.forEach(function(m){var p=proj(m.x,m.y);ctx.strokeStyle='#C4802C';ctx.fillStyle='#fff';ctx.beginPath();ctx.moveTo(p.x-9,p.y-9);ctx.lineTo(p.x+9,p.y+9);ctx.moveTo(p.x+9,p.y-9);ctx.lineTo(p.x-9,p.y+9);ctx.stroke();ctx.beginPath();ctx.arc(p.x,p.y,4,0,6.3);ctx.fill();});
+    if(anim){
+      anim.t+=RM?1:dt/.3;var p=proj(anim.x,anim.y),k=clamp(1-anim.t,0,1);
+      ctx.strokeStyle='rgba(255,255,255,'+k+')';ctx.lineWidth=4;ctx.beginPath();ctx.arc(p.x,p.y,6+60*k,0,6.3);ctx.stroke();
+      if(anim.t>=1){marks.push({x:anim.x,y:anim.y});var cb=anim.done;anim=null;if(cb)cb();}
+    }
+  }
+  function resize(W,H){w=W;h=H;dpr=pixelRatio();canvas.width=Math.round(W*dpr);canvas.height=Math.round(H*dpr);}
+  function clear(){marks.length=0;anim=null;}
+  return {proj:proj,throwDart:throwDart,render:render,resize:resize,clear:clear,dispose:function(){marks.length=0;}};
+}
+
+/* ===== Classement des fléchettes (pseudo gardé seulement dans le navigateur) ===== */
+var LB_KEY='beerkong-darts-v2';
+var Leader=(function(){
+  var state={last:'',scores:[]},memOnly=false;
+  function load(){
+    try{
+      var raw=window.localStorage.getItem(LB_KEY);
+      if(raw){var o=JSON.parse(raw);if(o&&Array.isArray(o.scores)){state.last=cleanName(o.last);state.scores=o.scores.map(function(s){return {n:cleanName(s.n)||'Joueur',p:Math.max(0,Math.floor(+s.p||0)),t:+s.t||0};}).filter(function(s){return s.p>0;});sortTrim();}}
+    }catch(e){memOnly=true;}
+  }
+  function save(){
+    try{window.localStorage.setItem(LB_KEY,JSON.stringify(state));}catch(e){memOnly=true;}
+  }
+  function cleanName(v){
+    v=String(v==null?'':v);
+    try{v=v.replace(/[^\p{L}\p{N} \-]/gu,'');}catch(e){v=v.replace(/[^A-Za-z0-9À-ſ \-]/g,'');}
+    return v.replace(/\s+/g,' ').trim().slice(0,12).trim();
+  }
+  function sortTrim(){
+    state.scores.sort(function(a,b){return b.p-a.p||a.t-b.t;});
+    state.scores=state.scores.slice(0,10);
+  }
+  function add(name,pts){
+    var n=cleanName(name)||'Joueur',entry={n:n,p:pts,t:Date.now()};
+    state.last=cleanName(name);state.scores.push(entry);sortTrim();save();
+    return {entry:entry,rank:state.scores.indexOf(entry)+1};
+  }
+  function clear(){state.scores=[];save();}
+  load();
+  return {add:add,clear:clear,clean:cleanName,list:function(){return state.scores;},last:function(){return state.last;},memOnly:function(){return memOnly;}};
+})();
+
+function initDarts(){
+  var stage=$('#dartStage'),canvas=$('#dartCanvas'),vis=$('#viseur');
+  var board=null,mode='3d';
+  if(hasGL())board=makeBoard3D(canvas,stage);
+  if(!board){
+    // WebGL absent ou en erreur : version 2D, le jeu reste utilisable
+    var c2=canvas.cloneNode(false);canvas.parentNode.replaceChild(c2,canvas);canvas=c2;
+    board=makeBoard2D(canvas);mode='2d';stage.classList.add('no-gl');
+  }
+  board3dLost=function(){ // perte du contexte WebGL en cours de route
+    var c2=document.createElement('canvas');c2.id='dartCanvas';c2.setAttribute('aria-hidden','true');
+    canvas.parentNode.replaceChild(c2,canvas);canvas=c2;
+    board=makeBoard2D(canvas);mode='2d';stage.classList.add('no-gl');size();
+  };
+  var btnThrow=$('#throwBtn'),btnAgain=$('#againBtn'),elLeft=$('#dartsLeft'),elNow=$('#scoreNow'),elBest=$('#scoreBest'),elRes=$('#dartResult');
+  var saveForm=$('#saveForm'),pseudo=$('#pseudo'),skipSave=$('#skipSave');
+  var left=3,pts=[],total=0,best=0,busy=false,over=false,phx=Math.random()*6,phy=Math.random()*6,pos={x:0,y:0},visible=false,running=false,raf=0,last=0,clock0=performance.now();
+  function showLeft(){
+    elLeft.textContent='';for(var i=0;i<3;i++){var d=document.createElement('i');if(i>=left)d.className='used';elLeft.appendChild(d);}
+    elLeft.setAttribute('aria-label',left+(left>1?' fléchettes restantes':' fléchette restante'));
+  }
+  function say(main,sub){elRes.textContent='';elRes.appendChild(document.createTextNode(main));if(sub){var s=document.createElement('small');s.textContent=sub;elRes.appendChild(s);}}
+  function size(){var W=stage.clientWidth,H=stage.clientHeight;if(W&&H){board.resize(W,H);}}
+  function reset(){
+    left=3;pts=[];total=0;busy=false;over=false;board.clear();elNow.textContent='0';showLeft();
+    btnThrow.hidden=false;btnThrow.disabled=false;btnAgain.hidden=true;saveForm.hidden=true;
+    say('Nouvelle manche : trois fléchettes.','Appuyez sur Lancer quand le viseur passe sur la cible.');
+    if(document.activeElement===btnAgain||document.activeElement===document.body)btnThrow.focus({preventScroll:true});
+  }
+  function doThrow(){
+    if(busy||over)return;
+    busy=true;btnThrow.disabled=true;vis.classList.add('idle');
+    update();
+    var x=pos.x,y=pos.y,res=scoreAt(x,y);
+    Sound.sfx('throw');
+    board.throwDart(x,y,function(){
+      Sound.sfx(res.kind);
+      pts.push(res.pts);total+=res.pts;left--;elNow.textContent=String(total);showLeft();
+      var n=pts.length;
+      if(left>0){
+        say(res.pts+' point'+(res.pts>1?'s':'')+' : '+res.label,'Fléchette '+n+' sur 3. Total : '+total+'.');
+        busy=false;btnThrow.disabled=false;vis.classList.remove('idle');update();
+      }else{
+        over=true;busy=false;update();
+        var isBest=total>best;if(isBest){best=total;elBest.textContent=String(best);}
+        var msg=total>=150?'Joli tir, Kong est fier de vous !':total>=100?'Beau tir !':total>=40?'Pas mal du tout !':'On s\'échauffe : rejouez !';
+        say('Manche finie : '+total+' point'+(total>1?'s':'')+'. '+msg,res.pts+' point'+(res.pts>1?'s':'')+' sur la dernière ('+res.label+')'+(isBest&&total>0?' · Nouveau meilleur score de la session.':'.')+(total>0?' Entrez un pseudo pour le classement.':''));
+        Sound.sfx('end');btnThrow.hidden=true;btnAgain.hidden=false;btnAgain.focus({preventScroll:true});
+        if(total>0){pseudo.value=Leader.last();saveForm.hidden=false;}
+      }
+    });
+  }
+  btnThrow.addEventListener('click',doThrow);
+  btnAgain.addEventListener('click',reset);
+  stage.addEventListener('click',doThrow);
+  saveForm.addEventListener('submit',function(e){
+    e.preventDefault();
+    if(!over||total<=0)return;
+    var r=Leader.add(pseudo.value,total);
+    saveForm.hidden=true;renderLb(r.entry);
+    say('Score enregistré : '+r.entry.n+', '+total+' point'+(total>1?'s':'')+'.',r.rank>0?'Vous êtes n° '+r.rank+' du classement.':'Pas assez haut pour le top 10 cette fois.');
+    btnAgain.focus({preventScroll:true});
+  });
+  skipSave.addEventListener('click',function(){saveForm.hidden=true;btnAgain.focus({preventScroll:true});});
+
+  var lbList=$('#lbList'),lbEmpty=$('#lbEmpty'),lbStor=$('#lbStor');
+  function renderLb(hl){
+    var L=Leader.list();lbList.textContent='';
+    L.forEach(function(s,i){
+      var li=document.createElement('li');if(hl&&s===hl)li.className='me';
+      li.appendChild(el('span','rk',String(i+1)));li.appendChild(el('span','nm',s.n));li.appendChild(el('span','pt',s.p+' pts'));
+      lbList.appendChild(li);
+    });
+    lbEmpty.hidden=L.length>0;lbList.hidden=L.length===0;lbStor.hidden=!Leader.memOnly();
+  }
+  var clearBtn=$('#lbClear'),conf=$('#lbConfirm'),yes=$('#lbYes'),no=$('#lbNo');
+  clearBtn.addEventListener('click',function(){clearBtn.hidden=true;conf.hidden=false;no.focus();});
+  no.addEventListener('click',function(){conf.hidden=true;clearBtn.hidden=false;clearBtn.focus();});
+  yes.addEventListener('click',function(){Leader.clear();renderLb();conf.hidden=true;clearBtn.hidden=false;clearBtn.focus();});
+  renderLb();
+
+  function frame(ms){
+    if(!running){raf=0;return;}
+    var dt=Math.min(.05,(ms-last)/1000);last=ms;
+    var sp=(RM?.5:1)*(1+.2*(3-left));
+    if(!busy&&!over){phx+=dt*1.55*sp;phy+=dt*2.15*sp;pos.x=1.08*Math.sin(phx);pos.y=.98*Math.sin(phy+1);}
+    board.render((ms-clock0)/1000,dt);
+    var p=board.proj(pos.x,pos.y);vis.style.transform='translate('+p.x.toFixed(1)+'px,'+p.y.toFixed(1)+'px)';
+    raf=requestAnimationFrame(frame);
+  }
+  function update(){
+    var want=(visible||busy)&&!document.hidden;   // un lancer en cours se termine même si la cible sort de l'écran
+    if(want&&!running){running=true;last=performance.now();raf=requestAnimationFrame(frame);}
+    else if(!want&&running){running=false;if(raf)cancelAnimationFrame(raf);raf=0;}
+  }
+  if(window.ResizeObserver)new ResizeObserver(size).observe(stage);else window.addEventListener('resize',size);
+  if('IntersectionObserver' in window)new IntersectionObserver(function(es){visible=es[0].isIntersecting;update();},{threshold:0}).observe(stage);else{visible=true;update();}
+  document.addEventListener('visibilitychange',update);
+  window.addEventListener('pagehide',function(){running=false;if(board&&board.dispose)board.dispose();});
+  size();showLeft();vis.classList.remove('idle');board.render(0,0);
+  if(DEBUG){window.__darts={force:function(x,y){pos.x=x;pos.y=y;},mode:function(){return mode;},clean:Leader.clean};}
+}
+
+/* ===== Formulaire de privatisation : prépare un message, n'envoie rien ===== */
+function initForm(){
+  var form=$('#privForm'),fPrenom=$('#fPrenom'),fType=$('#fType'),fDate=$('#fDate'),fNb=$('#fNb'),fMsg=$('#fMsg');
+  var eDate=$('#eDate'),eNb=$('#eNb'),status=$('#formStatus'),note=$('#contactNote'),reset=$('#msgReset');
+  var lnkSms=$('#lnkSms'),lnkMail=$('#lnkMail'),lnkInsta=$('#lnkInsta'),btnCopy=$('#btnCopy');
+  var dirty=false;
+  function pad(n){return (n<10?'0':'')+n;}
+  var now=new Date(),todayStr=now.getFullYear()+'-'+pad(now.getMonth()+1)+'-'+pad(now.getDate());
+  fDate.min=todayStr;
+  var TYPE_TXT={anniv:'un anniversaire',amis:'un pot entre amis',asso:'un événement d\'association ou de club',entreprise:'une soirée d\'entreprise',autre:'un événement'};
+  function frDate(v){
+    var m=/^(\d{4})-(\d{2})-(\d{2})$/.exec(v);if(!m)return '';
+    var d=new Date(+m[1],+m[2]-1,+m[3]);
+    try{return d.toLocaleDateString('fr-FR',{weekday:'long',day:'numeric',month:'long',year:'numeric'});}catch(e){return m[3]+'/'+m[2]+'/'+m[1];}
+  }
+  function build(){
+    var type=fType.value,date=frDate(fDate.value),nb=parseInt(fNb.value,10),prenom=fPrenom.value.replace(/\s+/g,' ').trim();
+    var nbTxt=nb>=1?('environ '+nb+(nb>1?' personnes':' personne')):'';
+    var l1='Bonjour,';
+    var l2;
+    if(type==='pack'){
+      l2='Je souhaite avoir des informations sur le Pack événement clé en main'+(date?' pour le '+date:'')+(nbTxt?', '+nbTxt:'')+'.';
+    }else{
+      l2='Je souhaite privatiser le Beer Kong pour '+TYPE_TXT[type]+(date?' le '+date:'')+(nbTxt?', pour '+nbTxt:'')+'.';
+    }
+    var l3=type==='pack'?'Pouvez-vous me dire ce qui est possible et comment on s\'organise ?':'Pouvez-vous me dire si c\'est possible et comment on s\'organise ?';
+    return l1+'\n\n'+l2+'\n'+l3+'\n\nMerci beaucoup !'+(prenom?'\n'+prenom:'');
+  }
+  function subject(){return fType.value==='pack'?'Demande de Pack événement clé en main : Beer Kong':'Demande de privatisation : Beer Kong';}
+  function links(){
+    var msg=fMsg.value;
+    // SMS : « sms:DESTINATAIRE?&body=… » fonctionne sur iPhone comme sur Android
+    lnkSms.href='sms:'+(CONTACT.sms?encodeURIComponent(CONTACT.sms).replace(/%2B/g,'+'):'')+'?&body='+encodeURIComponent(msg);
+    // Mail : retours à la ligne en CRLF, comme l'attend le standard mailto
+    lnkMail.href='mailto:'+(CONTACT.email?encodeURIComponent(CONTACT.email).replace(/%40/g,'@'):'')+'?subject='+encodeURIComponent(subject())+'&body='+encodeURIComponent(msg.replace(/\r?\n/g,'\r\n'));
+  }
+  function refreshAuto(){if(!dirty){fMsg.value=build();}links();}
+  function showErr(input,err,txt){
+    if(txt){err.textContent=txt;err.hidden=false;input.setAttribute('aria-invalid','true');}
+    else{err.textContent='';err.hidden=true;input.removeAttribute('aria-invalid');}
+  }
+  function validate(){
+    var bad=null;
+    var d=fDate.value;
+    if(!d){showErr(fDate,eDate,'Choisissez une date.');bad=bad||fDate;}
+    else if(d<todayStr){showErr(fDate,eDate,'Cette date est déjà passée : choisissez une date à partir d\'aujourd\'hui.');bad=bad||fDate;}
+    else showErr(fDate,eDate,'');
+    var n=fNb.value.trim(),num=Number(n);
+    if(n===''){showErr(fNb,eNb,'Indiquez le nombre de personnes.');bad=bad||fNb;}
+    else if(!isFinite(num)||Math.floor(num)!==num||num<1){showErr(fNb,eNb,'Indiquez un nombre entier d\'au moins 1.');bad=bad||fNb;}
+    else showErr(fNb,eNb,'');
+    return bad;
+  }
+  function guard(e){ // bloque l'action si le formulaire est incomplet
+    var bad=validate();
+    if(bad){e.preventDefault();status.textContent='Le formulaire est incomplet : voyez les messages en rouge.';bad.focus();return false;}
+    status.textContent='';return true;
+  }
+  function copyText(txt){
+    return new Promise(function(res,rej){
+      function fallback(){
+        try{
+          var ta=document.createElement('textarea');ta.value=txt;ta.setAttribute('readonly','');ta.style.cssText='position:fixed;left:-9999px;top:0;opacity:0';
+          document.body.appendChild(ta);ta.select();ta.setSelectionRange(0,txt.length);
+          var ok=document.execCommand&&document.execCommand('copy');document.body.removeChild(ta);ok?res():rej();
+        }catch(e){rej(e);}
+      }
+      if(navigator.clipboard&&navigator.clipboard.writeText&&window.isSecureContext){navigator.clipboard.writeText(txt).then(res,fallback);}else fallback();
+    });
+  }
+  [fPrenom,fType,fDate,fNb].forEach(function(f){f.addEventListener('input',function(){
+    if(f===fDate||f===fNb){if(f.getAttribute('aria-invalid'))validate();}
+    refreshAuto();
+  });f.addEventListener('change',refreshAuto);});
+  fMsg.addEventListener('input',function(){dirty=true;reset.hidden=false;links();});
+  reset.addEventListener('click',function(){dirty=false;reset.hidden=true;refreshAuto();status.textContent='Message automatique refait.';});
+  btnCopy.addEventListener('click',function(e){
+    if(!guard(e))return;
+    copyText(fMsg.value).then(function(){status.textContent='Message copié. Collez-le où vous voulez.';},function(){status.textContent='La copie n\'a pas marché : sélectionnez le message et copiez-le à la main.';fMsg.focus();fMsg.select();});
+  });
+  lnkSms.addEventListener('click',guard);
+  lnkMail.hidden=!CONTACT.email; // bouton mail caché si l'adresse est vide
+  lnkMail.addEventListener('click',guard);
+  lnkInsta.addEventListener('click',function(e){
+    if(!guard(e))return;
+    copyText(fMsg.value).then(function(){status.textContent='Message copié : collez-le dans la discussion Instagram.';},function(){status.textContent='Instagram s\'ouvre, mais la copie a échoué : copiez le message à la main.';});
+  });
+  form.addEventListener('submit',function(e){e.preventDefault();});
+  note.textContent=(CONTACT.sms&&CONTACT.email)
+    ?'Le numéro et le mail du bar sont déjà remplis.'
+    :CONTACT.sms?'Le numéro SMS du bar est déjà rempli.'
+    :'Les liens SMS et mail s\'ouvrent sans destinataire : choisissez le contact dans votre messagerie. Le 02 52 56 92 46 est un numéro fixe, il ne reçoit pas les SMS.';
+  // « Demander le pack » : présélectionne le type de soirée
+  $('#askPack').addEventListener('click',function(){fType.value='pack';dirty=false;reset.hidden=true;refreshAuto();});
+  refreshAuto();
+  if(DEBUG)window.__form={contact:CONTACT};
+}
+
+function boot(){
+  try{initKong();}catch(e){console.error('Kong 3D :',e);$('#kongStage').classList.add('no-gl');}
+  try{initDarts();}catch(e){console.error('Fléchettes :',e);}
+}
+try{initForm();}catch(e){console.error('Formulaire :',e);}
+if(typeof window.THREE==='undefined'&&!FORCE_2D){
+  // Three.js se charge en différé : on attend la fin du chargement de la page
+  window.addEventListener('load',boot);
+}else{boot();}
+})();
+</script>
+</body>
+</html>
