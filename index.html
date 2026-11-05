@@ -120,7 +120,15 @@ h1 .l2{color:var(--red)}
 .kong-stage canvas{position:absolute;inset:0;width:100%;height:100%;display:block;cursor:pointer}
 .hint{position:absolute;left:0;right:0;bottom:-2px;text-align:center;font-size:.85rem;color:var(--mut);pointer-events:none}
 .fallback{display:none;position:absolute;inset:0;flex-direction:column;align-items:center;justify-content:center;gap:6px;text-align:center}
-.fallback svg{width:66%;height:auto}
+.fallback{perspective:700px}
+.fb-logo{position:relative;width:82%;max-width:330px;height:auto;border-radius:50%;transform:rotateY(calc(var(--fx,0)*16deg)) rotateX(calc(var(--fy,0)*-12deg));transition:transform .25s ease-out;will-change:transform}
+.fb-glow{position:absolute;left:50%;top:44%;width:78%;aspect-ratio:1;border-radius:50%;translate:-50% -50%;background:radial-gradient(circle,rgba(200,86,12,.65) 0%,rgba(200,86,12,.25) 45%,transparent 70%);pointer-events:none}
+@media (prefers-reduced-motion:no-preference){
+  .no-gl .fb-logo{animation:fbIn .9s cubic-bezier(.2,.7,.2,1) both}
+  .no-gl .fb-glow{animation:fbPulse 3.2s ease-in-out infinite}
+}
+@keyframes fbIn{from{opacity:0;scale:.82}to{opacity:1;scale:1}}
+@keyframes fbPulse{0%,100%{opacity:.45;scale:.92}50%{opacity:1;scale:1.08}}
 .fallback p{color:var(--mut);font-size:.9rem;max-width:30ch}
 .no-gl .fallback{display:flex}
 .no-gl canvas,.no-gl .hint{display:none}
@@ -378,17 +386,9 @@ footer ul{list-style:none;margin:0;padding:0}
       <div class="halo" id="halo" aria-hidden="true"></div>
       <canvas id="kongCanvas" role="img" aria-label="Kong, un gorille en 3D qui tourne doucement, suit le curseur ou le doigt et réagit au défilement de la page. Touche-le pour le voir se frapper la poitrine."></canvas>
       <div class="fallback" id="kongFallback">
-        <svg viewBox="0 0 240 240" fill="none" stroke-linejoin="round" stroke-linecap="round" role="img" aria-label="Kong, le gorille de Beer Kong, en dessin">
-          <polygon points="14,236 36,150 84,124 156,124 204,150 226,236" stroke="#BE3822" stroke-width="3.5" fill="#1b1413"/>
-          <path d="M70 162 120 178 170 162M120 140v96" stroke="#BE3822" stroke-width="3"/>
-          <polygon points="84,124 76,84 94,50 120,40 146,50 164,84 156,124 120,142" stroke="#C4802C" stroke-width="3.5" fill="#1b1413"/>
-          <polyline points="98,52 120,26 142,52" stroke="#C4802C" stroke-width="3"/>
-          <path d="M86 80h68" stroke="#E7E2DC" stroke-width="4"/>
-          <circle cx="104" cy="93" r="5" fill="#C4802C" stroke="#C4802C"/><circle cx="136" cy="93" r="5" fill="#C4802C" stroke="#C4802C"/>
-          <polygon points="98,106 142,106 150,128 120,142 90,128" stroke="#C4802C" stroke-width="3" fill="#2a1d1a"/>
-          <path d="M112 114v4M128 114v4M104 130q16 7 32 0" stroke="#E7E2DC" stroke-width="3"/>
-        </svg>
-        <p role="status">La 3D n'est pas disponible ici : voici Kong en version dessin. Tout le site reste utilisable.</p>
+        <span class="fb-glow" aria-hidden="true"></span>
+        <img class="fb-logo" id="fbLogo" src="img/logo-beer-kong.webp" width="360" height="360" alt="Logo Beer Kong : un gorille en médaillon, une bouteille dans chaque main">
+        <p role="status">La 3D n'est pas disponible ici. Tout le site reste utilisable.</p>
       </div>
       <p class="hint" id="kongHint">Touche Kong : il réagit. Fais défiler la page : il tourne.</p>
     </div>
@@ -997,7 +997,17 @@ function makeRenderer(canvas){
 /* ===== Gorille Kong (Three.js) : tourne, réagit au scroll et à la souris ===== */
 function initKong(){
   var stage=$('#kongStage'),canvas=$('#kongCanvas');
-  function fallback(){stage.classList.add('no-gl');}
+  function fallback(){
+    stage.classList.add('no-gl');
+    var logo=$('#fbLogo');
+    if(!logo||mqRM.matches)return;
+    function tilt(e){var b=stage.getBoundingClientRect();logo.style.setProperty('--fx',Math.max(-1,Math.min(1,((e.clientX-b.left)/b.width-.5)*2)));logo.style.setProperty('--fy',Math.max(-1,Math.min(1,((e.clientY-b.top)/b.height-.5)*2)));}
+    function rest(){logo.style.setProperty('--fx',0);logo.style.setProperty('--fy',0);}
+    window.addEventListener('pointermove',tilt,{passive:true});
+    stage.addEventListener('pointerdown',tilt);
+    stage.addEventListener('pointerup',function(e){if(e.pointerType!=='mouse')rest();});
+    stage.addEventListener('pointercancel',rest);
+  }
   if(!hasGL()){fallback();return;}
   var renderer=makeRenderer(canvas);
   if(!renderer){fallback();return;}
