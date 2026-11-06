@@ -5,29 +5,43 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <meta name="robots" content="noindex, nofollow">
 <meta name="theme-color" content="#0E0A0A">
-<meta name="description" content="Maquette de présentation du site du bar Beer Kong (Saint-Onen-la-Chapelle). Contenu d'exemple, non publié.">
+<meta name="description" content="Maquette de présentation du site du bar Beer Kong (Saint-Onen-la-Chapelle). Maquette non publiée : les éléments marqués Exemple sont inventés.">
 <title>Beer Kong · maquette (Rem Studio)</title>
 <link rel="icon" type="image/png" href="img/favicon.png">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Anton&family=Barlow:wght@400;500;600;700&family=Barlow+Condensed:wght@500;600;700&display=swap">
+<link rel="preload" href="fonts/anton-400.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="fonts/barlow-400.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="fonts/barlow-condensed-700.woff2" as="font" type="font/woff2" crossorigin>
 <script>document.documentElement.classList.add('js');</script>
 <style>
+/* Polices hébergées avec le site (SIL Open Font License) : Anton, Barlow, Barlow Condensed, Permanent Marker. Aucune requête vers Google. */
+@font-face{font-family:'Anton';font-style:normal;font-weight:400;font-display:swap;src:url(fonts/anton-400.woff2) format('woff2');unicode-range:U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD}
+@font-face{font-family:'Barlow';font-style:normal;font-weight:400;font-display:swap;src:url(fonts/barlow-400.woff2) format('woff2');unicode-range:U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD}
+@font-face{font-family:'Barlow';font-style:normal;font-weight:500;font-display:swap;src:url(fonts/barlow-500.woff2) format('woff2');unicode-range:U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD}
+@font-face{font-family:'Barlow';font-style:normal;font-weight:600;font-display:swap;src:url(fonts/barlow-600.woff2) format('woff2');unicode-range:U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD}
+@font-face{font-family:'Barlow';font-style:normal;font-weight:700;font-display:swap;src:url(fonts/barlow-700.woff2) format('woff2');unicode-range:U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD}
+@font-face{font-family:'Barlow Condensed';font-style:normal;font-weight:500;font-display:swap;src:url(fonts/barlow-condensed-500.woff2) format('woff2');unicode-range:U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD}
+@font-face{font-family:'Barlow Condensed';font-style:normal;font-weight:600;font-display:swap;src:url(fonts/barlow-condensed-600.woff2) format('woff2');unicode-range:U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD}
+@font-face{font-family:'Barlow Condensed';font-style:normal;font-weight:700;font-display:swap;src:url(fonts/barlow-condensed-700.woff2) format('woff2');unicode-range:U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD}
+@font-face{font-family:'Permanent Marker';font-style:normal;font-weight:400;font-display:swap;src:url(fonts/permanent-marker-400.woff2) format('woff2');unicode-range:U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD}
 :root{
   /* Palette mesurée sur l'Instagram du bar (approximative, non officielle) */
-  --bg:#0E0A0A; --bg2:#150F0E; --panel:#1b1413; --panel2:#241a18; --line:#3b2d29;
+  --bg:#0E0A0A; --bg2:#140E0D; --panel:#1b1413; --panel2:#241a18; --line:#3b2d29;
   --tx:#E7E2DC; --mut:#B9AEA6;
-  --red:#BE3822; --red-tx:#E2583F;          /* rouge brique : fonds / texte lisible */
+  --red:#BE3822; --red-tx:#E2583F; --red-deep:#A22E1A;
   --orange:#C8560C; --orange-btn:#B64C08; --orange-tx:#E8742A;
-  --amber:#C4802C;
+  --amber:#C4802C; --amber-tx:#F0C27A;
+  --ink:#1a1210; --paper:#E7E2DC;
   --hdr:92px;
   --fd:'Anton','Bebas Neue',Impact,'Arial Narrow',sans-serif;
   --fc:'Barlow Condensed','Arial Narrow','Roboto Condensed',sans-serif;
   --fb:'Barlow',system-ui,-apple-system,'Segoe UI',Roboto,Helvetica,Arial,sans-serif;
+  --fm:'Permanent Marker','Segoe Script','Bradley Hand',cursive;
   --gut:clamp(16px,5vw,36px);
+  --ease:cubic-bezier(.2,.7,.2,1);
 }
 *,*::before,*::after{box-sizing:border-box}
 html{scroll-behavior:smooth;scroll-padding-top:calc(var(--hdr) + 8px);-webkit-text-size-adjust:100%}
+@media (max-width:1059px){html{scroll-padding-bottom:calc(92px + env(safe-area-inset-bottom))}}
 body{margin:0;background:var(--bg);color:var(--tx);font-family:var(--fb);font-size:1.0625rem;line-height:1.6;overflow-x:hidden;padding-bottom:calc(76px + env(safe-area-inset-bottom))}
 /* grain très discret */
 body::before{content:"";position:fixed;inset:0;z-index:70;pointer-events:none;opacity:.055;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E")}
@@ -40,7 +54,7 @@ ul,ol{margin:0}
 :focus-visible{outline:3px solid var(--amber);outline-offset:3px;border-radius:6px}
 .skip{position:absolute;left:12px;top:-90px;z-index:100;background:var(--amber);color:#150a00;padding:12px 18px;border-radius:8px;font-weight:700;text-decoration:none}
 .skip:focus{top:12px}
-.wrap{width:100%;max-width:1140px;margin-inline:auto;padding-inline:var(--gut)}
+.wrap{width:100%;max-width:1140px;margin-inline:auto;padding-inline:var(--gut);position:relative}
 .tlink{display:inline-flex;align-items:center;min-height:44px}
 
 /* ---------- En-tête ---------- */
@@ -48,7 +62,8 @@ ul,ol{margin:0}
 .demo-bar{background:#2a1a0a;color:#F0B060;font-size:.75rem;line-height:1.25;letter-spacing:.05em;text-align:center;padding:5px 10px;font-weight:600;border-bottom:1px solid #4a3010}
 .nav-row{display:flex;align-items:center;gap:8px;min-height:56px;padding-inline:var(--gut);max-width:1240px;margin-inline:auto;position:relative}
 .brand{display:flex;align-items:center;gap:10px;margin-right:auto;min-height:44px;color:var(--tx);text-decoration:none;font-family:var(--fd);font-size:1.45rem;letter-spacing:.04em;white-space:nowrap}
-.brand img{width:38px;height:38px;border-radius:50%;display:block}
+.brand img{width:38px;height:38px;border-radius:50%;display:block;transition:transform .6s var(--ease)}
+.brand:hover img{transform:rotate(-14deg) scale(1.08)}
 .menu-btn,.sound-toggle{min-height:44px;min-width:44px;border:1.5px solid var(--line);background:transparent;color:var(--tx);border-radius:10px;font:600 .95rem var(--fb);padding:0 12px;cursor:pointer;display:inline-flex;align-items:center;justify-content:center;gap:8px;transition:background .2s,border-color .2s}
 .menu-btn:hover,.sound-toggle:hover{border-color:var(--amber)}
 .sound-toggle[aria-pressed="true"]{background:rgba(196,128,44,.16);border-color:var(--amber);color:#F0C27A}
@@ -64,13 +79,16 @@ ul,ol{margin:0}
 .progress i{display:block;height:100%;background:linear-gradient(90deg,var(--red),var(--orange),var(--amber));transform:scaleX(0);transform-origin:0 50%}
 
 /* ---------- Boutons ---------- */
-.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;min-height:48px;padding:0 24px;border-radius:10px;font:700 1.1rem var(--fc);letter-spacing:.07em;text-transform:uppercase;text-decoration:none;border:2px solid transparent;cursor:pointer;transition:transform .2s,background .2s,border-color .2s,box-shadow .2s;text-align:center;color:#fff}
-.btn-main{background:var(--orange-btn);border-color:var(--orange-btn)}
-.btn-main:hover{background:#cf5809;border-color:#cf5809;transform:translateY(-1px)}
-.btn-red{background:var(--red);border-color:var(--red)}
-.btn-red:hover{background:#cf4128;border-color:#cf4128;transform:translateY(-1px)}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;min-height:48px;padding:0 24px;border-radius:10px;font:700 1.1rem var(--fc);letter-spacing:.07em;text-transform:uppercase;text-decoration:none;border:2px solid transparent;cursor:pointer;transition:transform .2s,background .2s,border-color .2s,box-shadow .2s;text-align:center;color:#fff;position:relative;overflow:hidden;isolation:isolate}
+.btn::after{content:"";position:absolute;inset:0;z-index:-1;background:linear-gradient(105deg,transparent 35%,rgba(255,255,255,.22) 50%,transparent 65%);transform:translateX(-120%)}
+.btn:hover::after{transform:translateX(120%);transition:transform .7s var(--ease)}
+.btn:active{transform:translateY(1px) scale(.99)}
+.btn-main{background:var(--orange-btn);border-color:var(--orange-btn);box-shadow:0 6px 0 -2px #7a3205}
+.btn-main:hover{background:#cf5809;border-color:#cf5809;transform:translateY(-2px)}
+.btn-red{background:var(--red);border-color:var(--red);box-shadow:0 6px 0 -2px #7d2212}
+.btn-red:hover{background:#cf4128;border-color:#cf4128;transform:translateY(-2px)}
 .btn-alt{background:transparent;border-color:rgba(231,226,220,.5);color:var(--tx)}
-.btn-alt:hover{border-color:var(--tx);background:rgba(231,226,220,.07)}
+.btn-alt:hover{border-color:var(--tx);background:rgba(231,226,220,.07);transform:translateY(-2px)}
 .btn[disabled]{opacity:.45;cursor:not-allowed}
 .btn-sm{min-height:44px;padding:0 18px;font-size:1rem}
 .btn.nav-call{display:none}
@@ -80,7 +98,7 @@ ul,ol{margin:0}
 
 /* ---------- Apparitions ---------- */
 @media (prefers-reduced-motion:no-preference){
-  .js .reveal{opacity:0;transform:translateY(26px);transition:opacity .9s ease,transform .9s cubic-bezier(.2,.7,.2,1);transition-delay:calc(var(--i,0) * 80ms)}
+  .js .reveal{opacity:0;transform:translateY(26px);transition:opacity .9s ease,transform .9s var(--ease);transition-delay:calc(var(--i,0) * 80ms)}
   .js .reveal.in{opacity:1;transform:none}
   .js h2.reveal::after{transform:scaleX(0)}
   .js h2.reveal.in::after{transform:scaleX(1)}
@@ -89,18 +107,22 @@ ul,ol{margin:0}
 /* ---------- Sections ---------- */
 section{padding-block:clamp(64px,10vw,116px);position:relative}
 section + section::before{content:"";position:absolute;top:0;left:50%;width:min(1140px,calc(100% - 2*var(--gut)));transform:translateX(-50%);height:1px;background:linear-gradient(90deg,transparent,var(--line) 20%,var(--line) 80%,transparent)}
+.num{position:absolute;right:var(--gut);top:-.42em;font:400 clamp(5.5rem,17vw,12rem)/1 var(--fd);color:transparent;-webkit-text-stroke:1.5px rgba(196,128,44,.2);pointer-events:none;user-select:none}
 .kicker{font-family:var(--fc);font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:var(--orange-tx);font-size:1rem;margin-bottom:10px;display:flex;align-items:center;gap:12px}
 .kicker::before{content:"";width:28px;height:2px;background:var(--red)}
-h2{font-family:var(--fd);font-weight:400;font-size:clamp(2.5rem,9vw,4.8rem);line-height:1;letter-spacing:.01em;text-transform:uppercase;position:relative;padding-bottom:18px}
+h2{font-family:var(--fd);font-weight:400;font-size:clamp(2.6rem,9vw,5rem);line-height:.98;letter-spacing:.01em;text-transform:uppercase;position:relative;padding-bottom:18px}
 h2 em{font-style:normal;color:var(--red-tx)}
-h2::after{content:"";position:absolute;left:0;bottom:0;width:84px;height:4px;background:var(--red);transform-origin:0 50%;transition:transform .9s cubic-bezier(.2,.7,.2,1) .2s}
+h2::after{content:"";position:absolute;left:0;bottom:0;width:84px;height:4px;background:linear-gradient(90deg,var(--red),var(--orange));transform-origin:0 50%;transition:transform .9s var(--ease) .2s}
 .lead{color:var(--mut);max-width:62ch;margin-top:18px;font-size:1.125rem}
-.tag-ex{display:inline-flex;align-items:center;background:var(--amber);color:#150a00;font-family:var(--fc);font-weight:700;font-size:.82rem;letter-spacing:.1em;padding:2px 10px;border-radius:6px;text-transform:uppercase}
+.tag-ex{display:inline-flex;align-items:center;background:var(--amber);color:#150a00;font-family:var(--fc);font-weight:700;font-size:.82rem;letter-spacing:.1em;padding:2px 10px;border-radius:6px;text-transform:uppercase;white-space:nowrap}
+.tag-real{display:inline-flex;align-items:center;background:transparent;color:var(--mut);border:1.5px solid var(--line);font-family:var(--fc);font-weight:700;font-size:.82rem;letter-spacing:.1em;padding:1px 10px;border-radius:6px;text-transform:uppercase;white-space:nowrap}
 .ex-banner{display:flex;gap:10px;align-items:center;background:rgba(196,128,44,.1);border:1.5px dashed var(--amber);color:#F0C27A;font-weight:600;font-size:.95rem;padding:10px 14px;border-radius:10px;margin-top:22px}
 .evin{margin-top:26px;border-left:4px solid var(--amber);padding:9px 14px;background:rgba(196,128,44,.08);color:var(--tx);font-weight:600;font-size:.98rem;border-radius:0 8px 8px 0}
+.src{font-size:.82rem;color:var(--mut);margin-top:10px}
+.src a{color:var(--amber-tx)}
 
 /* ---------- Hero ---------- */
-.hero{padding-top:calc(var(--hdr) + 20px);padding-bottom:44px;overflow:hidden;isolation:isolate}
+.hero{padding-top:calc(var(--hdr) + 20px);padding-bottom:70px;overflow:hidden;isolation:isolate}
 .hero-bg{position:absolute;inset:0;z-index:-1;overflow:hidden;background:radial-gradient(circle at 70% 30%,#2a1812,var(--bg) 70%)}
 .hero-bg img{position:absolute;left:0;top:-6%;width:100%;height:112%;object-fit:cover;object-position:50% 38%;opacity:.3;filter:saturate(.85) contrast(1.05);will-change:transform}
 .hero-bg::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(14,10,10,.55) 0%,rgba(14,10,10,.35) 40%,rgba(14,10,10,.92) 85%,var(--bg) 100%),linear-gradient(90deg,rgba(14,10,10,.88),rgba(14,10,10,.25) 70%,rgba(14,10,10,.6))}
@@ -109,23 +131,44 @@ h2::after{content:"";position:absolute;left:0;bottom:0;width:84px;height:4px;bac
 .hero-id{display:flex;align-items:center;gap:14px}
 .hero-logo{width:clamp(64px,18vw,96px);height:auto;border-radius:50%;display:block;flex:none}
 .mention{font-family:var(--fc);font-weight:600;text-transform:uppercase;letter-spacing:.16em;font-size:1rem;color:var(--amber)}
-h1{font-family:var(--fd);font-weight:400;text-transform:uppercase;line-height:.9;font-size:clamp(4.2rem,21vw,10.5rem);letter-spacing:.005em;margin-top:8px}
+h1{font-family:var(--fd);font-weight:400;text-transform:uppercase;line-height:.88;font-size:clamp(4.2rem,21vw,10.5rem);letter-spacing:.005em;margin-top:8px}
 h1 .l1,h1 .l2{display:block}
-h1 .l2{color:var(--red)}
+h1 .l1{text-shadow:0 4px 0 rgba(0,0,0,.4)}
+h1 .l2{color:var(--red);text-shadow:4px 4px 0 #000,0 0 40px rgba(190,56,34,.35)}
 .punch{font-family:var(--fc);font-weight:600;font-size:clamp(1.5rem,5.6vw,2.2rem);line-height:1.15;margin-top:16px;max-width:20ch}
 .orig{font-size:.8rem;color:var(--mut);margin-top:10px;max-width:44ch}
+.open-pill{display:inline-flex;align-items:center;gap:10px;margin-top:16px;padding:7px 16px 7px 12px;border-radius:999px;border:1.5px solid var(--line);background:rgba(14,10,10,.7);font:600 1.05rem/1.2 var(--fc);letter-spacing:.04em;text-transform:uppercase}
+.open-pill .dot{width:11px;height:11px;border-radius:50%;background:var(--mut);flex:none}
+.open-pill.is-open{border-color:#5a8a45}
+.open-pill.is-open .dot{background:#7fd35f;box-shadow:0 0 0 0 rgba(127,211,95,.6)}
+.open-pill.is-closed .dot{background:var(--red-tx)}
+.open-pill small{font:500 .85rem var(--fb);letter-spacing:0;text-transform:none;color:var(--mut)}
+.open-pill{flex-wrap:wrap;row-gap:0}
+#openTxt{white-space:nowrap}
+@media (max-height:520px) and (orientation:landscape){h1{font-size:clamp(3.2rem,19vh,6.5rem)}.hero{padding-bottom:50px}}
+@media (prefers-reduced-motion:no-preference){
+  .open-pill.is-open .dot{animation:ping 2.2s ease-out infinite}
+  .hero-text>*{animation:rise .9s var(--ease) both}
+  .hero-text>*:nth-child(2){animation-delay:.08s}.hero-text>*:nth-child(3){animation-delay:.16s}.hero-text>*:nth-child(4){animation-delay:.24s}.hero-text>*:nth-child(5){animation-delay:.32s}
+}
+@keyframes ping{0%{box-shadow:0 0 0 0 rgba(127,211,95,.55)}80%,100%{box-shadow:0 0 0 12px rgba(127,211,95,0)}}
+@keyframes rise{from{opacity:0;transform:translateY(22px)}to{opacity:1;transform:none}}
 .hero-btns{display:flex;flex-wrap:wrap;gap:12px;margin-top:10px}
 .kong-stage{position:relative;width:100%;max-width:400px;aspect-ratio:1/1;margin-inline:auto;touch-action:pan-y}
 .kong-stage .halo{position:absolute;inset:8%;border-radius:50%;background:radial-gradient(circle,rgba(190,56,34,.22) 0%,rgba(200,86,12,.08) 45%,transparent 70%);pointer-events:none}
+.ring{position:absolute;inset:0;width:100%;height:100%;pointer-events:none;overflow:visible}
+.ring text{font:700 15.5px 'Barlow Condensed','Arial Narrow',sans-serif;letter-spacing:.34em;fill:var(--amber);text-transform:uppercase;opacity:.75}
+@media (prefers-reduced-motion:no-preference){.ring{animation:spin 60s linear infinite}}
+@keyframes spin{to{transform:rotate(360deg)}}
 .kong-stage canvas{position:absolute;inset:0;width:100%;height:100%;display:block;cursor:pointer}
-.hint{position:absolute;left:0;right:0;bottom:-2px;text-align:center;font-size:.85rem;color:var(--mut);pointer-events:none}
+.hint{position:absolute;left:0;right:0;bottom:-8px;text-align:center;font-size:.85rem;color:var(--mut);pointer-events:none}
 .fallback{display:none;position:absolute;inset:0;flex-direction:column;align-items:center;justify-content:center;gap:6px;text-align:center}
 .fallback{perspective:700px}
 .fb-wrap{position:relative;display:block;width:82%;max-width:330px}
 .fb-logo{position:relative;display:block;width:100%;height:auto;border-radius:50%;transform:rotateY(calc(var(--fx,0)*16deg)) rotateX(calc(var(--fy,0)*-12deg));transition:transform .25s ease-out;will-change:transform}
 .fb-glow{position:absolute;left:50%;top:44%;width:78%;aspect-ratio:1;border-radius:50%;translate:-50% -50%;background:radial-gradient(circle,rgba(200,86,12,.65) 0%,rgba(200,86,12,.25) 45%,transparent 70%);pointer-events:none}
 @media (prefers-reduced-motion:no-preference){
-  .no-gl .fb-logo{animation:fbIn .9s cubic-bezier(.2,.7,.2,1) both}
+  .no-gl .fb-logo{animation:fbIn .9s var(--ease) both}
   .no-gl .fb-glow{animation:fbPulse 3.2s ease-in-out infinite}
 }
 .kong-ui{position:absolute;inset:0;z-index:3;pointer-events:none}
@@ -170,28 +213,72 @@ h1 .l2{color:var(--red)}
 .no-gl .fallback{display:flex}
 .no-gl canvas,.no-gl .hint{display:none}
 
-/* ---------- Ce soir ---------- */
+/* ---------- Bandeau défilant ---------- */
+.ticker-wrap{overflow-x:clip;position:relative;z-index:2}
+.ticker{position:relative;z-index:2;overflow:hidden;background:var(--red);color:#fff;transform:rotate(-1.2deg);margin:-34px -12px 0;padding:11px 0;border-block:3px solid #000;box-shadow:0 10px 30px rgba(0,0,0,.5)}
+.ticker-track{display:flex;width:max-content;gap:0}
+.ticker-track span{display:inline-flex;align-items:center;gap:22px;padding-right:22px;font:400 clamp(1.25rem,3.4vw,1.7rem)/1 var(--fd);letter-spacing:.06em;text-transform:uppercase;white-space:nowrap}
+.ticker-track svg{width:20px;height:20px;flex:none;fill:#000}
+@media (prefers-reduced-motion:no-preference){.ticker-track{animation:marquee 38s linear infinite}.ticker:hover .ticker-track{animation-play-state:paused}}
+@keyframes marquee{to{transform:translateX(-50%)}}
+
+/* ---------- Chiffres ---------- */
+.facts{padding-block:clamp(56px,8vw,90px) 0}
+.facts-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.fact{border:1px solid var(--line);border-radius:14px;background:linear-gradient(160deg,var(--panel2),var(--panel));padding:18px 16px;position:relative;overflow:hidden}
+.fact::before{content:"";position:absolute;left:0;top:0;bottom:0;width:4px;background:linear-gradient(var(--red),var(--amber))}
+.fact b{display:block;font:400 clamp(2.8rem,9vw,4.4rem)/1 var(--fd);color:var(--tx);letter-spacing:.01em}
+.fact b em{font-style:normal;color:var(--amber);font-size:.55em;margin-left:4px}
+.fact span{display:block;font:600 1.05rem/1.25 var(--fc);letter-spacing:.06em;text-transform:uppercase;color:var(--amber-tx);margin-top:4px}
+.fact small{display:block;color:var(--mut);font-size:.82rem;margin-top:4px;line-height:1.35}
+
+/* ---------- Billets (événements) ---------- */
 .tabs{display:flex;gap:8px;margin-top:26px;flex-wrap:wrap}
-.tab,.chip{min-height:46px;padding:0 18px;border-radius:10px;border:1.5px solid var(--line);background:var(--panel);color:var(--tx);font:700 1.05rem var(--fc);letter-spacing:.08em;text-transform:uppercase;cursor:pointer;transition:background .2s,border-color .2s}
-.tab:hover,.chip:hover{border-color:var(--amber)}
+.tab,.chip{min-height:46px;padding:0 18px;border-radius:10px;border:1.5px solid var(--line);background:var(--panel);color:var(--tx);font:700 1.05rem var(--fc);letter-spacing:.08em;text-transform:uppercase;cursor:pointer;transition:background .2s,border-color .2s,transform .2s}
+.tab:hover,.chip:hover{border-color:var(--amber);transform:translateY(-1px)}
 .tab[aria-selected="true"],.chip[aria-pressed="true"]{border-color:var(--red);background:var(--red);color:#fff}
-.tonight{margin-top:16px;border:1px solid var(--line);border-left:6px solid var(--red);border-radius:6px 18px 18px 6px;background:linear-gradient(135deg,rgba(190,56,34,.12),var(--panel) 55%);padding:clamp(22px,5vw,48px)}
-.tonight .meta,.ev .row{display:flex;flex-wrap:wrap;gap:10px;align-items:center}
+.ticket{--c:var(--red);--cx:#fff;display:grid;grid-template-columns:92px 1fr;background:linear-gradient(135deg,rgba(255,255,255,.035),transparent 60%),var(--panel);border:1px solid var(--line);border-radius:14px;position:relative;transition:transform .35s var(--ease),border-color .25s,box-shadow .35s}
+.ticket:hover{transform:translateY(-4px);border-color:var(--c);box-shadow:0 14px 30px -14px rgba(0,0,0,.8)}
+.stub{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:2px;padding:14px 8px;background:var(--c);color:var(--cx);border-radius:13px 0 0 13px;position:relative;text-align:center;border-right:2px dashed rgba(0,0,0,.35)}
+.stub::before,.stub::after{content:"";position:absolute;right:-10px;width:18px;height:18px;border-radius:50%;background:var(--bg);z-index:1}
+.stub::before{top:-9px}.stub::after{bottom:-9px}
+.stub .s1{font:700 .82rem var(--fc);letter-spacing:.16em;text-transform:uppercase}
+.stub .s2{font:400 2.3rem/1 var(--fd);letter-spacing:.02em;text-transform:uppercase}
+.t-match{--c:var(--amber);--cx:#150a00}
+.t-concert{--c:var(--red);--cx:#fff}
+.t-dj{--c:var(--orange-btn);--cx:#fff}
+.t-event{--c:var(--paper);--cx:#150a00}
+.tk-body{padding:16px 18px 18px;display:flex;flex-direction:column;gap:8px;min-width:0}
+.tk-body .row{display:flex;flex-wrap:wrap;gap:8px;align-items:center}
 .type-pill{font-family:var(--fc);font-weight:700;letter-spacing:.16em;text-transform:uppercase;font-size:.95rem;padding:2px 12px;border-radius:6px;border:1.5px solid currentColor}
-.t-match{color:#E1A24E}.t-concert{color:var(--red-tx)}.t-dj{color:var(--orange-tx)}
-.tonight h3{font-family:var(--fd);font-weight:400;text-transform:uppercase;font-size:clamp(2.3rem,9vw,4.6rem);line-height:1;margin-top:14px}
-.when{font-family:var(--fc);font-weight:700;font-size:clamp(1.5rem,5vw,2.1rem);color:var(--amber);margin-top:8px;letter-spacing:.06em;text-transform:uppercase}
-.tonight p.desc{color:var(--mut);margin-top:12px;max-width:56ch}
-.tonight .acts{display:flex;flex-wrap:wrap;gap:12px;margin-top:24px}
+.tk-body .type-pill.t-match{color:#E1A24E}.tk-body .type-pill.t-concert{color:var(--red-tx)}.tk-body .type-pill.t-dj{color:var(--orange-tx)}.tk-body .type-pill.t-event{color:var(--tx)}
+.tk-body h3,.tk-body h4{font-family:var(--fd);font-weight:400;text-transform:uppercase;font-size:1.6rem;line-height:1.05}
+.when{font-family:var(--fc);font-weight:700;font-size:1.2rem;color:var(--amber);letter-spacing:.05em;text-transform:uppercase}
+.when .tm{white-space:nowrap}
+.tk-body p.desc{color:var(--mut);font-size:.98rem}
+.stamp{position:absolute;right:12px;top:12px;rotate:7deg;font:700 .95rem var(--fc);letter-spacing:.14em;text-transform:uppercase;color:var(--mut);border:2px solid var(--mut);border-radius:6px;padding:0 8px;opacity:.85}
+.is-past .stub{filter:saturate(.55) brightness(.9)}
+.tonight .ticket{grid-template-columns:clamp(96px,22vw,170px) 1fr;border-radius:18px}
+.tonight .stub{border-radius:17px 0 0 17px;padding:20px 10px}
+.tonight .stub .s2{font-size:clamp(2.6rem,9vw,4.6rem)}
+.tonight .stub .s1{font-size:clamp(.82rem,2.4vw,1.1rem)}
+.tonight .tk-body{padding:clamp(18px,4vw,36px);gap:10px}
+.tonight .tk-body h3{font-size:clamp(2.2rem,8vw,4.4rem);line-height:1}
+.tonight .when{font-size:clamp(1.4rem,4.4vw,2rem)}
+.tonight .acts{display:flex;flex-wrap:wrap;gap:12px;margin-top:10px}
+.tonight{margin-top:16px}
+.tonight:focus-visible{outline-offset:6px}
 
 /* ---------- Pack événement ---------- */
 .pack{background:radial-gradient(900px 500px at 85% 20%,rgba(190,56,34,.14),transparent 65%),linear-gradient(180deg,transparent,rgba(200,86,12,.05) 50%,transparent)}
 .pack-grid{display:grid;gap:30px;margin-top:34px;align-items:start}
-.pack-fig{position:relative;border:1px solid var(--line);border-radius:14px;overflow:hidden;background:var(--panel);max-width:560px;width:100%;margin-inline:auto}
+.pack-fig{position:relative;border:1px solid var(--line);border-radius:14px;overflow:hidden;background:var(--panel);max-width:560px;width:100%;margin-inline:auto;transition:transform .5s var(--ease)}
+.pack-fig:hover{transform:rotate(-1deg) scale(1.01)}
 .pack-fig img{display:block;width:100%;height:auto;aspect-ratio:1/1;object-fit:cover;background:linear-gradient(135deg,#2a1812,#120c0b)}
 .pack-fig figcaption{padding:10px 14px;font-size:.85rem;color:var(--mut)}
 .pack-list{list-style:none;padding:0;display:grid;gap:10px;margin-top:22px}
-.pack-list li{display:flex;gap:14px;align-items:flex-start;background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:12px 14px}
+.pack-list li{display:flex;gap:14px;align-items:flex-start;background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:12px 14px;transition:border-color .25s,transform .25s}
+.pack-list li:hover{border-color:var(--amber);transform:translateX(4px)}
 .pack-list .n{font-family:var(--fd);font-size:1.5rem;line-height:1;color:var(--red-tx);min-width:2ch}
 .pack-list b{display:block;font-family:var(--fc);font-size:1.25rem;letter-spacing:.05em;text-transform:uppercase;line-height:1.2}
 .pack-list span.d{color:var(--mut);font-size:.96rem}
@@ -199,22 +286,37 @@ h1 .l2{color:var(--red)}
 .pack-hook em{font-style:normal;color:var(--amber)}
 .pack .acts{display:flex;flex-wrap:wrap;gap:12px;margin-top:24px}
 .pack .note{font-size:.88rem;color:var(--mut);margin-top:16px;border-left:3px solid var(--amber);padding-left:12px}
+.tap{margin-top:34px;display:grid;gap:16px;border:1.5px dashed var(--amber);border-radius:16px;padding:clamp(18px,4vw,28px);background:rgba(196,128,44,.06)}
+.tap h3{font-family:var(--fd);font-weight:400;text-transform:uppercase;font-size:1.8rem;line-height:1.05}
+.tap h3 em{font-style:normal;color:var(--amber)}
+.tap ul{list-style:none;padding:0;display:grid;gap:8px;color:var(--tx)}
+.tap li{display:flex;gap:10px;align-items:flex-start}
+.tap li::before{content:"";flex:none;width:9px;height:9px;margin-top:.55em;background:var(--red);transform:rotate(45deg)}
+.tap p{color:var(--mut)}
 
 /* ---------- Agenda ---------- */
 .filters{display:flex;flex-wrap:wrap;gap:8px;margin-top:26px}
-.grid-ev{display:grid;gap:14px;margin-top:20px;grid-template-columns:1fr}
-.ev{background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:18px;display:flex;flex-direction:column;gap:8px;border-top:4px solid var(--c,var(--red))}
-.ev[hidden]{display:none}
-.ev h3{font-family:var(--fd);font-weight:400;text-transform:uppercase;font-size:1.6rem;line-height:1.05}
-.ev .when{font-size:1.25rem;margin-top:0}
-.ev p{color:var(--mut);font-size:.98rem}
-.ev p.when{color:var(--amber)}
+.grp{font:700 1.05rem var(--fc);letter-spacing:.18em;text-transform:uppercase;color:var(--amber-tx);margin-top:30px;display:flex;align-items:center;gap:12px}
+.grp::after{content:"";flex:1;height:1px;background:var(--line)}
+.grid-ev{display:grid;gap:14px;margin-top:16px;grid-template-columns:1fr}
+.grid-ev .ticket[hidden],.grp[hidden],.grid-ev[hidden]{display:none}
+.grid-ev .ticket{grid-template-columns:78px 1fr}
+.grid-ev .stub .s2{font-size:1.9rem}
 .count{color:var(--mut);margin-top:14px;font-size:.95rem}
 
-/* ---------- Bières ---------- */
-.beers{display:grid;gap:14px;margin-top:28px;grid-template-columns:1fr 1fr}
+/* ---------- La carte ---------- */
+.carte{background:linear-gradient(180deg,transparent,var(--bg2) 12%,var(--bg2) 88%,transparent)}
+.carte-nav{display:flex;flex-wrap:wrap;gap:8px;margin-top:26px}
+.carte-nav a{display:inline-flex;align-items:center;min-height:46px;padding:0 18px;border-radius:999px;border:1.5px solid var(--line);background:var(--panel);color:var(--tx);font:700 1.05rem var(--fc);letter-spacing:.08em;text-transform:uppercase;text-decoration:none;transition:border-color .2s,background .2s,transform .2s}
+.carte-nav a:hover{border-color:var(--amber);transform:translateY(-1px)}
+.carte-nav a.hot{background:var(--paper);color:var(--ink);border-color:var(--paper)}
+.cblock{margin-top:52px}
+.cblock>h3{font-family:var(--fd);font-weight:400;text-transform:uppercase;font-size:clamp(1.9rem,6vw,2.8rem);line-height:1;display:flex;align-items:center;gap:14px}
+.cblock>h3::after{content:"";flex:1;height:2px;background:repeating-linear-gradient(90deg,var(--line) 0 8px,transparent 8px 14px)}
+.cblock>p.sub{color:var(--mut);margin-top:8px;max-width:62ch}
+.beers{display:grid;gap:14px;margin-top:22px;grid-template-columns:1fr 1fr}
 .bcard{position:relative;border:0;padding:0;background:none;color:inherit;font:inherit;text-align:left;cursor:pointer;perspective:900px;min-height:256px;display:block;width:100%;-webkit-tap-highlight-color:transparent;touch-action:pan-y;--mx:50%;--my:50%}
-.btilt{display:block;width:100%;height:100%;min-height:256px;transform-style:preserve-3d;transform:rotateX(var(--rx,0deg)) rotateY(var(--ry,0deg));transition:transform .5s cubic-bezier(.2,.7,.2,1)}
+.btilt{display:block;width:100%;height:100%;min-height:256px;transform-style:preserve-3d;transform:rotateX(var(--rx,0deg)) rotateY(var(--ry,0deg));transition:transform .5s var(--ease)}
 .bcard.tilting .btilt{transition:transform .12s linear}
 .binner{display:grid;width:100%;height:100%;min-height:256px;transition:transform .6s cubic-bezier(.3,.7,.2,1);transform-style:preserve-3d}
 .bface{grid-area:1/1;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:8px;text-align:center;padding:14px 12px;border-radius:14px;border:1.5px solid var(--bc,var(--amber));background:linear-gradient(160deg,var(--panel2),var(--panel));-webkit-backface-visibility:hidden;backface-visibility:hidden;position:relative;overflow:hidden}
@@ -236,8 +338,59 @@ h1 .l2{color:var(--red)}
   .bcard.flipped .bface.back{visibility:visible}
   .bface::after{display:none}
 }
+.wines{grid-template-columns:1fr 1fr}
+
+/* Softs : le gros morceau, sur papier clair avec bords en capsule */
+.feature{position:relative;margin-top:64px}
+.softs{background:var(--paper);color:var(--ink);padding:clamp(40px,6vw,64px) clamp(18px,4vw,44px) clamp(34px,5vw,52px);margin-inline:calc(-1 * var(--gut));border-radius:0}
+.softs::before,.softs::after{content:"";position:absolute;left:0;right:0;height:18px;pointer-events:none}
+.softs::before{top:-1px;background:radial-gradient(circle at 14px 0,var(--bg2) 11px,transparent 11.5px) 0 0/28px 18px round no-repeat}
+.softs::after{bottom:-1px;background:radial-gradient(circle at 14px 18px,var(--bg2) 11px,transparent 11.5px) 0 0/28px 18px round no-repeat}
+.softs-grid{display:grid;gap:28px;max-width:1140px;margin-inline:auto;align-items:center}
+.softs .stick{display:inline-block;rotate:-3deg;background:var(--red-deep);color:#fff;font:700 1rem var(--fc);letter-spacing:.14em;text-transform:uppercase;padding:3px 14px;border-radius:6px;margin-bottom:12px}
+.softs h3{font-family:var(--fd);font-weight:400;text-transform:uppercase;font-size:clamp(2.8rem,10vw,5.6rem);line-height:.94;color:var(--ink)}
+.softs h3 em{font-style:normal;color:var(--red-deep);display:block}
+.softs .hand{font-family:var(--fm);color:#7a3205;font-size:clamp(1.15rem,3.6vw,1.6rem);margin-top:12px;rotate:-1.5deg;display:inline-block}
+.softs p.txt{margin-top:14px;max-width:46ch;color:#3a2c27;font-weight:500}
+.softs-art{position:relative;max-width:340px;margin-inline:auto;width:100%}
+.softs-art svg{display:block;width:100%;height:auto;overflow:visible}
+.bub{position:absolute;bottom:8%;left:var(--x,50%);width:var(--s,10px);height:var(--s,10px);border-radius:50%;border:2px solid rgba(190,56,34,.55);opacity:0;pointer-events:none}
+@media (prefers-reduced-motion:no-preference){
+  .bub{animation:bubble var(--d,5s) ease-in infinite;animation-delay:var(--dl,0s)}
+  .softs-art svg{animation:bob 6s ease-in-out infinite}
+}
+@keyframes bubble{0%{transform:translateY(0) scale(.6);opacity:0}15%{opacity:.9}100%{transform:translateY(-230px) scale(1.15);opacity:0}}
+@keyframes bob{0%,100%{transform:translateY(0) rotate(0)}50%{transform:translateY(-7px) rotate(.6deg)}}
+.soft-tiles{list-style:none;padding:0;display:grid;gap:10px;grid-template-columns:1fr 1fr;grid-column:1/-1}
+.soft-tiles li{background:#fff8ee;border:2px solid var(--ink);border-radius:14px;padding:14px 14px 12px;box-shadow:4px 4px 0 var(--ink);transition:transform .25s var(--ease),box-shadow .25s var(--ease);display:flex;flex-direction:column;gap:4px;position:relative}
+.soft-tiles li:hover{transform:translate(-2px,-3px);box-shadow:7px 8px 0 var(--ink)}
+.soft-tiles svg{width:34px;height:34px;flex:none}
+.soft-tiles b{font:400 1.45rem/1.05 var(--fd);text-transform:uppercase;letter-spacing:.02em;color:var(--ink)}
+.soft-tiles span.d{font-size:.92rem;color:#4a3a34;line-height:1.35}
+.soft-tiles .tag-ex{align-self:flex-start;margin-top:4px;background:var(--ink);color:var(--paper)}
+.softs .note-s{grid-column:1/-1;font-size:.9rem;color:#4a3a34;border-top:2px dashed rgba(26,18,16,.35);padding-top:12px}
+.softs .note-s a{color:var(--red-deep);font-weight:700}
+
+/* Planches apéro : bois sombre */
+.planches{background:radial-gradient(700px 360px at 80% 20%,rgba(196,128,44,.22),transparent 70%),linear-gradient(160deg,#2a1a12,#17100d 70%);border:1px solid #4a3426;border-radius:22px;padding:clamp(26px,5vw,52px);overflow:hidden}
+.planches-grid{display:grid;gap:28px;align-items:center}
+.planches .stick{display:inline-block;rotate:2deg;background:var(--amber);color:#150a00;font:700 1rem var(--fc);letter-spacing:.14em;text-transform:uppercase;padding:3px 14px;border-radius:6px;margin-bottom:12px}
+.planches h3{font-family:var(--fd);font-weight:400;text-transform:uppercase;font-size:clamp(2.8rem,10vw,5.2rem);line-height:.94}
+.planches h3 em{font-style:normal;color:var(--amber);display:block}
+.planches .hand{font-family:var(--fm);color:var(--amber-tx);font-size:clamp(1.15rem,3.6vw,1.55rem);margin-top:12px;rotate:-1.5deg;display:inline-block}
+.planches p.txt{margin-top:14px;color:var(--mut);max-width:48ch}
+.board-art{max-width:520px;margin-inline:auto;width:100%}
+.board-art svg{display:block;width:100%;height:auto;filter:drop-shadow(0 18px 18px rgba(0,0,0,.55));transition:transform .6s var(--ease)}
+.planches:hover .board-art svg{transform:rotate(-2deg) scale(1.03)}
+.plank{list-style:none;padding:0;display:grid;gap:12px;margin-top:24px}
+.plank li{display:grid;grid-template-columns:auto 1fr;gap:4px 14px;align-items:baseline;border-bottom:1.5px dotted rgba(231,226,220,.3);padding-bottom:12px}
+.plank b{font:400 1.55rem/1.05 var(--fd);text-transform:uppercase;letter-spacing:.02em}
+.plank span.d{grid-column:1/-1;color:var(--mut);font-size:.96rem}
+.plank .tag-ex{justify-self:end}
+.planches .src{margin-top:18px}
 
 /* ---------- Fléchettes ---------- */
+.flech{background:radial-gradient(800px 420px at 15% 30%,rgba(190,56,34,.1),transparent 70%)}
 .game{display:grid;gap:22px;margin-top:28px;align-items:start}
 .dstage{position:relative;width:100%;max-width:540px;aspect-ratio:1/1;margin-inline:auto;border-radius:18px;border:1px solid var(--line);background:radial-gradient(circle at 50% 50%,#241714,#0E0A0A 75%);overflow:hidden;touch-action:pan-y;cursor:crosshair;-webkit-tap-highlight-color:transparent}
 .dstage canvas{position:absolute;inset:0;width:100%;height:100%;display:block}
@@ -302,53 +455,69 @@ input[aria-invalid="true"]{border-color:#FF7A5F}
 .callbox .acts{margin-top:18px}
 
 /* ---------- Infos ---------- */
+.infos-sec{background:linear-gradient(180deg,transparent,var(--bg2) 30%)}
 .infos{display:grid;gap:16px;margin-top:30px}
-.card{background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:22px}
+.card{background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:22px;transition:border-color .25s,transform .35s var(--ease)}
+.card:hover{border-color:#6b4a36;transform:translateY(-3px)}
 .card h3{font-family:var(--fd);font-weight:400;text-transform:uppercase;font-size:1.5rem;line-height:1.1;color:var(--amber);margin-bottom:12px;letter-spacing:.02em}
 address{font-style:normal}
 .card .acts{display:flex;flex-wrap:wrap;gap:12px;margin-top:16px}
 .hours{width:100%;border-collapse:collapse}
 .hours th,.hours td{text-align:left;padding:9px 0;border-bottom:1px solid rgba(255,255,255,.08);font-weight:500}
 .hours td{text-align:right}
+.hours tr.today th,.hours tr.today td{color:var(--amber-tx);font-weight:700}
+.hours tr.today th::after{content:" · aujourd'hui";font-weight:600;font-size:.85rem;color:var(--mut)}
 .closed{color:var(--mut)}
 .badge-tbc{display:inline-block;margin-top:12px;background:rgba(196,128,44,.12);border:1.5px dashed var(--amber);color:#F0C27A;font-weight:700;border-radius:8px;padding:3px 12px;font-size:.9rem}
 .hours-sum{margin-bottom:8px}
 .photo-card{padding:0;overflow:hidden;display:flex;flex-direction:column}
-.photo-card .ph{aspect-ratio:4/3;background:linear-gradient(135deg,#2a1812,#120c0b);position:relative}
-.photo-card img{display:block;width:100%;height:100%;object-fit:cover;object-position:50% 45%}
+.photo-card .ph{aspect-ratio:4/3;background:linear-gradient(135deg,#2a1812,#120c0b);position:relative;overflow:hidden}
+.photo-card img{display:block;width:100%;height:100%;object-fit:cover;object-position:50% 45%;transition:transform 1.2s var(--ease)}
+.photo-card:hover img{transform:scale(1.05)}
 .photo-card figcaption{padding:12px 16px;font-size:.88rem;color:var(--mut)}
 .img-fail img{visibility:hidden}
 .img-fail::after{content:attr(data-fb);position:absolute;inset:0;display:flex;align-items:center;justify-content:center;text-align:center;padding:16px;color:var(--mut);font-family:var(--fc);font-size:1.1rem;letter-spacing:.06em;text-transform:uppercase}
+.svc{list-style:none;padding:0;display:flex;flex-wrap:wrap;gap:8px}
+.svc li{border:1.5px solid var(--line);border-radius:8px;padding:5px 12px;font:600 1rem var(--fc);letter-spacing:.06em;text-transform:uppercase;background:rgba(255,255,255,.03)}
+.contact-list{list-style:none;padding:0;display:grid;gap:2px}
+.contact-list a.big{font-size:1.5rem;font-weight:600;text-decoration:none;color:var(--tx)}
 
 /* ---------- Pied de page ---------- */
-footer{border-top:1px solid var(--line);padding:36px 0 22px;background:#080505}
+footer{border-top:1px solid var(--line);padding:36px 0 22px;background:#080505;position:relative;overflow:hidden}
 .evin-foot{font-weight:700;font-size:1.1rem;color:var(--tx);border:1.5px solid var(--amber);border-radius:10px;padding:14px 16px;text-align:center;background:rgba(196,128,44,.08)}
 .foot-grid{display:grid;gap:20px;margin-top:24px;font-size:.95rem;color:var(--mut)}
 .foot-grid h3{font-family:var(--fc);font-weight:700;letter-spacing:.12em;text-transform:uppercase;font-size:1.1rem;color:var(--tx);margin-bottom:4px}
 footer ul{list-style:none;margin:0;padding:0}
 .todo{color:#F0C27A;font-weight:600}
+.wordmark{font:400 clamp(4rem,19vw,15rem)/1.05 var(--fd);text-transform:uppercase;text-align:center;color:transparent;-webkit-text-stroke:1.5px rgba(196,128,44,.25);margin-top:34px;white-space:nowrap;overflow:hidden;user-select:none}
 
 /* ---------- Écrans larges ---------- */
 @media (min-width:640px){
   .grid-ev{grid-template-columns:repeat(2,1fr)}
   .beers{grid-template-columns:repeat(3,1fr)}
+  .wines{grid-template-columns:repeat(4,1fr)}
   .foot-grid{grid-template-columns:repeat(3,1fr)}
   .infos{grid-template-columns:repeat(2,1fr)}
   .f-grid{grid-template-columns:1fr 1fr}
   .sound-toggle .st{display:inline}
+  .facts-grid{grid-template-columns:repeat(4,1fr)}
+}
+@media (min-width:768px){
+  .soft-tiles{grid-template-columns:repeat(4,1fr)}
 }
 @media (min-width:900px){
   .pack-grid{grid-template-columns:.95fr 1.05fr;gap:44px}
-  .grid-ev{grid-template-columns:repeat(3,1fr)}
-  .beers{grid-template-columns:repeat(4,1fr)}
   .game{grid-template-columns:1fr 1fr;gap:36px}
   .priv{grid-template-columns:.8fr 1.2fr;gap:36px}
   .infos{grid-template-columns:repeat(3,1fr)}
   .hero-grid{grid-template-columns:1.05fr .95fr;gap:24px;grid-template-areas:'text stage' 'btns stage';align-content:center}
   .hero-btns{align-self:start;margin-top:0}
   .hero-text{align-self:end}
-  .hero{padding-bottom:70px;min-height:min(820px,100svh);display:flex;align-items:center}
+  .hero{padding-bottom:84px;min-height:min(820px,100svh);display:flex;align-items:center}
   .kong-stage{max-width:560px}
+  .softs-grid{grid-template-columns:1.1fr .9fr;gap:36px 48px}
+  .planches-grid{grid-template-columns:1.05fr .95fr;gap:44px}
+  .grid-ev{grid-template-columns:repeat(2,1fr)}
 }
 @media (min-width:1060px){
   :root{--hdr:96px}
@@ -360,18 +529,23 @@ footer ul{list-style:none;margin:0;padding:0}
   .menu-list a.nav-pack{margin:0 4px;padding:0 14px}
   .btn.nav-call{display:inline-flex}
   .sound-toggle{order:3}.menu-list{order:2}.btn.nav-call{order:4}
+  .beers{grid-template-columns:repeat(6,1fr)}
+  .beers.wines{grid-template-columns:repeat(4,1fr)}
+  .grid-ev{grid-template-columns:repeat(3,1fr)}
 }
 @media (max-width:359px){
   .btn{padding:0 14px;font-size:1rem}
-  .beers{gap:10px}
+  .beers,.wines{gap:10px}
   .bname{font-size:1.4rem}
   .brand{font-size:1.25rem}
+  .ticket,.grid-ev .ticket{grid-template-columns:66px 1fr}
 }
 @media (prefers-reduced-motion:reduce){
   html{scroll-behavior:auto}
   .hint{display:none}
   *,*::before,*::after{animation:none!important;transition:none!important}
   .hero-bg img{will-change:auto}
+  .bub{display:none}
 }
 @media (forced-colors:active){.btn,.tab,.chip{border:2px solid ButtonText}}
 </style>
@@ -379,10 +553,24 @@ footer ul{list-style:none;margin:0;padding:0}
 <body>
 <a class="skip" href="#contenu">Aller au contenu</a>
 
+<!-- Icônes réutilisées (aucune image externe) -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
+  <defs>
+    <symbol id="ic-glass" viewBox="0 0 32 32"><path d="M8 7h16l-2 20a2 2 0 0 1-2 2h-8a2 2 0 0 1-2-2z" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linejoin="round"/><path d="M9.2 14h13.6" stroke="currentColor" stroke-width="2.2"/><path d="M19 3l-3 13" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"/></symbol>
+    <symbol id="ic-can" viewBox="0 0 32 32"><path d="M9 6h14v21a2 2 0 0 1-2 2H11a2 2 0 0 1-2-2z" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linejoin="round"/><path d="M9 11h14M9 22h14" stroke="currentColor" stroke-width="2.2"/><path d="M13 3h6v3h-6z" fill="currentColor"/></symbol>
+    <symbol id="ic-lemon" viewBox="0 0 32 32"><circle cx="16" cy="17" r="11" fill="none" stroke="currentColor" stroke-width="2.2"/><path d="M16 6v22M5 17h22M8.5 9.5l15 15M23.5 9.5l-15 15" stroke="currentColor" stroke-width="1.6"/></symbol>
+    <symbol id="ic-drop" viewBox="0 0 32 32"><path d="M16 3c5 7 9 11.5 9 16.5a9 9 0 0 1-18 0C7 14.500 11 10 16 3z" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linejoin="round"/><path d="M12 20a4.500 4.500 0 0 0 4 4" stroke="currentColor" stroke-width="2" stroke-linecap="round" fill="none"/></symbol>
+    <symbol id="ic-tall" viewBox="0 0 32 32"><path d="M10 5h12l-1.500 22a2 2 0 0 1-2 2h-5a2 2 0 0 1-2-2z" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linejoin="round"/><circle cx="14" cy="15" r="1.700" fill="currentColor"/><circle cx="18.500" cy="20" r="1.700" fill="currentColor"/><circle cx="14.500" cy="24" r="1.200" fill="currentColor"/></symbol>
+    <symbol id="ic-bottle" viewBox="0 0 32 32"><path d="M13 3h6v6c0 3 4 4 4 9v9a2 2 0 0 1-2 2H11a2 2 0 0 1-2-2v-9c0-5 4-6 4-9z" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linejoin="round"/><path d="M9 19h14" stroke="currentColor" stroke-width="2.2"/></symbol>
+    <symbol id="ic-cup" viewBox="0 0 32 32"><path d="M5 12h18v8a7 7 0 0 1-7 7h-4a7 7 0 0 1-7-7z" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linejoin="round"/><path d="M23 14h2.500a3.500 3.500 0 0 1 0 7H22.500" fill="none" stroke="currentColor" stroke-width="2.2"/><path d="M10 4c-1.500 2 1.500 3 0 5M15 4c-1.500 2 1.500 3 0 5" fill="none" stroke="currentColor" stroke-width="1.800" stroke-linecap="round"/></symbol>
+    <symbol id="ic-star" viewBox="0 0 24 24"><path d="M12 1l2.800 7.700L23 9.500l-6.200 5.300L18.700 23 12 18.600 5.300 23l1.900-8.200L1 9.500l8.200-.8z"/></symbol>
+  </defs>
+</svg>
+
 <header class="top" id="entete">
-  <div class="demo-bar" role="note">MAQUETTE : événements, bières et horaires sont des EXEMPLES</div>
+  <div class="demo-bar" role="note">MAQUETTE : les éléments marqués « EXEMPLE » sont inventés, ne rien prendre pour vrai</div>
   <div class="nav-row">
-    <a class="brand" href="#accueil"><img src="img/logo-beer-kong.webp" width="360" height="360" alt="" id="brandLogo"><span>BEER KONG<span class="sr-only"> : retour à l'accueil</span></span></a>
+    <a class="brand" href="#accueil"><img src="img/logo-beer-kong-192.webp" width="192" height="192" alt="" id="brandLogo"><span>BEER KONG<span class="sr-only"> : retour à l'accueil</span></span></a>
     <button class="sound-toggle" type="button" id="soundBtn" aria-pressed="false" aria-label="Ambiance sonore : coupée. Activer">
       <svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M11 5 6 9H3v6h3l5 4z"/><path class="wave" d="M15.5 8.5a5 5 0 0 1 0 7M18.5 5.5a9 9 0 0 1 0 13"/><path class="mute" d="m16 9 5 6m0-6-5 6" style="display:none"/></svg>
       <span class="st">Ambiance</span>
@@ -396,13 +584,13 @@ footer ul{list-style:none;margin:0;padding:0}
         <li><a href="#ce-soir">Ce soir</a></li>
         <li><a href="#pack" class="nav-pack">Pack événement</a></li>
         <li><a href="#agenda">Agenda</a></li>
-        <li><a href="#bieres">Bières</a></li>
+        <li><a href="#carte">La carte</a></li>
         <li><a href="#flechettes">Fléchettes</a></li>
         <li><a href="#privatisation">Privatiser</a></li>
         <li><a href="#infos">Infos</a></li>
       </ul>
     </nav>
-    <a class="btn btn-main btn-sm nav-call" href="tel:+33252569246" aria-label="Appeler Beer Kong au 02 52 56 92 46">Appeler</a>
+    <a class="btn btn-main btn-sm nav-call" href="tel:+33252569246" aria-label="Appeler Beer Kong au 02 52 56 92 46">Appeler</a>
   </div>
   <div class="progress" aria-hidden="true"><i id="prog"></i></div>
 </header>
@@ -414,13 +602,15 @@ footer ul{list-style:none;margin:0;padding:0}
   <div class="hero-bg" aria-hidden="true"><img src="img/bar-comptoir.webp" width="540" height="640" alt="" fetchpriority="high" id="heroBg"></div>
   <div class="wrap hero-grid">
     <div class="hero-text">
-      <div class="hero-id"><img class="hero-logo" src="img/logo-beer-kong.webp" width="360" height="360" alt="Logo Beer Kong : un gorille en médaillon, une bouteille dans chaque main" fetchpriority="high">
+      <div class="hero-id"><img class="hero-logo" src="img/logo-beer-kong-192.webp" width="192" height="192" alt="Logo Beer Kong : un gorille en médaillon, une bouteille dans chaque main" fetchpriority="high">
       <p class="mention">Bar à bières &amp; vins<br>Sports bar</p></div>
       <h1 id="titre-hero"><span class="l1">Beer</span><span class="l2">Kong</span></h1>
       <p class="punch">On vient pour le match, on reste pour l'ambiance.</p>
+      <p class="open-pill" id="openNow"><span class="dot" aria-hidden="true"></span><span id="openTxt">Ouvert du mardi au samedi, dès 11 h</span></p>
     </div>
     <div class="kong-stage" id="kongStage">
       <div class="halo" id="halo" aria-hidden="true"></div>
+      <svg class="ring" viewBox="0 0 400 400" aria-hidden="true" focusable="false"><defs><path id="ringPath" d="M200 200m-182 0a182 182 0 1 1 364 0a182 182 0 1 1-364 0"/></defs><text><textPath href="#ringPath">Beer Kong · Saint-Onen-la-Chapelle · Bar à bières &amp; vins · Sports bar · </textPath></text></svg>
       <div class="kong-ui"><p class="kong-say" id="kongSay" role="status" aria-live="polite"></p><button type="button" class="btn btn-main kong-turn" id="kongTurn" hidden>À ton tour ?</button></div>
       <canvas id="kongCanvas" role="img" aria-label="Kong, un gorille en 3D qui tourne doucement, suit le curseur ou le doigt et réagit au défilement de la page. Touche-le pour le voir se frapper la poitrine."></canvas>
       <div class="fallback" id="kongFallback">
@@ -437,24 +627,45 @@ footer ul{list-style:none;margin:0;padding:0}
       <p class="hint" id="kongHint">Touche Kong : il réagit. Fais défiler la page : il tourne.</p>
     </div>
     <div class="hero-btns">
-      <a class="btn btn-main" href="tel:+33252569246" aria-label="Appeler Beer Kong au 02 52 56 92 46">
+      <a class="btn btn-main" href="tel:+33252569246" aria-label="Appeler Beer Kong au 02 52 56 92 46">
         <svg class="ico" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M6.6 10.8a15 15 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.25 11 11 0 0 0 3.5.56 1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.2.2 2.4.56 3.5a1 1 0 0 1-.25 1z"/></svg>
         Appeler</a>
       <a class="btn btn-alt" href="https://www.google.com/maps/dir/?api=1&amp;destination=La+Banquette+35290+Saint-Onen-la-Chapelle" target="_blank" rel="noopener">
         <svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 21s7-6.2 7-11.5A7 7 0 0 0 5 9.5C5 14.8 12 21 12 21z"/><circle cx="12" cy="9.5" r="2.5"/></svg>
         Itinéraire<span class="sr-only"> (s'ouvre dans un nouvel onglet)</span></a>
-      <a class="btn btn-red" href="#pack">Pack événement</a>
+      <a class="btn btn-red" href="#carte">La carte</a>
     </div>
+  </div>
+</section>
+
+<div class="ticker-wrap"><div class="ticker" aria-hidden="true">
+  <div class="ticker-track">
+    <span>Matchs sur 7 écrans<svg viewBox="0 0 24 24"><use href="#ic-star"/></svg>Concerts<svg viewBox="0 0 24 24"><use href="#ic-star"/></svg>Terrasse<svg viewBox="0 0 24 24"><use href="#ic-star"/></svg>Softs et sans alcool<svg viewBox="0 0 24 24"><use href="#ic-star"/></svg>Planches apéro<svg viewBox="0 0 24 24"><use href="#ic-star"/></svg>À emporter<svg viewBox="0 0 24 24"><use href="#ic-star"/></svg>Pack événement<svg viewBox="0 0 24 24"><use href="#ic-star"/></svg></span>
+    <span>Matchs sur 7 écrans<svg viewBox="0 0 24 24"><use href="#ic-star"/></svg>Concerts<svg viewBox="0 0 24 24"><use href="#ic-star"/></svg>Terrasse<svg viewBox="0 0 24 24"><use href="#ic-star"/></svg>Softs et sans alcool<svg viewBox="0 0 24 24"><use href="#ic-star"/></svg>Planches apéro<svg viewBox="0 0 24 24"><use href="#ic-star"/></svg>À emporter<svg viewBox="0 0 24 24"><use href="#ic-star"/></svg>Pack événement<svg viewBox="0 0 24 24"><use href="#ic-star"/></svg></span>
+  </div>
+</div></div>
+
+<!-- CHIFFRES (tous sourcés) -->
+<section class="facts" aria-label="Le Kong en quelques chiffres">
+  <div class="wrap">
+    <div class="facts-grid">
+      <div class="fact reveal" style="--i:0"><b data-count="7">7</b><span>écrans pour les matchs</span><small>6 à l'intérieur, 1 grand écran en extérieur</small></div>
+      <div class="fact reveal" style="--i:1"><b data-count="5">5</b><span>jours sur 7</span><small>du mardi au samedi (horaires à confirmer)</small></div>
+      <div class="fact reveal" style="--i:2"><b data-count="120">120</b><span>équipes au concours de palets</span><small>maximum, saison 5, le 19 septembre 2026</small></div>
+      <div class="fact reveal" style="--i:3"><b>4,7<em>/5</em></b><span>note Google</span><small>270 avis, que Google ne vérifie pas. Relevé le 6 nov. 2026</small></div>
+    </div>
+    <p class="src reveal">Sources : publications Instagram du bar, fiches Google Maps et PagesJaunes, relevées le 6 novembre 2026.</p>
   </div>
 </section>
 
 <!-- 2. CE SOIR AU KONG -->
 <section id="ce-soir" aria-labelledby="t-ce-soir">
   <div class="wrap">
+    <span class="num" aria-hidden="true">01</span>
     <p class="kicker reveal">Au programme</p>
     <h2 id="t-ce-soir" class="reveal">Ce soir au <em>Kong</em></h2>
-    <p class="lead reveal">Le prochain rendez-vous, en grand. Match sur écran, concert ou DJ : choisissez ce qui vous intéresse.</p>
-    <div class="ex-banner reveal" role="note"><span class="tag-ex">Exemple</span> EXEMPLE, à remplacer par le vrai programme</div>
+    <p class="lead reveal">Le prochain rendez-vous, en grand. Match sur écran, concert, DJ ou événement : choisissez ce qui vous intéresse.</p>
+    <div class="ex-banner reveal" role="note"><span class="tag-ex">Exemple</span> EXEMPLE, à remplacer par le vrai programme (aucun événement à venir n'est publié en ligne)</div>
     <div class="tabs reveal" role="tablist" aria-label="Type de soirée" id="tonightTabs"></div>
     <div class="tonight reveal" id="tonightPanel" role="tabpanel" tabindex="0" aria-live="polite"></div>
   </div>
@@ -463,12 +674,13 @@ footer ul{list-style:none;margin:0;padding:0}
 <!-- 3. PACK ÉVÉNEMENT CLÉ EN MAIN -->
 <section class="pack" id="pack" aria-labelledby="t-pack">
   <div class="wrap">
+    <span class="num" aria-hidden="true">02</span>
     <p class="kicker reveal">Leur offre pour vos événements</p>
     <h2 id="t-pack" class="reveal">Pack événement <em>clé en main</em></h2>
     <p class="pack-hook reveal">Vous profitez, <em>on s'occupe du reste !</em></p>
     <div class="pack-grid">
       <figure class="pack-fig reveal" id="packFig" data-fb="Affiche du pack événement">
-        <img src="img/pack-evenement.webp" width="640" height="640" loading="lazy" alt="Affiche Beer Kong du Pack événement clé en main : un fourgon aux couleurs du bar, une tonnelle avec tireuses installées, des gobelets personnalisés, une enceinte, des fûts de bière et des mange-debout.">
+        <img src="img/pack-evenement.webp" width="640" height="640" loading="lazy" decoding="async" alt="Affiche Beer Kong du Pack événement clé en main : un fourgon aux couleurs du bar, une tonnelle avec tireuses installées, des gobelets personnalisés, une enceinte, des fûts de bière et des mange-debout.">
         <figcaption>Leur affiche, publiée sur leur Instagram.</figcaption>
       </figure>
       <div>
@@ -483,11 +695,21 @@ footer ul{list-style:none;margin:0;padding:0}
         </ul>
         <div class="acts reveal">
           <a class="btn btn-red" href="#privatisation" id="askPack">Demander le pack</a>
-          <a class="btn btn-alt" href="tel:+33252569246" aria-label="Appeler Beer Kong au 02 52 56 92 46">Appeler</a>
+          <a class="btn btn-alt" href="tel:+33252569246" aria-label="Appeler Beer Kong au 02 52 56 92 46">Appeler</a>
         </div>
         <p class="note reveal">D'après leur publication Instagram, contenu à confirmer avec le bar. Aucun prix n'est affiché : on en parle ensemble, sur demande.</p>
         <p class="evin reveal">L'abus d'alcool est dangereux pour la santé, à consommer avec modération.</p>
       </div>
+    </div>
+    <div class="tap reveal">
+      <h3>Location de <em>tireuse</em></h3>
+      <ul>
+        <li>Pour un anniversaire, un mariage, un barbecue ou une fête d'entreprise : la tireuse se loue.</li>
+        <li>Location de la tireuse : 20 € (tarif de leur publication, à confirmer avec le bar).</li>
+        <li>Retrait ou livraison (selon le secteur), avec des conseils personnalisés.</li>
+      </ul>
+      <p>Réservation en message privé ou par téléphone. D'après leur publication Instagram du 28 juin 2026, à confirmer avec le bar.</p>
+      <div class="acts"><a class="btn btn-main btn-sm" href="tel:+33645967070" aria-label="Appeler le mobile du bar au 06 45 96 70 70">06 45 96 70 70</a><a class="btn btn-alt btn-sm" href="#privatisation" id="askTap">Préparer un message</a></div>
     </div>
   </div>
 </section>
@@ -495,30 +717,156 @@ footer ul{list-style:none;margin:0;padding:0}
 <!-- 4. AGENDA -->
 <section id="agenda" aria-labelledby="t-agenda">
   <div class="wrap">
-    <p class="kicker reveal">Les prochaines dates</p>
+    <span class="num" aria-hidden="true">03</span>
+    <p class="kicker reveal">Les rendez-vous</p>
     <h2 id="t-agenda" class="reveal">Agenda</h2>
-    <div class="ex-banner reveal" role="note"><span class="tag-ex">Exemple</span> EXEMPLE : ces événements sont inventés pour la maquette. Le vrai agenda sera mis à jour par le bar.</div>
+    <div class="ex-banner reveal" role="note"><span class="tag-ex">Exemple</span> Les rendez-vous « à venir » sont inventés pour la maquette. Ceux « déjà passés » sont réels, relevés sur l'Instagram du bar.</div>
     <div class="filters reveal" role="group" aria-label="Filtrer l'agenda par type" id="filters"></div>
     <p class="count" id="evCount" role="status"></p>
-    <div class="grid-ev" id="evGrid"></div>
+    <h3 class="grp" id="grpNext">À venir <span class="tag-ex">Exemples</span></h3>
+    <div class="grid-ev" id="evNext"></div>
+    <h3 class="grp" id="grpPast">Déjà passé <span class="tag-real">Vrais rendez-vous</span></h3>
+    <div class="grid-ev" id="evPast"></div>
+    <p class="src reveal">Sources : publications et affiches Instagram @beerkong35 (mai à octobre 2026). Le bar n'a publié aucun rendez-vous à venir au 6 novembre 2026.</p>
   </div>
 </section>
 
-<!-- 5. LES BIÈRES -->
-<section id="bieres" aria-labelledby="t-bieres">
+<!-- 5. LA CARTE -->
+<section class="carte" id="carte" aria-labelledby="t-carte">
   <div class="wrap">
-    <p class="kicker reveal">À la carte</p>
-    <h2 id="t-bieres" class="reveal">Les <em>bières</em></h2>
-    <p class="lead reveal">Des styles pour tous les goûts. Touchez une carte pour la retourner et lire la description.</p>
-    <div class="ex-banner reveal" role="note"><span class="tag-ex">Exemple</span> EXEMPLE : la vraie carte sera mise à jour avec le bar. Styles génériques, sans marques, sans prix.</div>
-    <div class="beers reveal" id="beers"></div>
-    <p class="evin reveal">L'abus d'alcool est dangereux pour la santé, à consommer avec modération.</p>
+    <span class="num" aria-hidden="true">04</span>
+    <p class="kicker reveal">Au comptoir</p>
+    <h2 id="t-carte" class="reveal">La <em>carte</em></h2>
+    <p class="lead reveal">Des bières, des vins, des softs et des planches à partager. Touchez une carte pour la retourner et lire la description.</p>
+    <div class="ex-banner reveal" role="note"><span class="tag-ex">Exemple</span> EXEMPLE : le bar n'a pas publié sa carte. Les types de boissons et de planches sont réels, mais les noms, goûts et compositions sont inventés. Aucun prix, aucune marque.</div>
+    <nav class="carte-nav reveal" aria-label="Aller à une partie de la carte">
+      <a href="#c-bieres">Bières</a>
+      <a href="#c-vins">Vins</a>
+      <a href="#c-softs" class="hot">Softs et sans alcool</a>
+      <a href="#c-planches" class="hot">Planches apéro</a>
+    </nav>
+
+    <div class="cblock" id="c-bieres">
+      <h3 class="reveal">Bières</h3>
+      <p class="sub reveal">À la pression, une rangée de tireuses au comptoir. Styles génériques, pour donner l'idée.</p>
+      <div class="beers reveal" id="beers"></div>
+    </div>
+
+    <div class="cblock" id="c-vins">
+      <h3 class="reveal">Vins</h3>
+      <p class="sub reveal">Une ligne de vins en complément des bières.</p>
+      <div class="beers wines reveal" id="wines"></div>
+    </div>
+
+    <div class="feature" id="c-softs">
+      <div class="softs">
+        <div class="softs-grid">
+          <div>
+            <span class="stick reveal">À la carte aussi</span>
+            <h3 class="reveal">Softs <em>&amp; sans alcool</em></h3>
+            <p class="hand reveal">Pour tout le monde, à toute heure.</p>
+            <p class="txt reveal">Le Kong vend aussi des boissons sans alcool : de quoi suivre le match, passer la soirée ou prendre le volant l'esprit tranquille. Voici une liste d'exemple.</p>
+          </div>
+          <div class="softs-art reveal" aria-hidden="true">
+            <svg viewBox="0 0 330 290" focusable="false">
+              <ellipse cx="165" cy="268" rx="150" ry="14" fill="rgba(26,18,16,.16)"/>
+              <!-- verre avec paille et rondelle -->
+              <path d="M30 88h92l-12 164a10 10 0 0 1-10 9H52a10 10 0 0 1-10-9z" fill="#E8742A" stroke="#1a1210" stroke-width="5" stroke-linejoin="round"/>
+              <path d="M36 96h80l-3 40H39z" fill="#F0C27A" opacity=".9"/>
+              <rect x="52" y="150" width="22" height="22" rx="4" fill="#fff" opacity=".55" transform="rotate(-12 63 161)"/>
+              <rect x="82" y="182" width="20" height="20" rx="4" fill="#fff" opacity=".5" transform="rotate(14 92 192)"/>
+              <path d="M92 20 80 150" stroke="#BE3822" stroke-width="9" stroke-linecap="round"/>
+              <path d="M92 20 98 10" stroke="#BE3822" stroke-width="9" stroke-linecap="round"/>
+              <circle cx="40" cy="88" r="23" fill="#C4802C" stroke="#1a1210" stroke-width="5"/>
+              <path d="M40 66v44M18 88h44M24 72l32 32M56 72 24 104" stroke="#fff8ee" stroke-width="2.500"/>
+              <!-- bouteille capsule -->
+              <path d="M178 38h26v38c0 18 22 26 22 56v118a12 12 0 0 1-12 12h-46a12 12 0 0 1-12-12V132c0-30 22-38 22-56z" fill="#BE3822" stroke="#1a1210" stroke-width="5" stroke-linejoin="round"/>
+              <rect x="150" y="150" width="82" height="70" rx="4" fill="#E7E2DC" stroke="#1a1210" stroke-width="4"/>
+              <text x="191" y="192" text-anchor="middle" font-family="Anton,Impact,sans-serif" font-size="25" fill="#1a1210" textLength="68" lengthAdjust="spacingAndGlyphs">LIMONADE</text>
+              <text x="191" y="210" text-anchor="middle" font-family="Barlow Condensed,Arial Narrow,sans-serif" font-weight="700" font-size="13" fill="#A22E1A" textLength="68" lengthAdjust="spacingAndGlyphs">SANS ALCOOL</text>
+              <path d="M174 22h34v18h-34z" fill="#C4802C" stroke="#1a1210" stroke-width="5" stroke-linejoin="round"/>
+              <path d="M178 30h26" stroke="#1a1210" stroke-width="3" stroke-dasharray="3 3"/>
+              <!-- canette -->
+              <path d="M252 118h58v136a10 10 0 0 1-10 10h-38a10 10 0 0 1-10-10z" fill="#1a1210" stroke="#1a1210" stroke-width="5" stroke-linejoin="round"/>
+              <path d="M252 150h58v44h-58z" fill="#C8560C"/>
+              <path d="M252 118h58v14h-58z" fill="#c4c8cc" stroke="#1a1210" stroke-width="4"/>
+              <circle cx="281" cy="172" r="12" fill="#E7E2DC"/>
+              <path d="M281 160v24M269 172h24" stroke="#BE3822" stroke-width="4"/>
+            </svg>
+            <span class="bub" style="--x:22%;--s:12px;--d:5.2s;--dl:0s"></span>
+            <span class="bub" style="--x:44%;--s:8px;--d:4.4s;--dl:1.2s"></span>
+            <span class="bub" style="--x:62%;--s:14px;--d:6s;--dl:.6s"></span>
+            <span class="bub" style="--x:78%;--s:9px;--d:4.8s;--dl:2.1s"></span>
+            <span class="bub" style="--x:34%;--s:10px;--d:5.6s;--dl:2.8s"></span>
+          </div>
+          <ul class="soft-tiles">
+            <li class="reveal" style="--i:0"><svg viewBox="0 0 32 32" aria-hidden="true"><use href="#ic-glass"/></svg><b>Limonade</b><span class="d">Pétillante, citronnée, bien fraîche.</span><span class="tag-ex">Exemple</span></li>
+            <li class="reveal" style="--i:1"><svg viewBox="0 0 32 32" aria-hidden="true"><use href="#ic-can"/></svg><b>Soda cola</b><span class="d">Le classique, avec des glaçons.</span><span class="tag-ex">Exemple</span></li>
+            <li class="reveal" style="--i:2"><svg viewBox="0 0 32 32" aria-hidden="true"><use href="#ic-lemon"/></svg><b>Jus de fruits</b><span class="d">Orange, pomme, ananas…</span><span class="tag-ex">Exemple</span></li>
+            <li class="reveal" style="--i:3"><svg viewBox="0 0 32 32" aria-hidden="true"><use href="#ic-drop"/></svg><b>Eau</b><span class="d">Plate ou pétillante.</span><span class="tag-ex">Exemple</span></li>
+            <li class="reveal" style="--i:4"><svg viewBox="0 0 32 32" aria-hidden="true"><use href="#ic-tall"/></svg><b>Sirop à l'eau</b><span class="d">Menthe, grenadine, citron…</span><span class="tag-ex">Exemple</span></li>
+            <li class="reveal" style="--i:5"><svg viewBox="0 0 32 32" aria-hidden="true"><use href="#ic-glass"/></svg><b>Thé glacé</b><span class="d">Pêche ou citron.</span><span class="tag-ex">Exemple</span></li>
+            <li class="reveal" style="--i:6"><svg viewBox="0 0 32 32" aria-hidden="true"><use href="#ic-bottle"/></svg><b>Bière sans alcool</b><span class="d">Le goût de la bière, sans l'alcool.</span><span class="tag-ex">Exemple</span></li>
+            <li class="reveal" style="--i:7"><svg viewBox="0 0 32 32" aria-hidden="true"><use href="#ic-cup"/></svg><b>Boissons chaudes</b><span class="d">Café, thé…</span><span class="tag-ex">Exemple</span></li>
+          </ul>
+          <p class="note-s reveal">Ce qui est vrai : le bar vend des boissons non alcoolisées (objet social déclaré, <a href="https://www.annonces-legales.fr/consultation/bretagne/ille-et-vilaine-35/beer-kong-449734" target="_blank" rel="noopener">annonce légale de 2021<span class="sr-only"> (s'ouvre dans un nouvel onglet)</span></a>). La liste exacte, les marques et les prix sont à renseigner avec le bar.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="feature" id="c-planches">
+      <div class="planches">
+        <div class="planches-grid">
+          <div>
+            <span class="stick reveal">À partager</span>
+            <h3 class="reveal">Planches <em>apéro</em></h3>
+            <p class="hand reveal">À poser au milieu de la table.</p>
+            <p class="txt reveal">Le bar annonce des planches apéritives à déguster sur place. Voici des exemples de planches, pour imaginer la carte.</p>
+            <ul class="plank">
+              <li class="reveal" style="--i:0"><b>Planche charcuterie</b><span class="tag-ex">Exemple</span><span class="d">Jambon sec, saucisson, rillettes, cornichons et pain.</span></li>
+              <li class="reveal" style="--i:1"><b>Planche fromages</b><span class="tag-ex">Exemple</span><span class="d">Une sélection de fromages, fruits secs et pain.</span></li>
+              <li class="reveal" style="--i:2"><b>Planche mixte</b><span class="tag-ex">Exemple</span><span class="d">Charcuterie et fromages, pour tout goûter.</span></li>
+              <li class="reveal" style="--i:3"><b>Planche végétale</b><span class="tag-ex">Exemple</span><span class="d">Légumes croquants, houmous et pain grillé.</span></li>
+            </ul>
+            <p class="src reveal">Vrai : « Dégustation planches apéritives sur place » (<a href="https://www.destination-broceliande.com/offres/beer-kong-saint-onen-la-chapelle-fr-3494035" target="_blank" rel="noopener">fiche Destination Brocéliande<span class="sr-only"> (s'ouvre dans un nouvel onglet)</span></a>). La composition, les tailles et les prix sont à renseigner avec le bar.</p>
+          </div>
+          <div class="board-art reveal" aria-hidden="true">
+            <svg viewBox="0 0 380 300" focusable="false">
+              <rect x="14" y="40" width="352" height="226" rx="30" fill="#6b3f20" stroke="#2a160a" stroke-width="5"/>
+              <rect x="22" y="48" width="336" height="210" rx="24" fill="#8a5630"/>
+              <path d="M40 80c60-8 120 6 180-2s90 6 118 0M36 150c70 8 130-6 190 2s80-4 112 2M42 218c70-6 120 6 180-2s80 4 116-2" stroke="#6b3f20" stroke-width="3" fill="none" opacity=".55" stroke-linecap="round"/>
+              <circle cx="342" cy="66" r="7" fill="#2a160a"/>
+              <!-- saucisson -->
+              <g stroke="#5a170f" stroke-width="3"><circle cx="70" cy="92" r="21" fill="#A8352A"/><circle cx="104" cy="104" r="21" fill="#B63D2F"/><circle cx="76" cy="130" r="21" fill="#A8352A"/><circle cx="112" cy="140" r="21" fill="#B63D2F"/></g>
+              <g fill="#F0D9C8" opacity=".85"><circle cx="64" cy="88" r="3"/><circle cx="76" cy="98" r="2.500"/><circle cx="98" cy="100" r="3"/><circle cx="110" cy="110" r="2.500"/><circle cx="70" cy="126" r="3"/><circle cx="82" cy="134" r="2.500"/><circle cx="106" cy="136" r="3"/><circle cx="118" cy="146" r="2.500"/></g>
+              <!-- fromage rond et part -->
+              <circle cx="210" cy="108" r="38" fill="#F2E6BC" stroke="#9a7a30" stroke-width="3.500"/>
+              <path d="M210 108 248 94A38 38 0 0 1 248 122z" fill="#E8D48E" stroke="#9a7a30" stroke-width="3.500" stroke-linejoin="round"/>
+              <path d="M290 78l56 26-56 26z" fill="#E8B94A" stroke="#8a6410" stroke-width="3.500" stroke-linejoin="round"/>
+              <g fill="#C4902A"><circle cx="306" cy="104" r="4.500"/><circle cx="322" cy="100" r="3.500"/><circle cx="312" cy="114" r="3"/></g>
+              <!-- pain -->
+              <g stroke="#8a5a20" stroke-width="3"><ellipse cx="86" cy="206" rx="34" ry="22" fill="#E2B672" transform="rotate(-14 86 206)"/><ellipse cx="144" cy="214" rx="34" ry="22" fill="#D8A460" transform="rotate(8 144 214)"/><ellipse cx="200" cy="198" rx="34" ry="22" fill="#E2B672" transform="rotate(-6 200 198)"/></g>
+              <path d="M70 202c10-6 20-6 28 0M130 212c10-6 20-6 28 0M184 196c10-6 20-6 28 0" stroke="#B98642" stroke-width="3" fill="none" stroke-linecap="round"/>
+              <!-- raisins, olives, cornichons -->
+              <g fill="#5a2a4a" stroke="#2a0f22" stroke-width="2.500"><circle cx="262" cy="170" r="11"/><circle cx="282" cy="168" r="11"/><circle cx="272" cy="188" r="11"/><circle cx="252" cy="190" r="11"/><circle cx="292" cy="190" r="11"/><circle cx="272" cy="208" r="11"/></g>
+              <path d="M270 160c0-10 6-16 14-16" stroke="#4a6a2a" stroke-width="4" fill="none" stroke-linecap="round"/>
+              <g stroke="#2a3a12" stroke-width="2.500"><ellipse cx="320" cy="170" rx="12" ry="10" fill="#5a6e2a"/><ellipse cx="338" cy="190" rx="12" ry="10" fill="#4a5e22"/><ellipse cx="318" cy="208" rx="12" ry="10" fill="#5a6e2a"/></g>
+              <g fill="#BE3822"><circle cx="320" cy="170" r="4"/><circle cx="338" cy="190" r="4"/><circle cx="318" cy="208" r="4"/></g>
+              <g stroke="#2a3a12" stroke-width="2.500"><rect x="228" y="224" width="62" height="16" rx="8" fill="#6a8a30"/><rect x="238" y="244" width="54" height="14" rx="7" fill="#5a7a28"/></g>
+            </svg>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <p class="evin reveal" style="margin-top:44px">L'abus d'alcool est dangereux pour la santé, à consommer avec modération.</p>
   </div>
 </section>
 
 <!-- 6. FLÉCHETTES -->
-<section id="flechettes" aria-labelledby="t-fle">
+<section class="flech" id="flechettes" aria-labelledby="t-fle">
   <div class="wrap">
+    <span class="num" aria-hidden="true">05</span>
     <p class="kicker reveal">Un petit jeu</p>
     <h2 id="t-fle" class="reveal">Fléchettes</h2>
     <p class="lead reveal">Un petit jeu pour patienter, juste pour le plaisir. Trois fléchettes par manche : touchez l'écran (ou le bouton Lancer) quand le viseur passe sur la cible. Des points pour rire, rien d'autre : pas de lot, pas de gain.</p>
@@ -571,6 +919,7 @@ footer ul{list-style:none;margin:0;padding:0}
 <!-- 7. PRIVATISER -->
 <section id="privatisation" aria-labelledby="t-priv">
   <div class="wrap">
+    <span class="num" aria-hidden="true">06</span>
     <p class="kicker reveal">Entre vous</p>
     <h2 id="t-priv" class="reveal">Privatiser le <em>Kong</em></h2>
     <div class="priv">
@@ -583,7 +932,7 @@ footer ul{list-style:none;margin:0;padding:0}
           <h3>On en parle ?</h3>
           <p>Le plus simple reste d'appeler. Le formulaire prépare juste un message, à envoyer vous-même.</p>
           <div class="acts">
-            <a class="btn btn-main" href="tel:+33252569246" aria-label="Appeler Beer Kong au 02 52 56 92 46">Appeler</a>
+            <a class="btn btn-main" href="tel:+33252569246" aria-label="Appeler Beer Kong au 02 52 56 92 46">Appeler</a>
           </div>
         </div>
       </div>
@@ -603,6 +952,7 @@ footer ul{list-style:none;margin:0;padding:0}
               <option value="asso">Association ou club</option>
               <option value="entreprise">Soirée d'entreprise</option>
               <option value="pack">Pack événement clé en main</option>
+              <option value="tireuse">Location de tireuse</option>
               <option value="autre">Autre</option>
             </select>
           </div>
@@ -627,7 +977,7 @@ footer ul{list-style:none;margin:0;padding:0}
           <a class="btn btn-main" id="lnkSms" href="sms:?&amp;body=">SMS</a>
           <a class="btn btn-main" id="lnkMail" href="mailto:?subject=&amp;body=">Mail</a>
           <a class="btn btn-alt" id="lnkInsta" href="https://www.instagram.com/beerkong35/" target="_blank" rel="noopener">Message Instagram<span class="sr-only"> (copie le message, puis ouvre le profil dans un nouvel onglet)</span></a>
-          <a class="btn btn-alt" id="lnkCall" href="tel:+33252569246" aria-label="Appeler Beer Kong au 02 52 56 92 46">Appeler</a>
+          <a class="btn btn-alt" id="lnkCall" href="tel:+33252569246" aria-label="Appeler Beer Kong au 02 52 56 92 46">Appeler</a>
         </div>
         <p class="status" id="formStatus" role="status" aria-live="polite"></p>
         <p class="note" id="contactNote"></p>
@@ -638,13 +988,14 @@ footer ul{list-style:none;margin:0;padding:0}
 </section>
 
 <!-- 8. INFOS ET ACCÈS -->
-<section id="infos" aria-labelledby="t-infos">
+<section class="infos-sec" id="infos" aria-labelledby="t-infos">
   <div class="wrap">
+    <span class="num" aria-hidden="true">07</span>
     <p class="kicker reveal">Nous trouver</p>
     <h2 id="t-infos" class="reveal">Infos et <em>accès</em></h2>
     <div class="infos">
       <figure class="card photo-card reveal" style="--i:0">
-        <div class="ph" id="barPh" data-fb="Le comptoir du Beer Kong"><img src="img/bar-comptoir.webp" width="540" height="640" loading="lazy" alt="Le comptoir du Beer Kong : les deux gérants derrière la rangée de tireuses, sous une lampe orange, devant les étagères de bouteilles."></div>
+        <div class="ph" id="barPh" data-fb="Le comptoir du Beer Kong"><img src="img/bar-comptoir.webp" width="540" height="640" loading="lazy" decoding="async" alt="Le comptoir du Beer Kong : les deux gérants derrière la rangée de tireuses, sous une lampe orange, devant les étagères de bouteilles."></div>
         <figcaption>Le comptoir, photo issue de leur Instagram.</figcaption>
       </figure>
       <div class="card reveal" style="--i:1">
@@ -652,22 +1003,38 @@ footer ul{list-style:none;margin:0;padding:0}
         <address>Beer Kong<br>La Banquette<br>35290 Saint-Onen-la-Chapelle</address>
         <div class="acts"><a class="btn btn-alt" href="https://www.google.com/maps/dir/?api=1&amp;destination=La+Banquette+35290+Saint-Onen-la-Chapelle" target="_blank" rel="noopener">Itinéraire<span class="sr-only"> (s'ouvre dans un nouvel onglet)</span></a></div>
         <h3 style="margin-top:22px">Contact</h3>
-        <p><a class="tlink" href="tel:+33252569246" style="font-size:1.5rem;font-weight:600;text-decoration:none;color:var(--tx)">02 52 56 92 46</a></p>
-        <p>Instagram : <a class="tlink" href="https://www.instagram.com/beerkong35/" target="_blank" rel="noopener">@beerkong35<span class="sr-only"> (s'ouvre dans un nouvel onglet)</span></a></p>
-        <div class="acts"><a class="btn btn-main" href="tel:+33252569246" aria-label="Appeler Beer Kong au 02 52 56 92 46">Appeler</a></div>
+        <ul class="contact-list">
+          <li><a class="tlink big" href="tel:+33252569246">02 52 56 92 46</a></li>
+          <li>Mobile : <a class="tlink" href="tel:+33645967070">06 45 96 70 70</a></li>
+          <li>Mail : <a class="tlink" href="mailto:beerkong35@gmail.com">beerkong35@gmail.com</a></li>
+          <li>Instagram : <a class="tlink" href="https://www.instagram.com/beerkong35/" target="_blank" rel="noopener">@beerkong35<span class="sr-only"> (s'ouvre dans un nouvel onglet)</span></a></li>
+        </ul>
+        <div class="acts"><a class="btn btn-main" href="tel:+33252569246" aria-label="Appeler Beer Kong au 02 52 56 92 46">Appeler</a></div>
       </div>
       <div class="card reveal" style="--i:2">
         <h3>Horaires</h3>
-        <p class="hours-sum">Ouvert du mardi au jeudi dès 17 h et le samedi dès 11 h. Vendredi, lundi et dimanche : à confirmer.</p>
-        <table class="hours">
+        <p class="hours-sum">Ouvert du mardi au samedi, dès 11 h. Fermé le dimanche et le lundi.</p>
+        <table class="hours" id="hoursTbl">
           <caption class="sr-only">Horaires d'ouverture (à confirmer)</caption>
           <tbody>
-            <tr><th scope="row">Mardi au jeudi</th><td>Dès 17 h</td></tr>
-            <tr><th scope="row">Samedi</th><td>Dès 11 h</td></tr>
-            <tr><th scope="row">Vendredi, dimanche, lundi</th><td>À confirmer</td></tr>
+            <tr data-d="2"><th scope="row">Mardi</th><td>11 h – 21 h</td></tr>
+            <tr data-d="3"><th scope="row">Mercredi</th><td>11 h – 21 h</td></tr>
+            <tr data-d="4"><th scope="row">Jeudi</th><td>11 h – 23 h</td></tr>
+            <tr data-d="5"><th scope="row">Vendredi</th><td>11 h – 0 h 30</td></tr>
+            <tr data-d="6"><th scope="row">Samedi</th><td>11 h – 0 h 30</td></tr>
+            <tr data-d="0"><th scope="row">Dimanche</th><td class="closed">Fermé</td></tr>
+            <tr data-d="1"><th scope="row">Lundi</th><td class="closed">Fermé</td></tr>
           </tbody>
         </table>
         <span class="badge-tbc">Horaires à confirmer</span>
+        <p class="src">Relevés sur Google Maps et PagesJaunes le 6 novembre 2026. Le mardi diffère selon la source (21 h ou 23 h). Les jours fériés et les horaires exceptionnels sont annoncés sur Instagram.</p>
+      </div>
+      <div class="card card-wide reveal" style="--i:3;grid-column:1/-1">
+        <h3>Au Kong</h3>
+        <ul class="svc">
+          <li>Terrasse</li><li>Service après 22 h</li><li>Matchs sur 7 écrans</li><li>Concerts</li><li>Bière à emporter</li><li>Planches apéritives</li><li>Softs et sans alcool</li><li>Location de tireuse</li><li>Pack événement</li>
+        </ul>
+        <p class="src">Sources : fiches Destination Brocéliande et Ille-et-Vilaine Tourisme, publications Instagram du bar. Détail dans infos-verifiees.md.</p>
       </div>
     </div>
     <p class="evin reveal">L'abus d'alcool est dangereux pour la santé, à consommer avec modération.</p>
@@ -682,52 +1049,54 @@ footer ul{list-style:none;margin:0;padding:0}
     <div class="foot-grid">
       <div>
         <h3>Maquette</h3>
-        <p>Maquette de présentation réalisée par Rem Studio, non publiée, contenu d'exemple. Logo, photo et affiche : © Beer Kong (publications Instagram), accord des gérants à confirmer avant toute publication.</p>
+        <p>Maquette de présentation réalisée par Rem Studio, non publiée. Les éléments marqués « Exemple » sont inventés. Logo, photo et affiche : © Beer Kong (publications Instagram), accord des gérants à confirmer avant toute publication.</p>
       </div>
       <div>
         <h3>Mentions légales</h3>
         <ul>
+          <li>Société : BEER KONG, SARL, SIREN 907 683 551, RCS Rennes (source Pappers)</li>
           <li>Éditeur du site : <span class="todo">à compléter</span></li>
           <li>Hébergeur : <span class="todo">à compléter</span></li>
-          <li>Identifiant d'entreprise : <span class="todo">à compléter</span></li>
           <li>Données personnelles : <span class="todo">à compléter</span></li>
         </ul>
       </div>
       <div>
         <h3>Beer Kong</h3>
-        <p>La Banquette, 35290 Saint-Onen-la-Chapelle<br><a class="tlink" href="tel:+33252569246">02 52 56 92 46</a><br><a class="tlink" href="https://www.instagram.com/beerkong35/" target="_blank" rel="noopener">Instagram @beerkong35<span class="sr-only"> (s'ouvre dans un nouvel onglet)</span></a></p>
+        <p>La Banquette, 35290 Saint-Onen-la-Chapelle<br><a class="tlink" href="tel:+33252569246">02 52 56 92 46</a><br><a class="tlink" href="https://www.instagram.com/beerkong35/" target="_blank" rel="noopener">Instagram @beerkong35<span class="sr-only"> (s'ouvre dans un nouvel onglet)</span></a></p>
       </div>
     </div>
+    <p class="wordmark" aria-hidden="true">Beer Kong</p>
   </div>
 </footer>
 
-<div class="actionbar" role="group" aria-label="Actions rapides">
-  <a class="btn btn-main" href="tel:+33252569246" aria-label="Appeler Beer Kong au 02 52 56 92 46">
+<nav class="actionbar" aria-label="Actions rapides">
+  <a class="btn btn-main" href="tel:+33252569246" aria-label="Appeler Beer Kong au 02 52 56 92 46">
     <svg class="ico" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M6.6 10.8a15 15 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.25 11 11 0 0 0 3.5.56 1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.2.2 2.4.56 3.5a1 1 0 0 1-.25 1z"/></svg>
     Appeler</a>
   <a class="btn btn-alt" href="https://www.google.com/maps/dir/?api=1&amp;destination=La+Banquette+35290+Saint-Onen-la-Chapelle" target="_blank" rel="noopener">
     <svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 21s7-6.2 7-11.5A7 7 0 0 0 5 9.5C5 14.8 12 21 12 21z"/><circle cx="12" cy="9.5" r="2.5"/></svg>
     Itinéraire<span class="sr-only"> (s'ouvre dans un nouvel onglet)</span></a>
-</div>
+</nav>
 
-<noscript><p style="position:fixed;bottom:80px;left:12px;right:12px;background:#C4802C;color:#150a00;padding:10px;border-radius:10px;z-index:99">JavaScript est désactivé : l'agenda, la carte des bières, la 3D, le jeu et le formulaire ne s'affichent pas. Appelez le 02 52 56 92 46 pour toute information.</p></noscript>
+<noscript><p style="position:fixed;bottom:80px;left:12px;right:12px;background:#C4802C;color:#150a00;padding:10px;border-radius:10px;z-index:99">JavaScript est désactivé : l'agenda, la carte des bières, la 3D, le jeu et le formulaire ne s'affichent pas. Appelez le 02 52 56 92 46 pour toute information.</p></noscript>
 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js" crossorigin="anonymous" defer></script>
-<script defer>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js" integrity="sha512-dLxUelApnYxpLt6K2iomGngnHO83iUvZytA3YjDUCjT0HDOHKXnVYdf3hU4JjM8uEhxf9nD1/ey98U3t2vZ0qQ==" crossorigin="anonymous" referrerpolicy="no-referrer" defer></script>
+<script>
 (function(){
 'use strict';
 
 /* =====================================================================
-   CONTACT : à renseigner avec le mobile et le mail du bar.
-   ATTENTION : ces valeurs ne sont PAS vérifiées, elles sont vides exprès.
+   CONTACT : mobile et mail du bar (trouvés sur 2 à 3 sources publiques :
+   Instagram du 28/06/2026, Destination Brocéliande, Ille-et-Vilaine Tourisme).
    Le 02 52 56 92 46 est un numéro FIXE : il ne reçoit pas les SMS, on ne
    le met donc pas ici.
-   - sms   : numéro de MOBILE au format international, ex. '+336xxxxxxxx'
+   - sms   : numéro de MOBILE au format international
    - email : adresse mail du bar
    Si ces champs sont vides, les liens SMS et mail s'ouvrent sans
    destinataire : la personne choisit elle-même dans sa messagerie.
+   À confirmer avec le bar avant toute mise en ligne.
    ===================================================================== */
-var CONTACT = { sms: '+33645967070' /* numéro à confirmer avec le bar */, email: 'beerkong35@gmail.com' /* vu sur leur affiche Pack événement, à confirmer */ };
+var CONTACT = { sms: '+33645967070', email: 'beerkong35@gmail.com' };
 
 var $=function(s,r){return (r||document).querySelector(s)};
 var $$=function(s,r){return Array.prototype.slice.call((r||document).querySelectorAll(s))};
@@ -789,30 +1158,56 @@ if('IntersectionObserver' in window){
    EVENTS : LE PROGRAMME (À MODIFIER PAR LES GÉRANTS OU PAR AZAA)
    Chaque ligne = un événement. Pour changer le programme, modifiez ce
    tableau (ou, plus tard, remplissez-le depuis un Google Sheet publié).
-   - type    : 'match', 'concert' ou 'dj'
+   - type    : 'match', 'concert', 'dj' ou 'event'
    - title   : titre affiché en grand
-   - day     : jour (mardi à samedi, le bar est fermé lundi et dimanche)
+   - day     : jour (exemples : « Vendredi » ; événements passés : date complète)
    - time    : heure
    - text    : petite description
-   - example : true = affiche l'étiquette EXEMPLE. METTRE false (ou
-               supprimer la ligne) pour les vrais événements.
-   Le premier événement de chaque type alimente « Ce soir au Kong ».
+   - example : true = étiquette EXEMPLE (événement inventé, à venir)
+   - past    : true = événement RÉEL déjà passé (relevé sur l'Instagram du bar),
+               avec d (jour du mois) et m (mois abrégé) pour le billet.
+   Le premier événement à venir de chaque type alimente « Ce soir au Kong ».
    Aucun service externe n'est appelé : tout est écrit ici.
    ===================================================================== */
 var EVENTS=[
-  {type:'match',  title:'Match de foot sur grand écran', day:'Vendredi', time:'21 h',   text:'Le match sur écran, entre amis. Le vrai programme sportif sera ajouté ici.', example:true},
-  {type:'concert',title:'Soirée concert',                day:'Samedi',   time:'21 h',   text:'Un groupe sur scène. Le nom du groupe et le style seront ajoutés ici.',       example:true},
-  {type:'dj',     title:'Soirée DJ',                     day:'Samedi',   time:'23 h',   text:'Un DJ aux platines pour finir la soirée. Le nom du DJ sera ajouté ici.',       example:true},
-  {type:'match',  title:'Match de rugby sur grand écran',day:'Mardi',    time:'20 h',   text:'Un autre match à suivre sur l\'écran du bar. Exemple de rendez-vous.',         example:true},
-  {type:'concert',title:'Concert en terrasse',           day:'Jeudi',    time:'20 h 30',text:'Un concert, si la météo s\'y prête. Exemple de rendez-vous.',                 example:true},
-  {type:'dj',     title:'Soirée DJ',                     day:'Vendredi', time:'22 h',   text:'Une soirée musique pour danser. Exemple de rendez-vous.',                     example:true}
+  /* À venir : EXEMPLES inventés (aucun événement à venir n'est publié en ligne au 6/11/2026) */
+  {type:'match',  title:'Match de foot sur grand écran', day:'Vendredi', time:'21 h',    text:'Le match sur écran, entre amis. Le vrai programme sportif sera ajouté ici.', example:true},
+  {type:'concert',title:'Soirée concert',                day:'Samedi',   time:'21 h',    text:'Un groupe sur scène. Le nom du groupe et le style seront ajoutés ici.',       example:true},
+  {type:'dj',     title:'Soirée DJ',                     day:'Samedi',   time:'23 h',    text:'Un DJ aux platines pour finir la soirée. Le nom du DJ sera ajouté ici.',       example:true},
+  {type:'event',  title:'Concours ou soirée à thème',    day:'Samedi',   time:'À annoncer', text:'Un concours, un tournoi ou une soirée à thème. Les dates seront annoncées par le bar.', example:true},
+  {type:'match',  title:'Match de rugby sur grand écran',day:'Mardi',    time:'20 h',    text:'Un autre match à suivre sur l\'écran du bar. Exemple de rendez-vous.',         example:true},
+  {type:'concert',title:'Concert en terrasse',           day:'Jeudi',    time:'20 h 30', text:'Un concert, si la météo s\'y prête. Exemple de rendez-vous.',                 example:true},
+  {type:'dj',     title:'Soirée DJ',                     day:'Vendredi', time:'22 h',    text:'Une soirée musique pour danser. Exemple de rendez-vous.',                     example:true},
+  /* Déjà passés : RÉELS (Instagram @beerkong35, publications et affiches, relevé du 6/11/2026) */
+  {type:'concert',title:'Hydromen, concert rock',          d:'30',m:'oct.',  day:'Vendredi 30 octobre 2026',   time:'21 h',       text:'Les grands classiques du rock en live. Entrée libre.', past:true},
+  {type:'event',  title:'Concours de palets, saison 5',    d:'19',m:'sept.', day:'Samedi 19 septembre 2026',   time:'Dès 11 h',   text:'120 équipes maximum, inscriptions sur place, tirage à 13 h 30, restauration sur place.', past:true},
+  {type:'match',  title:'France - Espagne, demi-finale',   d:'14',m:'juil.', day:'Mardi 14 juillet 2026',      time:'21 h',       text:'Coupe du monde : le match sur les 6 écrans intérieurs et le grand écran extérieur.', past:true},
+  {type:'match',  title:'France - Sénégal',                d:'16',m:'juin',  day:'Mardi 16 juin 2026',         time:'21 h',       text:'Le premier match de l\'équipe de France à la Coupe du monde, sur 7 écrans.', past:true},
+  {type:'event',  title:'Flash tattoo',                    d:'12',m:'juin',  day:'Vendredi 12 juin 2026',      time:'15 h à 23 h',text:'Tatouage sur place, au bar.', past:true},
+  {type:'match',  title:'Finale PSG - Arsenal',            d:'30',m:'mai',   day:'Samedi 30 mai 2026',         time:'18 h',       text:'La finale de la Ligue des champions, diffusée au bar.', past:true}
 ];
-var TYPES={match:'Matchs',concert:'Concerts',dj:'DJ'};
-var TYPE_LABEL={match:'Match',concert:'Concert',dj:'DJ'};
-var TYPE_COLOR={match:'#C4802C',concert:'#BE3822',dj:'#C8560C'};
+var TYPES={match:'Matchs',concert:'Concerts',dj:'DJ',event:'Événements'};
+var TYPE_LABEL={match:'Match',concert:'Concert',dj:'DJ',event:'Événement'};
 var CALL_SVG='<svg class="ico" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M6.6 10.8a15 15 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.25 11 11 0 0 0 3.5.56 1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.2.2 2.4.56 3.5a1 1 0 0 1-.25 1z"/></svg>';
 var MAPS='https://www.google.com/maps/dir/?api=1&destination=La+Banquette+35290+Saint-Onen-la-Chapelle';
 var INSTA='https://www.instagram.com/beerkong35/';
+
+/* Billet d'événement (même composant pour « Ce soir » et l'agenda) */
+function ticket(ev,big){
+  var t=el('article','ticket t-'+ev.type+(ev.past?' is-past':''));t.dataset.type=ev.type;
+  var stub=el('div','stub');
+  stub.appendChild(el('span','s1',ev.past?ev.m:'Exemple'));
+  stub.appendChild(el('span','s2',ev.past?ev.d:ev.day.slice(0,3)));
+  var body=el('div','tk-body'),row=el('div','row');
+  row.appendChild(el('span','type-pill t-'+ev.type,TYPE_LABEL[ev.type]));
+  row.appendChild(ev.past?el('span','tag-real','Déjà passé'):el('span','tag-ex','Exemple'));
+  body.appendChild(row);
+  body.appendChild(el(big?'h3':'h4',null,ev.title));
+  var wh=el('p','when',ev.day+' ');wh.appendChild(el('span','tm','· '+ev.time));body.appendChild(wh);
+  body.appendChild(el('p','desc',ev.text));
+  t.appendChild(stub);t.appendChild(body);
+  return t;
+}
 
 /* ===== Ce soir au Kong (onglets) ===== */
 var tabsBox=$('#tonightTabs'),panel=$('#tonightPanel');
@@ -833,25 +1228,20 @@ function selectTab(k,focus){
   Object.keys(tabEls).forEach(function(t){var on=t===k;tabEls[t].setAttribute('aria-selected',String(on));tabEls[t].tabIndex=on?0:-1;});
   if(focus)tabEls[k].focus();
   panel.setAttribute('aria-labelledby','tab-'+k);
-  var ev=EVENTS.filter(function(e){return e.type===k;})[0];
+  var ev=EVENTS.filter(function(e){return e.type===k&&!e.past;})[0];
   panel.textContent='';
   if(!ev){panel.appendChild(el('p','desc','Rien de prévu pour le moment. Appelez-nous pour en savoir plus.'));return;}
-  var meta=el('div','meta');
-  meta.appendChild(el('span','type-pill t-'+k,TYPE_LABEL[k]));
-  if(ev.example)meta.appendChild(el('span','tag-ex','Exemple'));
-  panel.appendChild(meta);
-  panel.appendChild(el('h3',null,ev.title));
-  panel.appendChild(el('p','when',ev.day+' · '+ev.time));
-  panel.appendChild(el('p','desc',ev.text));
+  var t=ticket(ev,true);
   var acts=el('div','acts');
   var call=el('a','btn btn-main');call.href='tel:+33252569246';call.setAttribute('aria-label','Appeler Beer Kong au 02 52 56 92 46');call.innerHTML=CALL_SVG;call.appendChild(document.createTextNode('Appeler'));
   var it=el('a','btn btn-alt','Itinéraire');it.href=MAPS;it.target='_blank';it.rel='noopener';
-  acts.appendChild(call);acts.appendChild(it);panel.appendChild(acts);
+  acts.appendChild(call);acts.appendChild(it);t.querySelector('.tk-body').appendChild(acts);
+  panel.appendChild(t);
 }
 selectTab('match',false);
 
 /* ===== Agenda (filtre) ===== */
-var fBox=$('#filters'),grid=$('#evGrid'),countEl=$('#evCount');
+var fBox=$('#filters'),gNext=$('#evNext'),gPast=$('#evPast'),hNext=$('#grpNext'),hPast=$('#grpPast'),countEl=$('#evCount');
 var current='all';
 var fList=[['all','Tous']].concat(Object.keys(TYPES).map(function(k){return [k,TYPES[k]];}));
 fList.forEach(function(f){
@@ -860,27 +1250,34 @@ fList.forEach(function(f){
   fBox.appendChild(b);
 });
 EVENTS.forEach(function(ev,i){
-  var c=el('article','ev reveal');c.style.setProperty('--i',String(i%3));c.dataset.type=ev.type;c.style.setProperty('--c',TYPE_COLOR[ev.type]);
-  var row=el('div','row');row.appendChild(el('span','type-pill t-'+ev.type,TYPE_LABEL[ev.type]));
-  if(ev.example)row.appendChild(el('span','tag-ex','Exemple'));
-  c.appendChild(row);c.appendChild(el('h3',null,ev.title));c.appendChild(el('p','when',ev.day+' · '+ev.time));c.appendChild(el('p',null,ev.text));
-  grid.appendChild(c);if(window.IntersectionObserver&&typeof io!=='undefined')io.observe(c);else c.classList.add('in');
+  var c=ticket(ev,false);c.classList.add('reveal');c.style.setProperty('--i',String(i%3));
+  (ev.past?gPast:gNext).appendChild(c);
+  if(window.IntersectionObserver&&typeof io!=='undefined')io.observe(c);else c.classList.add('in');
 });
 function applyFilter(){
-  var n=0;$$('.ev',grid).forEach(function(c){var show=current==='all'||c.dataset.type===current;c.hidden=!show;if(show)n++;});
-  countEl.textContent=n+(n>1?' événements d\'exemple affichés':' événement d\'exemple affiché');
+  var a=0,p=0;
+  $$('.ticket',gNext).forEach(function(c){var show=current==='all'||c.dataset.type===current;c.hidden=!show;if(show)a++;});
+  $$('.ticket',gPast).forEach(function(c){var show=current==='all'||c.dataset.type===current;c.hidden=!show;if(show)p++;});
+  hNext.hidden=gNext.hidden=a===0;hPast.hidden=gPast.hidden=p===0;
+  var n=a+p;
+  countEl.textContent=n===0?'Aucun rendez-vous de ce type.':n+(n>1?' rendez-vous affichés':' rendez-vous affiché')+' : '+a+' à venir (exemples), '+p+' déjà passé'+(p>1?'s':'')+'.';
 }
 applyFilter();
 
-/* ===== Les bières (cartes à retourner + inclinaison 3D) ===== */
+/* ===== La carte : cartes à retourner + inclinaison 3D ===== */
 var BEERS=[
   {n:'Blonde',c:'#E8C25A',d:'Légère en bouche, notes de céréales et de pain frais, amertume discrète.',k:'pint'},
   {n:'Ambrée',c:'#C9701C',d:'Caramel, noisette grillée, belle rondeur en bouche et finale douce.',k:'pint'},
   {n:'IPA',c:'#D9A441',d:'Houblonnée, parfums d\'agrumes et de fruits tropicaux, amertume franche.',k:'tulip'},
   {n:'Blanche',c:'#EFE3B8',d:'Trouble et fruitée, orange et coriandre, texture soyeuse.',k:'pint'},
   {n:'Brune',c:'#9A5A38',d:'Malt torréfié, notes de cacao et de café, longueur en bouche.',k:'pint'},
-  {n:'Bière du moment',c:'#BE3822',d:'Une bière qui change au fil des semaines. Style et goût à renseigner avec le bar.',k:'tulip'},
-  {n:'Vins',c:'#8E2A3A',d:'Une ligne de vins en complément. Sélection à renseigner avec le bar.',k:'wine'}
+  {n:'Bière du moment',c:'#BE3822',d:'Une bière qui change au fil des semaines. Style et goût à renseigner avec le bar.',k:'tulip'}
+];
+var WINES=[
+  {n:'Rouge',c:'#8E2A3A',d:'Fruits rouges, tanins souples. Sélection à renseigner avec le bar.',k:'wine'},
+  {n:'Blanc',c:'#E8D48E',d:'Frais et vif, notes d\'agrumes et de fleurs blanches. À renseigner avec le bar.',k:'wine'},
+  {n:'Rosé',c:'#E88A9A',d:'Léger et fruité, fraise et pamplemousse. À renseigner avec le bar.',k:'wine'},
+  {n:'Pétillant',c:'#F0E3B0',d:'De fines bulles, frais et gourmand. À renseigner avec le bar.',k:'wine'}
 ];
 function glass(kind,color){
   var liq,out,S='#E7E2DC';
@@ -896,7 +1293,6 @@ function glass(kind,color){
   }
   return '<svg viewBox="0 0 64 96" aria-hidden="true" focusable="false">'+liq+out+'</svg>';
 }
-var beersBox=$('#beers');
 function tiltCard(card,tilt){
   function set(e){
     if(RM)return;
@@ -915,23 +1311,70 @@ function tiltCard(card,tilt){
   card.addEventListener('pointercancel',reset);
   card.addEventListener('pointerup',function(e){if(e.pointerType!=='mouse')reset();});
 }
-BEERS.forEach(function(b){
-  var card=el('button','bcard');card.type='button';card.setAttribute('aria-pressed','false');
-  card.style.setProperty('--bc',b.c);
-  var label=function(f){return b.n+' (exemple). '+(f?'Goût : '+b.d+' Degré à renseigner. Toucher pour revenir.':'Toucher pour lire la description.');};
-  card.setAttribute('aria-label',label(false));
-  var tilt=el('span','btilt');
-  var inner=el('span','binner');
-  var front=el('span','bface front');front.innerHTML=glass(b.k,b.c);
-  front.appendChild(el('span','bname',b.n));front.appendChild(el('span','tag-ex','Exemple'));front.appendChild(el('span','bhint','Touchez pour retourner'));
-  var back=el('span','bface back');back.setAttribute('aria-hidden','true');
-  back.appendChild(el('span','bname',b.n));back.appendChild(el('span','btxt',b.d));back.appendChild(el('span','bdeg','Degré à renseigner'));back.appendChild(el('span','tag-ex','Exemple'));
-  inner.appendChild(front);inner.appendChild(back);tilt.appendChild(inner);card.appendChild(tilt);
-  card.addEventListener('click',function(){
-    var f=card.classList.toggle('flipped');card.setAttribute('aria-pressed',String(f));card.setAttribute('aria-label',label(f));
+function buildCards(box,list,degTxt){
+  list.forEach(function(b){
+    var card=el('button','bcard');card.type='button';card.setAttribute('aria-pressed','false');
+    card.style.setProperty('--bc',b.c);
+    var tilt=el('span','btilt');
+    var inner=el('span','binner');
+    var front=el('span','bface front');front.innerHTML=glass(b.k,b.c);
+    front.appendChild(el('span','bname',b.n));front.appendChild(el('span','tag-ex','Exemple'));front.appendChild(el('span','bhint','Touchez pour retourner'));
+    var back=el('span','bface back');back.setAttribute('aria-hidden','true');
+    back.appendChild(el('span','bname',b.n));back.appendChild(el('span','btxt',b.d));back.appendChild(el('span','bdeg',degTxt));back.appendChild(el('span','tag-ex','Exemple'));
+    inner.appendChild(front);inner.appendChild(back);tilt.appendChild(inner);card.appendChild(tilt);
+    card.addEventListener('click',function(){
+      var f=card.classList.toggle('flipped');card.setAttribute('aria-pressed',String(f));front.setAttribute('aria-hidden',String(f));back.setAttribute('aria-hidden',String(!f));
+    });
+    tiltCard(card,tilt);
+    box.appendChild(card);
   });
-  tiltCard(card,tilt);
-  beersBox.appendChild(card);
+}
+buildCards($('#beers'),BEERS,'Degré à renseigner.');
+buildCards($('#wines'),WINES,'Domaine et millésime à renseigner.');
+
+/* ===== Ouvert maintenant ? (horaires relevés le 6/11/2026, à confirmer) ===== */
+/* Jour 0 = dimanche. [ouverture, fermeture] en minutes ; au-delà de 1440 = après minuit. */
+var HOURS={0:null,1:null,2:[660,1260],3:[660,1260],4:[660,1380],5:[660,1470],6:[660,1470]};
+var DAYN=['dimanche','lundi','mardi','mercredi','jeudi','vendredi','samedi'];
+function parisNow(){
+  try{
+    var o={};new Intl.DateTimeFormat('en-US',{timeZone:'Europe/Paris',weekday:'short',hour:'2-digit',minute:'2-digit',hourCycle:'h23'}).formatToParts(new Date()).forEach(function(p){o[p.type]=p.value;});
+    return {d:{Sun:0,Mon:1,Tue:2,Wed:3,Thu:4,Fri:5,Sat:6}[o.weekday],m:(+o.hour%24)*60+(+o.minute)};
+  }catch(e){var n=new Date();return {d:n.getDay(),m:n.getHours()*60+n.getMinutes()};}
+}
+function hm(m){m=m%1440;var h=Math.floor(m/60),mi=m%60;return h+' h'+(mi?' '+(mi<10?'0':'')+mi:'');}
+function openState(now){
+  var prev=HOURS[(now.d+6)%7],h=HOURS[now.d],i,d;
+  if(prev&&prev[1]>1440&&now.m<prev[1]-1440)return {open:true,until:prev[1]-1440};
+  if(h&&now.m>=h[0]&&now.m<h[1])return {open:true,until:h[1]};
+  if(h&&now.m<h[0])return {open:false,when:'aujourd\'hui',at:h[0]};
+  for(i=1;i<=7;i++){d=(now.d+i)%7;if(HOURS[d])return {open:false,when:i===1?'demain':DAYN[d],at:HOURS[d][0]};}
+  return {open:false,when:'',at:0};
+}
+function showOpen(){
+  var now=parisNow(),st=openState(now),pill=$('#openNow'),txt=$('#openTxt');
+  if(!pill||!txt)return;
+  pill.classList.toggle('is-open',st.open);pill.classList.toggle('is-closed',!st.open);
+  txt.textContent=st.open?'Ouvert · jusqu\'à '+hm(st.until):'Fermé · ouvre '+st.when+' à '+hm(st.at);
+  if(!$('small',pill))pill.appendChild(el('small',null,'horaires à confirmer'));
+  $$('#hoursTbl tr').forEach(function(tr){tr.classList.toggle('today',+tr.dataset.d===now.d);});
+}
+showOpen();
+setInterval(showOpen,60000);
+if(DEBUG)window.__open={state:openState,now:parisNow};
+
+/* ===== Chiffres : compteur (désactivé si « réduire les animations ») ===== */
+$$('.fact b[data-count]').forEach(function(b){
+  var target=+b.dataset.count;
+  if(RM||!('IntersectionObserver' in window))return;
+  b.textContent='0';
+  var started=false;
+  new IntersectionObserver(function(es,ob){
+    if(!es[0].isIntersecting||started)return;
+    started=true;ob.disconnect();
+    var t0=performance.now();
+    (function step(t){var k=Math.min(1,(t-t0)/1100);b.textContent=String(Math.round(target*(1-Math.pow(1-k,3))));if(k<1)requestAnimationFrame(step);else b.textContent=String(target);})(t0);
+  },{threshold:.4}).observe(b);
 });
 
 /* ===== Ambiance sonore (WebAudio, aucun fichier, coupée par défaut) ===== */
@@ -1457,14 +1900,25 @@ function makeBoard3D(canvas,stage){
   var ring2=add(new THREE.TorusGeometry((R_PLATE+.12)*S,.02,8,96),new THREE.MeshBasicMaterial({color:0x6b4a2a}));ring2.position.z=-.05;bg.add(ring2);
   var wall=add(new THREE.PlaneGeometry(14,14),new THREE.MeshBasicMaterial({color:0x0c0807}));wall.position.z=-.22;scene.add(wall);
   // fléchette : pointe vers -z
-  function makeDart(){
-    var g=new THREE.Group();
-    function part(geo,col,z){var m=new THREE.MeshBasicMaterial({color:col,side:THREE.DoubleSide}),me=new THREE.Mesh(geo,m);me.position.z=z;disp.push(geo,m);g.add(me);return me;}
-    var tip=new THREE.ConeGeometry(.04,.3,8);tip.rotateX(-Math.PI/2);part(tip,0xe8e4dc,.15);
-    var bar=new THREE.CylinderGeometry(.06,.06,.36,10);bar.rotateX(Math.PI/2);part(bar,0xC4802C,.48);
-    var sh=new THREE.CylinderGeometry(.02,.02,.24,8);sh.rotateX(Math.PI/2);part(sh,0xE7E2DC,.78);
+  // Les pièces de la fléchette sont créées UNE seule fois et partagées par toutes les fléchettes :
+  // sans cela, chaque lancer créait de nouveaux tampons GPU qui n'étaient libérés qu'à la fermeture de la page.
+  var DA=null;
+  function dartAssets(){
+    if(DA)return DA;
+    var tip=new THREE.ConeGeometry(.04,.3,8);tip.rotateX(-Math.PI/2);
+    var bar=new THREE.CylinderGeometry(.06,.06,.36,10);bar.rotateX(Math.PI/2);
+    var sh=new THREE.CylinderGeometry(.02,.02,.24,8);sh.rotateX(Math.PI/2);
     var pl=new THREE.PlaneGeometry(.26,.22);pl.rotateY(Math.PI/2);
-    var f1=part(pl,0xBE3822,.98),f2=new THREE.Mesh(pl,f1.material);f2.position.z=.98;f2.rotation.z=Math.PI/2;g.add(f2);
+    var mk=function(c){return new THREE.MeshBasicMaterial({color:c,side:THREE.DoubleSide});};
+    DA={tip:tip,bar:bar,sh:sh,pl:pl,mTip:mk(0xe8e4dc),mBar:mk(0xC4802C),mSh:mk(0xE7E2DC),mFl:mk(0xBE3822)};
+    disp.push(tip,bar,sh,pl,DA.mTip,DA.mBar,DA.mSh,DA.mFl);
+    return DA;
+  }
+  function makeDart(){
+    var A=dartAssets(),g=new THREE.Group();
+    function part(geo,mat,z){var me=new THREE.Mesh(geo,mat);me.position.z=z;g.add(me);return me;}
+    part(A.tip,A.mTip,.15);part(A.bar,A.mBar,.48);part(A.sh,A.mSh,.78);
+    part(A.pl,A.mFl,.98);var f2=new THREE.Mesh(A.pl,A.mFl);f2.position.z=.98;f2.rotation.z=Math.PI/2;g.add(f2);
     return g;
   }
   var flash=add(new THREE.RingGeometry(.1,.16,32),new THREE.MeshBasicMaterial({color:0xffe9cc,transparent:true,opacity:0,depthWrite:false}));flash.visible=false;bg.add(flash);
@@ -1690,6 +2144,7 @@ function initForm(){
   var now=new Date(),todayStr=now.getFullYear()+'-'+pad(now.getMonth()+1)+'-'+pad(now.getDate());
   fDate.min=todayStr;
   var TYPE_TXT={anniv:'un anniversaire',amis:'un pot entre amis',asso:'un événement d\'association ou de club',entreprise:'une soirée d\'entreprise',autre:'un événement'};
+  var SPECIAL={pack:1,tireuse:1};
   function frDate(v){
     var m=/^(\d{4})-(\d{2})-(\d{2})$/.exec(v);if(!m)return '';
     var d=new Date(+m[1],+m[2]-1,+m[3]);
@@ -1702,13 +2157,15 @@ function initForm(){
     var l2;
     if(type==='pack'){
       l2='Je souhaite avoir des informations sur le Pack événement clé en main'+(date?' pour le '+date:'')+(nbTxt?', '+nbTxt:'')+'.';
+    }else if(type==='tireuse'){
+      l2='Je souhaite avoir des informations sur la location de tireuse'+(date?' pour le '+date:'')+(nbTxt?', '+nbTxt:'')+'.';
     }else{
       l2='Je souhaite privatiser le Beer Kong pour '+TYPE_TXT[type]+(date?' le '+date:'')+(nbTxt?', pour '+nbTxt:'')+'.';
     }
-    var l3=type==='pack'?'Pouvez-vous me dire ce qui est possible et comment on s\'organise ?':'Pouvez-vous me dire si c\'est possible et comment on s\'organise ?';
+    var l3=SPECIAL[type]?'Pouvez-vous me dire ce qui est possible et comment on s\'organise ?':'Pouvez-vous me dire si c\'est possible et comment on s\'organise ?';
     return l1+'\n\n'+l2+'\n'+l3+'\n\nMerci beaucoup !'+(prenom?'\n'+prenom:'');
   }
-  function subject(){return fType.value==='pack'?'Demande de Pack événement clé en main : Beer Kong':'Demande de privatisation : Beer Kong';}
+  function subject(){return fType.value==='pack'?'Demande de Pack événement clé en main : Beer Kong':fType.value==='tireuse'?'Demande de location de tireuse : Beer Kong':'Demande de privatisation : Beer Kong';}
   function links(){
     var msg=fMsg.value;
     // SMS : « sms:DESTINATAIRE?&body=… » fonctionne sur iPhone comme sur Android
@@ -1774,6 +2231,7 @@ function initForm(){
     :'Les liens SMS et mail s\'ouvrent sans destinataire : choisissez le contact dans votre messagerie. Le 02 52 56 92 46 est un numéro fixe, il ne reçoit pas les SMS.';
   // « Demander le pack » : présélectionne le type de soirée
   $('#askPack').addEventListener('click',function(){fType.value='pack';dirty=false;reset.hidden=true;refreshAuto();});
+  $('#askTap').addEventListener('click',function(){fType.value='tireuse';dirty=false;reset.hidden=true;refreshAuto();});
   refreshAuto();
   if(DEBUG)window.__form={contact:CONTACT};
 }
